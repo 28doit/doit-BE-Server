@@ -10,32 +10,32 @@ import lombok.*;
 public class User {
 
 
-    private int idx;        //idx
+    private int Idx;        //idx
 
-    private String email;   //email
+    private String Email;   //email
 
-    private String password;
+    private String Password;
 
-    private String name;    //이름
+    private String Name;    //이름
 
-    private String nicName; //닉네임
-    private String phonenumber; //휴대폰
+    private String NicName; //닉네임
+    private String Phonenumber; //휴대폰
 
-    private int sex;    //성별
+    private int Sex;    //성별
 
-    private String profile_img_loc;
+    private String Profile_img_loc;
 
-    private String adress;
+    private String Adress;
 
-    private String year;
+    private String Year;
 
-    private String month;
+    private String Month;
 
-    private String day;
+    private String Day;
     //차후 추가바람.
-    private int cornfirm;
-    private int type;
-    private int gall_count;
-    private int user_subscribe_count;
+    private int Cornfirm;
+    private int Type;
+    private int Gall_count;
+    private int User_subscribe_count;
 
 }

@@ -11,14 +11,14 @@ public class UserService {
     /**
      * 회원가입
      */
-    public int join(User user)
-    {
-        //같은 email 중복회원 X
-        userRepository.findByEmail(user.getEmail())
-            .ifPresent(u->{
-            throw new IllegalStateException("이미 가입되있는 Email입니다.");
-        });
-        userRepository.save(user);
-        return user.getIdx();
+    public int join(User member) {
+        validateDuplicateMember(member); //중복 회원 검증
+        userRepository.save(member);
+        return member.getIdx();
+    } private void validateDuplicateMember(User member) {
+        userRepository.findByEmail(member.getEmail())
+                .ifPresent(m -> {
+                    throw new IllegalStateException("이미 존재하는 회원입니다.");
+                });
     }
 }
