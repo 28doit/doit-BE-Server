@@ -1,7 +1,7 @@
 package com.example.photologger.photo.controller;
 
 import com.example.photologger.photo.domain.User;
-import com.example.photologger.photo.service.UserService;
+import com.example.photologger.photo.service.AccountsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.*;
 import org.springframework.security.core.context.*;
@@ -20,12 +20,12 @@ public class AccountsController {
     /**
      * 회원가입
      */
-    private UserService userService;
+    private AccountsService accountsService;
 
     @Autowired
-    public AccountsController(UserService userService)
+    public AccountsController(AccountsService accountsService)
     {
-        this.userService=userService;
+        this.accountsService=accountsService;
     }
     @GetMapping("/new")
     public String JoInForm()
@@ -60,7 +60,7 @@ public class AccountsController {
         System.out.println(user.getIdx());
         System.out.println(user.getPassword());
         System.out.println(user.getName());
-        userService.join(user);
+        accountsService.join(user);
 
         return "redirect:/";
     }

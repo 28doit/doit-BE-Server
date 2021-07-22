@@ -25,8 +25,6 @@ public class User {
 
     private String Profile_img_loc;
 
-    private String Adress;
-
     private String Year;
 
     private String Month;
