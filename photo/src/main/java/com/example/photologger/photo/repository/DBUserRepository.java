@@ -1,11 +1,13 @@
 package com.example.photologger.photo.repository;
 
 import com.example.photologger.photo.domain.User;
+import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
+@Repository
 public class DBUserRepository implements UserRepository {
     private static Map<Integer, User> store = new HashMap<>();
     private static int sequence = 0;

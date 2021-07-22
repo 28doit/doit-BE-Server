@@ -10,12 +10,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.*;
 
-@Controller
+
 @RequestMapping("/accounts")
+@Controller
 public class AccountsController {
     /**
      * 회원가입
@@ -23,7 +23,6 @@ public class AccountsController {
     private UserService userService;
 
     @Autowired
-    public AccountsController(){ }
     public AccountsController(UserService userService)
     {
         this.userService=userService;
@@ -47,7 +46,6 @@ public class AccountsController {
         user.setPhonenumber(form.getPhonenumber()); //휴대폰
         user.setSex(form.getSex());    //성별
         user.setProfile_img_loc(form.getProfile_img_loc());
-        user.setAdress(form.getAdress());
         user.setYear(form.getYear());
         user.setMonth(form.getMonth());
         user.setDay(form.getDay());
@@ -90,4 +88,5 @@ public class AccountsController {
     {
         return "";
     }
+
 }
