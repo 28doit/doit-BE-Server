@@ -2,7 +2,6 @@ package com.example.photologger.photo.service;
 
 import com.example.photologger.photo.domain.User;
 import com.example.photologger.photo.mapper.AccountsMapper;
-import com.example.photologger.photo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +15,7 @@ public class AccountsService {
     /**
      * 회원가입
      */
-    public int join(User user) {
+    public int join(User user) throws Exception {
         //validateDuplicateuser(user); //중복 회원 검증
         accountsMapper.join(user);
         return user.getIdx();

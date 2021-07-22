@@ -33,34 +33,9 @@ public class AccountsController {
         return "accounts/createUserForm";
     }
     @PostMapping("/new")
-    public String JoIn(User form)
-    {
-        User user = new User();
+    public String JoIn(User form) throws Exception {
 
-
-        user.setEmail(form.getEmail());   //email
-        user.setPassword(form.getPassword());
-        user.setName(form.getName());    //이름
-        user.setIdx(form.getIdx());        //idx
-        user.setNicName(form.getNicName()); //닉네임
-        user.setPhonenumber(form.getPhonenumber()); //휴대폰
-        user.setSex(form.getSex());    //성별
-        user.setProfile_img_loc(form.getProfile_img_loc());
-        user.setYear(form.getYear());
-        user.setMonth(form.getMonth());
-        user.setDay(form.getDay());
-
-        user.setCornfirm(form.getCornfirm());
-        user.setType(form.getType());
-        user.setGall_count(form.getGall_count());
-        user.setUser_subscribe_count(form.getUser_subscribe_count());
-
-
-        System.out.println(user.getEmail());
-        System.out.println(user.getIdx());
-        System.out.println(user.getPassword());
-        System.out.println(user.getName());
-        accountsService.join(user);
+        accountsService.join(form);
 
         return "redirect:/";
     }
