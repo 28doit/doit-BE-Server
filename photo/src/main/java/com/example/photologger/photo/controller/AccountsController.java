@@ -13,15 +13,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.*;
 
-
-@RequestMapping("/accounts")
 @Controller
+@RequestMapping("/accounts")
 public class AccountsController {
     /**
      * 회원가입
      */
     private AccountsService accountsService;
-
     @Autowired
     public AccountsController(AccountsService accountsService)
     {

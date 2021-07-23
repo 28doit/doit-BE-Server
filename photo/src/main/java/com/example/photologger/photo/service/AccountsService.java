@@ -4,19 +4,21 @@ import com.example.photologger.photo.domain.User;
 import com.example.photologger.photo.mapper.AccountsMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 @Service
 public class AccountsService {
+
+    private AccountsMapper accountsMapper;
     @Autowired
-    AccountsMapper accountsMapper;
-
-
+    public AccountsService(AccountsMapper accountsMapper) {
+        this.accountsMapper=accountsMapper;
+    }
 
     /**
      * 회원가입
      */
-    public int join(User user) throws Exception {
+    public int join(User user) {
         //validateDuplicateuser(user); //중복 회원 검증
+
         accountsMapper.join(user);
         return user.getIdx();
     }
