@@ -2,20 +2,20 @@ package com.example.photologger.photo.controller;
 
 import com.example.photologger.photo.domain.User;
 import com.example.photologger.photo.service.AccountsService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.*;
 import org.springframework.security.core.context.*;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.*;
 
 
 @RequestMapping("/accounts")
-@Controller
+@RestController
+@Slf4j
 public class AccountsController {
     /**
      * 회원가입
@@ -35,34 +35,14 @@ public class AccountsController {
     }
 
     @PostMapping("/new")
-    public String JoIn(User user)
+    public String JoIn(@RequestBody User user)
     {
-//        //User user = new User();
-//        user.setEmail(form.getEmail());   //email
-//        user.setPassword(form.getPassword());
-//        user.setU_name(form.getU_name());    //이름
-//        user.setIdx(form.getIdx());        //idx
-//        user.setNicName(form.getNicName()); //닉네임
-//        user.setphoneNumber(form.getphoneNumber()); //휴대폰
-//        user.setSex(form.getSex());    //성별
-//        user.setProfile_img_loc(form.getProfile_img_loc());
-//        user.setU_year(form.getU_year());
-//        user.setU_month(form.getU_month());
-//        user.setU_day(form.getU_day());
-//
-//        user.setCornfirm(form.getCornfirm());
-//        user.setType(form.getType());
-//        user.setGall_count(form.getGall_count());
-//        user.setUser_subscribe_count(form.getUser_subscribe_count());
 
-
-//        System.out.println("이메일 : " + user.getEmail());
-//        System.out.println("idx : " + user.getIdx());
-//        System.out.println("password : " +user.getPassword());
-//        System.out.println("U_name" + user.getU_name());
+        log.info(user.getEmail());
+        log.info(user.toString());
         accountsService.join(user);
 
-        return "redirect:/";
+        return "ok";
     }
     @GetMapping("/login")
     public String login(){
