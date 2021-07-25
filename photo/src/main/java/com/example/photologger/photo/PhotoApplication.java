@@ -8,9 +8,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 @SpringBootApplication(exclude = {SecurityAutoConfiguration.class})
 public class PhotoApplication {
-
 	public static void main(String[] args) {
 		SpringApplication.run(PhotoApplication.class, args);
 	}
-
 }
