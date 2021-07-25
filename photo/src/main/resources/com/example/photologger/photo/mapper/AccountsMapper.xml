@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.photologger.photo.mapper.AccountsMapper">
+    <insert id="join" parameterType="com.example.photologger.photo.domain.User">
+        INSERT INTO user (
+            idx,
+            profile_img_loc,
+            email,
+            u_name,
+            nicName,
+            phonenumber,
+            sex,
+            u_year,
+            u_month,
+            u_day,
+            password,
+            cornfirm,
+            type,
+            gall_count,
+            user_subscribe_count
+                          )
+        VALUES (
+                NEXTVAL(idx),
+                #{profileImageLocation},
+                #{email}
+                #{name},
+                #{nickanme},
+                #{phoneNumber},
+                #{sex},
+                #{u_year},
+                #{u_month},
+                #{u_day},
+                #{u_month},
+                #{u_day},
+                #{password},
+                #{confirm},
+                #{gall_count},
+                #{u_subscribe_count})
+    </insert>
+</mapper>
