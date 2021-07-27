@@ -7,24 +7,25 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.*;
 import org.springframework.security.core.context.*;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
 import javax.servlet.http.*;
 
 @Slf4j
 @RequestMapping("/accounts")
 @RestController
 public class AccountsController {
+
     /**
      * 회원가입
      */
+
     private AccountsService accountsService;
 
     @Autowired
-    public AccountsController(AccountsService accountsService)
-    {
-        this.accountsService=accountsService;
+    public AccountsController(AccountsService accountsService) {
+
+        this.accountsService = accountsService;
+
     }
 
     @GetMapping("/new")
