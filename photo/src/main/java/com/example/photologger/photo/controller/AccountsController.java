@@ -2,13 +2,16 @@ package com.example.photologger.photo.controller;
 
 import com.example.photologger.photo.domain.User;
 import com.example.photologger.photo.service.AccountsService;
+import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.*;
 import org.springframework.security.core.context.*;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.*;
 
@@ -16,9 +19,7 @@ import javax.servlet.http.*;
 @RequestMapping("/accounts")
 @RestController
 public class AccountsController {
-    /**
-     * 회원가입
-     */
+
     private AccountsService accountsService;
 
     @Autowired
@@ -27,22 +28,34 @@ public class AccountsController {
         this.accountsService=accountsService;
     }
 
+    /**
+     * 회원가입 페이지
+     */
     @GetMapping("/new")
-    public String JoInForm()
-    {
-        return "accounts/createUserForm";
+    public ModelAndView join () {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("accounts/createUserForm");
+        return modelAndView;
     }
-
     @PostMapping("/new")
-    public String JoIn(@RequestBody User user)
+    public ResponseEntity<User> JoIn(@RequestBody User user)
     {
         log.info(user.toString());
         accountsService.join(user);
-        return "ok";
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("");
+        return ResponseEntity.ok(user);
     }
     @GetMapping("/login")
     public String login(){
         return "user/login/login";
+    }
+
+    @PostMapping("/login")
+    public String Login()
+    {
+
+        return "redirect:/";
     }
 
     @GetMapping("/logout")
