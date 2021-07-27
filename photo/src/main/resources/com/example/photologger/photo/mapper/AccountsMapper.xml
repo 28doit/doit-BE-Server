@@ -15,7 +15,6 @@
             user_year,
             user_month,
             user_day,
-            cornfirm,
             type,
             gall_count,
             user_subscribe_count
@@ -32,7 +31,6 @@
                 #{userYear},
                 #{userMonth},
                 #{userDay},
-                #{cornFirm},
                 #{type},
                 #{gallaryCount},
                 #{userSubscribeCount})

@@ -5,6 +5,7 @@ import com.example.photologger.photo.service.AccountsService;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.*;
 import org.springframework.security.core.context.*;
@@ -12,7 +13,7 @@ import org.springframework.security.web.authentication.logout.SecurityContextLog
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-
+import org.springframework.http.MediaType;
 import javax.servlet.http.*;
 
 @Slf4j
@@ -37,14 +38,14 @@ public class AccountsController {
         modelAndView.setViewName("accounts/createUserForm");
         return modelAndView;
     }
-    @PostMapping("/new")
-    public ResponseEntity<User> JoIn(@RequestBody User user)
+    @PostMapping(value = "/new", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public String JoIn(@RequestBody User user)
     {
         log.info(user.toString());
         accountsService.join(user);
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("");
-        return ResponseEntity.ok(user);
+        modelAndView.setViewName("accounts/createUserForm");
+        return user.toString();
     }
     @GetMapping("/login")
     public String login(){

@@ -18,7 +18,6 @@ public class User {
     private String userYear; // 년도
     private String userMonth; // 월
     private String userDay; // 일
-    private int cornFirm; // 약관 동의 유무
     private int type; //사용자 직급
     private int gallaryCount; // 사진 갯수
     private int userSubscribeCount; // 구독자 수
