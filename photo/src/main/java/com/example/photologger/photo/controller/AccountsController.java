@@ -2,26 +2,19 @@ package com.example.photologger.photo.controller;
 
 import com.example.photologger.photo.domain.User;
 import com.example.photologger.photo.service.AccountsService;
-<<<<<<< HEAD
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-=======
 import io.swagger.annotations.*;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
->>>>>>> feature-이정훈
 import org.springframework.security.core.*;
 import org.springframework.security.core.context.*;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-<<<<<<< HEAD
-=======
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.http.MediaType;
->>>>>>> feature-이정훈
 import javax.servlet.http.*;
 /**/
 @Slf4j
@@ -30,41 +23,25 @@ import javax.servlet.http.*;
 @Api(tags= "Accounts Controller")
 public class AccountsController {
 
-    /**
-     * 회원가입
-     */
-
     private AccountsService accountsService;
 
     @Autowired
-    public AccountsController(AccountsService accountsService) {
-
-        this.accountsService = accountsService;
-
+    public AccountsController(AccountsService accountsService)
+    {
+        this.accountsService=accountsService;
     }
-<<<<<<< HEAD
-
-=======
-/**/
+    /**/
     /**
      * 회원가입 페이지
      */
     @ApiOperation(value = "회원가입 페이지", notes = "회원가입의 정보가있는 폼으로 보내준다.")
->>>>>>> feature-이정훈
     @GetMapping("/new")
-    public String JoInForm()
-    {
-        return "accounts/createUserForm";
+    public ModelAndView join () {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("accounts/createUserForm");
+        return modelAndView;
     }
 
-<<<<<<< HEAD
-    @PostMapping("/new")
-    public String JoIn(@RequestBody User user)
-    {
-        log.info(user.toString());
-        accountsService.join(user);
-        return "ok";
-=======
     @ApiOperation(value = "회원가입", notes = "회원가입")
 
     @PostMapping(value = "/new", consumes = MediaType.APPLICATION_JSON_VALUE)
@@ -75,16 +52,12 @@ public class AccountsController {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("accounts/createUserForm");
         return user.toString();
->>>>>>> feature-이정훈
     }
     @ApiOperation(value = "로그인 페이지", notes = "로그인 정보가있는 폼으로 보내준다.")
     @GetMapping("/login")
     public String login(){
         return "user/login/login";
     }
-<<<<<<< HEAD
-
-=======
     @ApiOperation(value = "로그인", notes = "로그인.")
     @PostMapping("/login")
     public String Login()
@@ -93,7 +66,6 @@ public class AccountsController {
         return "redirect:/";
     }
     @ApiOperation(value = "로그아웃", notes = "로그아웃.")
->>>>>>> feature-이정훈
     @GetMapping("/logout")
     public String logout(HttpServletRequest request, HttpServletResponse response) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
