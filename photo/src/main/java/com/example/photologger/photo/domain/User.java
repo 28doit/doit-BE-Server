@@ -5,6 +5,9 @@ import lombok.*;
 @Setter
 @NoArgsConstructor
 @ToString
+
+//DB 순으로 정리하기
+
 public class User {
     private int idx;        //idx
     private String email;   //email
@@ -13,7 +16,7 @@ public class User {
     private String nickName; //닉네임
     private String phoneNumber; //휴대폰
     private int sex;   //성별
-    private String profileImageLocation; // 이미지 위치
+    private String profileImgLoc; // 이미지 위치
     private String userYear; // 년도
     private String userMonth; // 월
     private String userDay; // 일
