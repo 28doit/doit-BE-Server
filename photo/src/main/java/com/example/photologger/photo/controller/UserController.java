@@ -27,6 +27,11 @@ public class UserController {
         for (User user : userList) {
             System.out.println(user);
         }
+<<<<<<< HEAD
+=======
+
+//        .addAttribute("UserList", userList);
+>>>>>>> feature-이정훈
         return "ok";
 
     }
