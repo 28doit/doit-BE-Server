@@ -30,7 +30,7 @@ public class AccountsController {
     /**
      * 회원가입 페이지
      */
-    @ApiOperation(value = "회원가입 페이지", notes = "회원가입의 정보가있는 폼으로 보내준다.")
+    @ApiOperation(value = "회원가입 페이지", notes = "회원가입의 정보가 있는 폼으로 보내준다.")
     @GetMapping("/new")
     public ModelAndView join () {
         ModelAndView modelAndView = new ModelAndView();
@@ -41,7 +41,7 @@ public class AccountsController {
     @ApiOperation(value = "회원가입", notes = "회원가입")
 
     @PostMapping(value = "/new", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public String JoIn(@RequestBody @ApiParam(value = "한명의 개인정보",required = true) User user)
+    public String Join(@RequestBody @ApiParam(value = "한명의 개인정보", required = true) User user)
     {
         log.info(user.toString());
         accountsService.join(user);

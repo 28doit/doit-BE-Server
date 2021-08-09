@@ -2,6 +2,7 @@ package com.example.photologger.photo.controller;
 
 import com.example.photologger.photo.domain.User;
 import com.example.photologger.photo.service.UserService;
+import lombok.Value;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
@@ -28,6 +29,14 @@ public class UserController {
             System.out.println(user);
         }
         return "ok";
-
+    }
+    //비밀번호 변경
+    @GetMapping("update_password")
+    public String updatePassword(@RequestParam(value = "updatepw",
+            defaultValue = "", required = false) String email, User user){
+            user.setEmail(email);
+            log.info(user.toString());
+            userService.UpdatePassword(user);
+            return "ok";
     }
 }

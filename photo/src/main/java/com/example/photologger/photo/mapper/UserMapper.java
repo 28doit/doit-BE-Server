@@ -8,4 +8,6 @@ import java.util.List;
 @Mapper
 public interface UserMapper {
     List<User> findOne(@Param("idx") int idx);
+
+    void updatePassword(User user);
 }

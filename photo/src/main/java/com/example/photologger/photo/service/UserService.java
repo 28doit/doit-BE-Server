@@ -18,4 +18,8 @@ public class UserService {
         return userMapper.findOne(idx);
     }
 
+    //비밀번호 변경
+    public void UpdatePassword(User user){
+        userMapper.updatePassword(user);
+    }
 }

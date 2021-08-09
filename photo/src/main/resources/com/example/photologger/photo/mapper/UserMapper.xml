@@ -7,4 +7,23 @@
         FROM user
         WHERE idx = #{idx}
     </select>
+    
+    <select id="findId" resultType="com.example.photologger.photo.domain.User">
+        SELECT *
+        FROM user
+        WHERE userName = #{userName}            AND
+              phoneNumber = #{phoneNumber}
+    </select>
+
+    <select id="findPw" resultType="com.example.photologger.photo.domain.User">
+        SELECT *
+        FROM user
+        WHERE email = #{email}              AND
+              userName = #{userName}         AND
+              phoneNumber = #{phoneNumber}
+    </select>
+    
+    <update id= "updatePassword">
+        UPDATE user SET userPassword = #{userPassword} AND email = #{email}
+    </update>
 </mapper>

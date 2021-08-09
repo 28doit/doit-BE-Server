@@ -3,7 +3,13 @@
 
 <mapper namespace="com.example.photologger.photo.mapper.SubScribeMapper">
     <insert id="userSubscribe" parameterType="com.example.photologger.photo.domain.User">
-        INSERT INTO user (
+        INSERT INTO userSubscribe (
+            idx
+        )
+    </insert>
+
+    <insert id="gallarySubscribe" parameterType="com.example.photologger.photo.domain.User">
+        INSERT INTO userSubscribe (
             idx
         )
     </insert>
