@@ -22,17 +22,28 @@ public class UserController {
     @GetMapping("/{idx}")
     public String findUser(
         @PathVariable(value = "idx")
-            int idx
+            Integer idx
     ) throws Exception {
 
         List<User> userList = userService.findOne(idx);
         for (User user : userList) {
-            System.out.println(user);
+            log.info(user.toString());
         }
         return "ok";
     }
 
-    //비밀번호 변경
+    // 아이디 찾기
+    @GetMapping("/findId")
+    public String findUserId(@RequestBody User user){
+        return "ok";
+    }
+
+    // 비밀번호 찾기
+        //이메일 인증
+
+
+
+    // 비밀번호 변경
     @PostMapping("/setpassword/{idx}")
     public String updatePassword(@PathVariable(value = "idx") Integer idx,
         @RequestBody User user) throws Exception {
@@ -40,6 +51,5 @@ public class UserController {
         System.out.println(user.getIdx() + "님의 비밀번호가" + user.getPassword() + "변경되었습니다.");
         userService.UpdatePassword(user);
         return "ok";
-
     }
 }

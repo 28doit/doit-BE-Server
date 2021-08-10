@@ -5,19 +5,19 @@
     <insert id="join" parameterType="com.example.photologger.photo.domain.User">
         INSERT INTO user (
             idx,
-            profile_img_loc,
+            profileimgloc,
             email,
             password,
             name,
             nickname,
             phonenumber,
             sex,
-            user_year,
-            user_month,
-            user_day,
+            useryear,
+            usermonth,
+            userday,
             type,
             gall_count,
-            user_subscribe_count
+            usersubscribecount
             )
         VALUES (
                 NEXTVAL(idx),

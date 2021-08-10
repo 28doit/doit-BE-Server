@@ -15,7 +15,7 @@ public class UserService {
     UserMapper userMapper;
 
     //맴버 전체 조회
-    public List<User> findOne(int idx) {
+    public List<User> findOne(Integer idx) {
         return userMapper.findOne(idx);
     }
 
