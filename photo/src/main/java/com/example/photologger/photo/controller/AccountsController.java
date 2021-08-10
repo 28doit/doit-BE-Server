@@ -39,12 +39,12 @@ public class AccountsController {
     }
 
     @ApiOperation(value = "회원가입", notes = "회원가입")
-
-    @PostMapping(value = "/new", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/new")
     public String Join(@RequestBody @ApiParam(value = "한명의 개인정보", required = true) User user)
     {
         log.info(user.toString());
         accountsService.join(user);
+        log.info(user.toString());
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("accounts/createUserForm");
         return user.toString();

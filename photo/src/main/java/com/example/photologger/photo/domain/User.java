@@ -9,11 +9,14 @@ import lombok.*;
 @ToString
 public class User {
     @ApiModelProperty(example = "회원 번호")
-    private int idx;        //idx
+    private Integer idx;        //idx
+
     @ApiModelProperty(example = "E-mail")
     private String email;   //email
+
     @ApiModelProperty(example = "비밀번호")
     private String password;
+
     @ApiModelProperty(example = "이름")
     private String userName;    //이름
     @ApiModelProperty(example = "닉네임")

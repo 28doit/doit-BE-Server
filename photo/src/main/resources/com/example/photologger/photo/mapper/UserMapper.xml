@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.example.photologger.photo.mapper.UserMapper">
-    <select id="findOne" resultMap="com.example.photologger.photo.domain.User" >
+    <select id="findOne" resultType="com.example.photologger.photo.domain.User" >
         SELECT *
         FROM user
         WHERE idx = #{idx}
@@ -10,20 +10,22 @@
     
     <select id="findId" resultType="com.example.photologger.photo.domain.User">
         SELECT *
-        FROM user
-        WHERE userName = #{userName}            AND
-              phoneNumber = #{phoneNumber}
+          FROM user
+         WHERE userName     = #{userName}
+           AND phoneNumber  = #{phoneNumber}
     </select>
 
     <select id="findPw" resultType="com.example.photologger.photo.domain.User">
         SELECT *
-        FROM user
-        WHERE email = #{email}              AND
-              userName = #{userName}         AND
-              phoneNumber = #{phoneNumber}
+          FROM user
+         WHERE email        = #{email}
+           AND userName     = #{userName}
+           AND phoneNumber  = #{phoneNumber}
     </select>
     
     <update id= "updatePassword">
-        UPDATE user SET userPassword = #{userPassword} AND email = #{email}
+        UPDATE user
+           SET password = #{password}
+         where idx      = #{idx}
     </update>
 </mapper>

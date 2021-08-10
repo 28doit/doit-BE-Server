@@ -2,10 +2,9 @@ package com.example.photologger.photo.controller;
 
 import com.example.photologger.photo.domain.User;
 import com.example.photologger.photo.service.UserService;
-import lombok.Value;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,22 +20,27 @@ public class UserController {
 
     // 유저 조회
     @GetMapping("/{idx}")
-    public String findUser(@PathVariable(value = "idx") int idx)
-            throws Exception {
-        List<User> userList = userService.findOne(idx);
+    public String findUser(
+        @PathVariable(value = "idx")
+            int idx
+    ) throws Exception {
 
+        List<User> userList = userService.findOne(idx);
         for (User user : userList) {
             System.out.println(user);
         }
         return "ok";
     }
+
     //비밀번호 변경
-    @GetMapping("update_password")
-    public String updatePassword(@RequestParam(value = "updatepw",
-            defaultValue = "", required = false) String email, User user){
-            user.setEmail(email);
-            log.info(user.toString());
-            userService.UpdatePassword(user);
-            return "ok";
+    @PostMapping("/setpassword/{idx}")
+    public String updatePassword(@RequestParam(value = "idx", defaultValue = "0",
+        required = true) Integer idx,
+        @RequestBody User user) throws Exception {
+        user.setIdx(idx);
+        System.out.println(user.getIdx() + "님의 비밀번호가"+ user.getPassword() +"변경되었습니다.");
+        userService.UpdatePassword(user);
+        return "ok";
+
     }
 }
