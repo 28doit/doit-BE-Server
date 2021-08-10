@@ -19,7 +19,7 @@
         SELECT *
           FROM user
          WHERE email        = #{email}
-           AND userName     = #{userName}
+           AND name     = #{name}
            AND phoneNumber  = #{phoneNumber}
     </select>
     

@@ -34,13 +34,23 @@ public class UserController {
 
     // 아이디 찾기
     @GetMapping("/findId")
-    public String findUserId(@RequestBody User user){
+    public String findUserId(@RequestBody User user) {
         return "ok";
     }
 
     // 비밀번호 찾기
-        //이메일 인증
-
+    @GetMapping("/findPwd")
+    public String findPwd(User user) throws Exception {
+        userService.findpwd(user);
+        if (user == null) {
+            return "이메일에 정보가 없습니다.";
+        } else {
+            String pwd = user.getEmail();
+            String email = user.getEmail();
+            userService.sendMail(pwd, email);
+            return "success";
+        }
+    }
 
 
     // 비밀번호 변경
