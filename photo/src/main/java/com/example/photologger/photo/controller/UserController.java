@@ -34,11 +34,10 @@ public class UserController {
 
     //비밀번호 변경
     @PostMapping("/setpassword/{idx}")
-    public String updatePassword(@RequestParam(value = "idx", defaultValue = "0",
-        required = true) Integer idx,
+    public String updatePassword(@PathVariable(value = "idx") Integer idx,
         @RequestBody User user) throws Exception {
         user.setIdx(idx);
-        System.out.println(user.getIdx() + "님의 비밀번호가"+ user.getPassword() +"변경되었습니다.");
+        System.out.println(user.getIdx() + "님의 비밀번호가" + user.getPassword() + "변경되었습니다.");
         userService.UpdatePassword(user);
         return "ok";
 
