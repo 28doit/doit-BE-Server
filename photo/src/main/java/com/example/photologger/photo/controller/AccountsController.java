@@ -1,89 +1,87 @@
 package com.example.photologger.photo.controller;
 
+import com.example.photologger.photo.domain.ReturnUser;
 import com.example.photologger.photo.domain.User;
 import com.example.photologger.photo.service.AccountsService;
-import io.swagger.annotations.*;
+import com.example.photologger.photo.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.*;
-import org.springframework.security.core.context.*;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.http.MediaType;
-import javax.servlet.http.*;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.util.Map;
+
 /**/
 @Slf4j
 @RequestMapping("/accounts")
 @RestController
-@Api(tags= "Accounts Controller")
-public class AccountsController {
+public class AccountsController implements iAccountController{
 
-    private AccountsService accountsService;
 
+    private final AccountsService accountsService;
+    private final UserService userService;
     @Autowired
-    public AccountsController(AccountsService accountsService)
+    public AccountsController(AccountsService accountsService,UserService userService)
     {
         this.accountsService=accountsService;
+        this.userService=userService;
+
     }
-    /**/
     /**
-     * 회원가입 페이지
+     * 회원가입
      */
-    @ApiOperation(value = "회원가입 페이지", notes = "회원가입의 정보가 있는 폼으로 보내준다.")
-    @GetMapping("/new")
-    public ModelAndView join () {
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("accounts/createUserForm");
-        return modelAndView;
-    }
-
-    @ApiOperation(value = "회원가입", notes = "회원가입")
-    @PostMapping(value = "/new")
-    public String Join(@RequestBody @ApiParam(value = "한명의 개인정보", required = true) User user)
-    {
-        log.info(user.toString());
+//    @GetMapping(value = "/new")
+//    public ModelAndView JoIn() {
+//        ModelAndView modelAndView = new ModelAndView();
+//        modelAndView.setViewName("/accounts/createUserForm");
+//        return modelAndView;
+//    }
+    @Override
+    @PostMapping(value = "/new", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity JoIn(@RequestBody  User user) {
+//        //비밀번호 암호화(미사용코드) 프론트쪽에서 암호화예정.
+//        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+//        user.setPassword(passwordEncoder.encode(user.getPassword()));
         accountsService.join(user);
-        log.info(user.toString());
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("accounts/createUserForm");
-        return user.toString();
+       return new ResponseEntity(HttpStatus.OK);
     }
-    @ApiOperation(value = "로그인 페이지", notes = "로그인 정보가있는 폼으로 보내준다.")
-    @GetMapping("/login")
-    public String login(){
-        return "user/login/login";
+    @Override
+    @PostMapping(value = "/login",consumes = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public ReturnUser login(@RequestBody Map<String, String> userIdPassword) {
+        return accountsService.login(userIdPassword);
     }
-    @ApiOperation(value = "로그인", notes = "로그인.")
-    @PostMapping("/login")
-    public String Login()
-    {
 
-        return "redirect:/";
-    }
-    @ApiOperation(value = "로그아웃", notes = "로그아웃.")
+    @Override
     @GetMapping("/logout")
     public String logout(HttpServletRequest request, HttpServletResponse response) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-
+ 
         if (authentication != null) {
             new SecurityContextLogoutHandler().logout(request, response, authentication);
         }
         return "redirect:/";
     }
-    @ApiOperation(value = "비밀번호 찾기", notes = "비밀번호 찾기")
+    @Override
     @PostMapping("/password-reset")
     public void PassWord_Reset()
     {
 
     }
-    @ApiOperation(value = "Id 찾기", notes = "id찾기")
+    @Override
     @PostMapping("/id-find")
     public String Id_Find()
     {
         return "redirect:/";
     }
-    @ApiOperation(value = "회원 삭제", notes = "회원삭제는 ??일의 보류기간을 가집니다.")
+    @Override
     @PostMapping("/deleteUser")
     public String Delete_User()
     {

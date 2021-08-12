@@ -4,6 +4,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+import java.util.Optional;
 
 @Mapper
 public interface UserMapper {
@@ -16,4 +17,7 @@ public interface UserMapper {
 
     //비밀번호 찾기
     void findPw(User user);
+
+    //토큰발급용 맵퍼jwt
+    Optional<User> findUser(String email);
 }

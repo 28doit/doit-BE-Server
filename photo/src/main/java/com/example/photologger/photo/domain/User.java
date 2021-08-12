@@ -10,7 +10,7 @@ import lombok.*;
 public class User {
 
     @ApiModelProperty(example = "회원 번호")
-    private Integer idx;
+    private int idx;
 
     @ApiModelProperty(example = "프로필 사진")
     private String profileImageLocation;
