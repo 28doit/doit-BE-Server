@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class AccountsService {
+
     @Autowired
     AccountsMapper accountsMapper;
 
@@ -14,14 +15,7 @@ public class AccountsService {
      * 회원가입
      */
     public int join(User user) {
-        //validateDuplicateuser(user); //중복 회원 검증
         accountsMapper.join(user);
         return user.getIdx();
     }
-//    private void validateDuplicateuser(User user) {
-//        userRepository.findByEmail(user.getEmail())
-//                .ifPresent(m -> {
-//                    throw new IllegalStateException("이미 존재하는 회원입니다.");
-//                });
-//    }
 }

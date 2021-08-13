@@ -5,7 +5,7 @@
     <insert id="join" parameterType="com.example.photologger.photo.domain.User">
         INSERT INTO user (
             idx,
-            profileimgloc,
+            profileImageLocation,
             email,
             password,
             name,
@@ -24,7 +24,7 @@
                 #{profileImageLocation},
                 #{email},
                 #{password},
-                #{userName},
+                #{name},
                 #{nickName},
                 #{phoneNumber},
                 #{sex},

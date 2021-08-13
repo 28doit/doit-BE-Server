@@ -12,20 +12,25 @@
         SELECT *
           FROM user
          WHERE userName     = #{userName}
-           AND phoneNumber  = #{phoneNumber}
+           AND phoneNumber  = #{phonenumber}
     </select>
 
-    <select id="findPw" resultType="com.example.photologger.photo.domain.User">
+    <select id="findPwd" resultType="com.example.photologger.photo.domain.User">
         SELECT *
           FROM user
          WHERE email        = #{email}
-           AND name     = #{name}
-           AND phoneNumber  = #{phoneNumber}
+           AND name         = #{name}
+           AND phonenumber  = #{phoneNumber}
     </select>
     
     <update id= "updatePassword">
         UPDATE user
            SET password = #{password}
          where idx      = #{idx}
+    </update>
+    <update id="updateName">
+      UPDATE user
+         SET name = #{name}
+       WHERE idx  = #{idx}
     </update>
 </mapper>
