@@ -4,6 +4,9 @@ import com.example.photologger.photo.domain.ReturnUser;
 import com.example.photologger.photo.domain.User;
 import com.example.photologger.photo.service.AccountsService;
 import com.example.photologger.photo.service.UserService;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import io.swagger.annotations.ApiParam;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,6 +19,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.HashMap;
 import java.util.Map;
 
 /**/
@@ -45,20 +49,22 @@ public class AccountsController implements iAccountController{
 //    }
     @Override
     @PostMapping(value = "/new", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity JoIn(@RequestBody  User user) {
+    public ResponseEntity JoIn(@RequestBody User user) {
 //        //비밀번호 암호화(미사용코드) 프론트쪽에서 암호화예정.
 //        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 //        user.setPassword(passwordEncoder.encode(user.getPassword()));
+
         accountsService.join(user);
+        log.info(user.getName()+"님의 회원가입이 정상적으로 완료되었습니다");
        return new ResponseEntity(HttpStatus.OK);
     }
     @Override
     @PostMapping(value = "/login",consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public ReturnUser login(@RequestBody Map<String, String> userIdPassword) {
+       log.info(userIdPassword.toString());
         return accountsService.login(userIdPassword);
     }
-
     @Override
     @GetMapping("/logout")
     public String logout(HttpServletRequest request, HttpServletResponse response) {
@@ -87,5 +93,19 @@ public class AccountsController implements iAccountController{
     {
         return "redirect:/";
     }
-
+    @Override
+    @GetMapping("/new/email-check")
+    public Object email_check(@RequestParam(name = "email") String email)
+    {
+        log.info(email);
+        return accountsService.email_Check(email);
+    }
+    @Override
+    @GetMapping("/token-check")
+    @ResponseBody
+    public HashMap token_Expiration(@RequestParam(name = "token")String token, @RequestParam(name = "email")String email)
+    {
+        log.info(token+email);
+        return accountsService.token_Expiration(token,email);
+    }
 }

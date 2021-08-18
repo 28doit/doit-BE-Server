@@ -1,5 +1,6 @@
 package com.example.photologger.photo.controller;
 
+import com.example.photologger.photo.mapper.AccountsMapper;
 import com.example.photologger.photo.mapper.UserMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,14 +9,14 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class AccountsControllerTest {
     @Autowired
-    UserMapper userMapper;
+    AccountsMapper accountsMapper;
     @Test
     void joIn() {
     }
 
     @Test
     void login() {
-        userMapper.findUser("test@asd.com");
+       accountsMapper.findEmail("test@asd.com");
     }
 
     @Test

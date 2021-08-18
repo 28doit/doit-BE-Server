@@ -10,7 +10,7 @@
             password,
             name,
             nickname,
-            phonenumber,
+            phone_number,
             sex,
             useryear,
             usermonth,
@@ -26,7 +26,7 @@
                 #{password},
                 #{name},
                 #{nickName},
-                #{phoneNumber},
+                #{phone_Number},
                 #{sex},
                 #{userYear},
                 #{userMonth},
@@ -35,4 +35,10 @@
                 #{gallaryCount},
                 #{userSubscribeCount})
     </insert>
+
+    <select id="findEmail" resultType="com.example.photologger.photo.domain.User">
+        SELECT *
+        FROM user
+        WHERE email        = #{email}
+    </select>
 </mapper>

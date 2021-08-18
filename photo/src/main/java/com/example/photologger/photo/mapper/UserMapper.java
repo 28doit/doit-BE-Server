@@ -17,7 +17,4 @@ public interface UserMapper {
 
     //비밀번호 찾기
     void findPw(User user);
-
-    //토큰발급용 맵퍼jwt
-    Optional<User> findUser(String email);
 }

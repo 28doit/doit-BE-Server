@@ -29,9 +29,4 @@
          where idx      = #{idx}
     </update>
 
-    <select id="findUser" resultType="com.example.photologger.photo.domain.User">
-        SELECT *
-        FROM user
-        WHERE email        = #{email}
-    </select>
 </mapper>
