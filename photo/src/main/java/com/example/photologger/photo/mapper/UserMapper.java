@@ -9,7 +9,7 @@ import java.util.List;
 public interface UserMapper {
 
     //특정 회원 정보 불러오기
-    List<User> findOne(@Param("idx") Integer idx);
+    User findOne(@Param("idx") Integer idx);
 
     //비밀번호 변경
     void updatePassword(User user);

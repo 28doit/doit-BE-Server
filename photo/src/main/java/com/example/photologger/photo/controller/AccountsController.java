@@ -1,65 +1,65 @@
 package com.example.photologger.photo.controller;
 
+import com.example.photologger.photo.apidocument.AccountControllerDocs;
 import com.example.photologger.photo.domain.User;
 import com.example.photologger.photo.service.AccountsService;
-import io.swagger.annotations.*;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.*;
-import org.springframework.security.core.context.*;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.http.MediaType;
-import javax.servlet.http.*;
+
 /**/
 @Slf4j
 @RequestMapping("/accounts")
 @RestController
-@Api(tags= "Accounts Controller")
-public class AccountsController {
+
+public class AccountsController implements AccountControllerDocs {
 
     private AccountsService accountsService;
 
     @Autowired
-    public AccountsController(AccountsService accountsService)
-    {
-        this.accountsService=accountsService;
+    public AccountsController(AccountsService accountsService) {
+        this.accountsService = accountsService;
     }
-    /**/
-    /**
-     * 회원가입 페이지
-     */
-    @ApiOperation(value = "회원가입 페이지", notes = "회원가입의 정보가 있는 폼으로 보내준다.")
+
     @GetMapping("/new")
-    public ModelAndView join () {
+    public ModelAndView join() {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("accounts/createUserForm");
         return modelAndView;
     }
 
-    @ApiOperation(value = "회원가입", notes = "회원가입")
     @PostMapping(value = "/new")
-    public String Join(@RequestBody @ApiParam(value = "한명의 개인정보", required = true) User user)
-        throws Exception
-    {
+    public String Join(@RequestBody User user)
+        throws Exception {
         log.info(user.toString());
         accountsService.join(user);
         return "ok";
     }
-    @ApiOperation(value = "로그인 페이지", notes = "로그인 정보가있는 폼으로 보내준다.")
+
     @GetMapping("/login")
-    public String login(){
+    public String login() {
         return "user/login/login";
     }
-    @ApiOperation(value = "로그인", notes = "로그인.")
+
     @PostMapping("/login")
-    public String Login()
-    {
+    public String Login() {
 
         return "redirect:/";
     }
-    @ApiOperation(value = "로그아웃", notes = "로그아웃.")
+
     @GetMapping("/logout")
     public String logout(HttpServletRequest request, HttpServletResponse response) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -69,22 +69,19 @@ public class AccountsController {
         }
         return "redirect:/";
     }
-    @ApiOperation(value = "비밀번호 찾기", notes = "비밀번호 찾기")
+
     @PostMapping("/password-reset")
-    public void PassWord_Reset()
-    {
+    public void PassWord_Reset() {
 
     }
-    @ApiOperation(value = "Id 찾기", notes = "id찾기")
+
     @PostMapping("/id-find")
-    public String Id_Find()
-    {
+    public String Id_Find() {
         return "redirect:/";
     }
-    @ApiOperation(value = "회원 삭제", notes = "회원삭제는 ??일의 보류기간을 가집니다.")
+
     @PostMapping("/deleteUser")
-    public String Delete_User()
-    {
+    public String Delete_User() {
         return "redirect:/";
     }
 
