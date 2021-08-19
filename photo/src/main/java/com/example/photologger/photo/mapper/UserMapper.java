@@ -19,4 +19,5 @@ public interface UserMapper {
 
     //비밀번호 찾기
     User findPwd(User user);
+    void updateUserPassword(String id, String pw);
 }
