@@ -29,6 +29,7 @@
          where idx      = #{idx}
     </update>
 
+
     <update id= "updateEPassword">
         UPDATE user
         SET password = #{password}
