@@ -1,3 +1,4 @@
+
 package com.example.photologger.photo.service;
 
 import com.example.photologger.photo.domain.ReturnCheck;
@@ -6,22 +7,14 @@ import com.example.photologger.photo.domain.User;
 import com.example.photologger.photo.jwt.JwtTokenProvider;
 import com.example.photologger.photo.mapper.AccountsMapper;
 import com.example.photologger.photo.mapper.UserMapper;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.ExpiredJwtException;
+import java.util.HashMap;
+import java.util.Map;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.w3c.dom.ls.LSException;
-import springfox.documentation.spring.web.json.Json;
-
-import java.util.*;
 
 @Slf4j
 @Service
@@ -33,12 +26,8 @@ public class AccountsService {
     JwtTokenProvider jwtTokenProvider;
     @Autowired
     UserMapper userMapper;
-//    private final UserRepository userRepository;
 
 
-    /**
-     * 회원가입
-     */
     @Transactional
     public int join(User user) {
         //validateDuplicateuser(user); //중복 회원 검증
@@ -47,9 +36,7 @@ public class AccountsService {
         return user.getIdx();
     }
 
-    /**
-     *  로그인
-     */
+
     public ReturnUser login(Map<String,String> userIdPassword) {
         ReturnUser returnUser = new ReturnUser();
         BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
@@ -143,3 +130,4 @@ public class AccountsService {
 //                });
 //    }
 }
+

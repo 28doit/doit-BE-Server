@@ -25,6 +25,10 @@ bin/
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
+.idea/gradle.xml
+.idea/libraries/
+.idea/modules.xml
+.idea/modules/
 
 ### NetBeans ###
 /nbproject/private/
