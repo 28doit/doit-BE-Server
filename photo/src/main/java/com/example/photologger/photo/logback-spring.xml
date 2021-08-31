@@ -11,10 +11,16 @@
             <root level="info">
                 <appender-ref ref="CONSOLE"/>
             </root>
+            <root level="debug">
+                <appender-ref ref="CONSOLE"/>
+            </root>
         </springProfile>
         <springProfile name="local-live">
             <include resource="log/console.xml" />
             <root level="info">
+                <appender-ref ref="CONSOLE"/>
+            </root>
+            <root level="debug">
                 <appender-ref ref="CONSOLE"/>
             </root>
         </springProfile>
