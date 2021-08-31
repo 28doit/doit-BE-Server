@@ -50,7 +50,7 @@ public class UserController {
         } else {
             String email = user1.getEmail();
             log.info(user1.toString());
-            emailService.sendMail(email,user1);
+            emailService.sendFindPasswordMail(email,user1);
             return "true";
         }
     }

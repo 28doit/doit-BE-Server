@@ -3,11 +3,6 @@ package com.example.photologger.photo.apidocument;
 import com.example.photologger.photo.domain.User;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 @Api(tags= "User Controller")
 public interface UserControllerDocs {
