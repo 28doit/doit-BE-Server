@@ -4,7 +4,7 @@ package com.example.photologger.photo.controller;
 import com.example.photologger.photo.domain.ReturnUser;
 import com.example.photologger.photo.domain.User;
 import com.example.photologger.photo.service.AccountsService;
-import com.example.photologger.photo.service.UserService;
+import com.example.photologger.photo.service.EmailService;
 import java.util.HashMap;
 import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
@@ -18,6 +18,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,43 +28,53 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @Slf4j
-@RequestMapping("/accounts")
+@RequestMapping("/api/accounts")
 @RestController
 public class AccountsController {
 
-
     private final AccountsService accountsService;
-    private final UserService userService;
-    @Autowired
-    public AccountsController(AccountsService accountsService,UserService userService)
-    {
-        this.accountsService=accountsService;
-        this.userService=userService;
+    private final EmailService emailService;
 
+    @Autowired
+    public AccountsController(AccountsService accountsService,
+        EmailService emailService) {
+        this.accountsService = accountsService;
+        this.emailService = emailService;
     }
+
 
     @PostMapping(value = "/new", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity JoIn(@RequestBody User user) {
 //        //비밀번호 암호화(미사용코드) 프론트쪽에서 암호화예정.
 //        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 //        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        //DB User 데이터 저장
 
         accountsService.join(user);
-        log.info(user.getName()+"님의 회원가입이 정상적으로 완료되었습니다");
-       return new ResponseEntity(HttpStatus.OK);
+        emailService.SendJoinMail(user.getEmail());
+        log.info(user.getName() + "님의 회원가입이 정상적으로 완료되었습니다");
+        return new ResponseEntity(HttpStatus.OK);
     }
 
-    @PostMapping(value = "/login",consumes = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping("/emailcornfirm/{email}")
+    public String checkEmail(@PathVariable(value = "email") String email) {
+        log.info(email);
+        accountsService.emailCheck(email);
+        log.info("아매알 안중이 완료 되었습니다.");
+        return "true";
+    }
+
+    @PostMapping(value = "/login", consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public ReturnUser login(@RequestBody Map<String, String> userIdPassword) {
-       log.info(userIdPassword.toString());
+        log.info(userIdPassword.toString());
         return accountsService.login(userIdPassword);
     }
 
     @GetMapping("/logout")
     public String logout(HttpServletRequest request, HttpServletResponse response) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
- 
+
         if (authentication != null) {
             new SecurityContextLogoutHandler().logout(request, response, authentication);
         }
@@ -71,36 +82,32 @@ public class AccountsController {
     }
 
     @PostMapping("/password-reset")
-    public void PassWord_Reset()
-    {
+    public void PassWord_Reset() {
 
     }
 
     @PostMapping("/id-find")
-    public String Id_Find()
-    {
+    public String Id_Find() {
         return "redirect:/";
     }
 
     @PostMapping("/deleteUser")
-    public String Delete_User()
-    {
+    public String Delete_User() {
         return "redirect:/";
     }
 
     @GetMapping("/new/email-check")
-    public Object email_check(@RequestParam(name = "email") String email)
-    {
+    public Object email_check(@RequestParam(name = "email") String email) {
         log.info(email);
         return accountsService.email_Check(email);
     }
 
     @GetMapping("/token-check")
     @ResponseBody
-    public HashMap token_Expiration(@RequestParam(name = "token")String token, @RequestParam(name = "email")String email)
-    {
-        log.info(token+email);
-        return accountsService.token_Expiration(token,email);
+    public HashMap token_Expiration(@RequestParam(name = "token") String token,
+        @RequestParam(name = "email") String email) {
+        log.info(token + email);
+        return accountsService.token_Expiration(token, email);
     }
 }
 

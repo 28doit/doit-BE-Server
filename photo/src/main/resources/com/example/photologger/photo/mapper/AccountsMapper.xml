@@ -5,19 +5,20 @@
     <insert id="join" parameterType="com.example.photologger.photo.domain.User">
         INSERT INTO user (
             idx,
-            profileImageLocation,
+            profile_Image_location,
             email,
             password,
             name,
-            nickname,
+            nick_name,
             phone_number,
             sex,
-            useryear,
-            usermonth,
-            userday,
+            user_year,
+            user_month,
+            user_day,
             type,
             gall_count,
-            usersubscribecount
+            user_subscribe_count,
+            auth_key
             )
         VALUES (
                 NEXTVAL(idx),
@@ -26,19 +27,26 @@
                 #{password},
                 #{name},
                 #{nickName},
-                #{phone_Number},
+                #{phoneNumber},
                 #{sex},
                 #{userYear},
                 #{userMonth},
                 #{userDay},
                 #{type},
                 #{gallaryCount},
-                #{userSubscribeCount})
+                #{userSubscribeCount},
+                #{authKey})
     </insert>
+
+    <update id= "emailCheck">
+        UPDATE user
+        SET   auth_key = "1"
+        where email    = #{email}
+    </update>
 
     <select id="findEmail" resultType="com.example.photologger.photo.domain.User">
         SELECT *
         FROM user
-        WHERE email        = #{email}
+        WHERE email    = #{email}
     </select>
 </mapper>

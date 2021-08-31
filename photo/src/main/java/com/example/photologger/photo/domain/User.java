@@ -32,7 +32,7 @@ public class User {
 
     @Size(min = 10, max = 11, message = "전화번호 양식에 맞지 않습니다")
     @ApiModelProperty(example = "전화번호")
-    private String phone_Number;
+    private String phoneNumber;
 
     @NotEmpty(message = "성별을 체크 해주세요.")
     @ApiModelProperty(example = "성별")
@@ -64,4 +64,7 @@ public class User {
 
     @ApiModelProperty(example = "구독자 수")
     private int userSubscribeCount;
+
+    @ApiModelProperty(example = "이메일 체크 확인")
+    private int authKey;
 }

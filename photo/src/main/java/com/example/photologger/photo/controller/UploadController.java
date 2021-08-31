@@ -1,8 +1,9 @@
 package com.example.photologger.photo.controller;
 
-
-import com.example.photologger.photo.service.UploaderService;
+import com.example.photologger.photo.domain.Gallary;
+import com.example.photologger.photo.service.GallaryService;
 import java.io.IOException;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,17 +11,21 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+@Slf4j
 @RestController
 @RequestMapping("/api/uploader")
 public class UploadController {
 
     @Autowired
-    private UploaderService uploaderService;
+    private GallaryService gallaryService;
 
-    @PostMapping("/images")
-    public String upload(@RequestParam("images") MultipartFile multipartFile) throws IOException {
-        uploaderService.upload(multipartFile, "static");
-        return "test";
+    @PostMapping(value = "/images")
+    public String upload(
+        Gallary gallary,
+        @RequestParam(value = "images") MultipartFile multipartFile
+    ) throws IOException {
+        gallaryService.gallaryInfoeSave(gallary ,multipartFile);
+        return "ok";
     }
 
 }

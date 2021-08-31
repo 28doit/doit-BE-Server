@@ -1,11 +1,20 @@
 cloud:
   aws:
     credentials:
-      accessKey: AKIA3IW2YOIUJSUSDU4U
-      secretKey: 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
-    s3:
-      bucket: photo-album-paldu
+      instance-profile: false
+      access-key: AKIA3IW2YOIUJSUSDU4U
+      secret-key: 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
     region:
+      auto: false
       static: ap-northeast-2
     stack:
       auto: false
+    s3:
+      bucket: photo-album-paldu
+
+logging:
+  level:
+    com:
+      amazonaws:
+        util:
+          EC2MetadataUtils: error

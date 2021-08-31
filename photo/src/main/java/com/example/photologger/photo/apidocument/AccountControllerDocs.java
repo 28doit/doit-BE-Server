@@ -1,7 +1,8 @@
-/*
+
 package com.example.photologger.photo.apidocument;
 
 import com.example.photologger.photo.domain.ReturnUser;
+import com.example.photologger.photo.domain.User;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -18,7 +19,7 @@ public interface AccountControllerDocs {
 
 
     @ApiOperation(value = "회원가입", notes = "회원가입")
-    public ResponseEntity JoIn(@ApiParam(value = "한명의 개인정보"));
+    public ResponseEntity JoIn(@ApiParam(value = "한명의 개인정보") User user);
 
     @ApiOperation(value = "로그인", notes = "로그인.")
     public ReturnUser login(@RequestBody @ApiParam(value = "이메일(ID) & password",required = true) Map<String,String> userIdPassword);
@@ -42,4 +43,4 @@ public interface AccountControllerDocs {
     public HashMap token_Expiration(@RequestParam(name = "token")@ApiParam(value = "token") String token, @RequestParam(name = "email") @ApiParam(value = "email") String email);
 
 }
-*/
+

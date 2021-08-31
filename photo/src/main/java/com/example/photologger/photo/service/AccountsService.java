@@ -24,18 +24,23 @@ public class AccountsService {
 
     @Autowired
     JwtTokenProvider jwtTokenProvider;
+
     @Autowired
     UserMapper userMapper;
-
 
     @Transactional
     public int join(User user) {
         //validateDuplicateuser(user); //중복 회원 검증
+
         //비밀번호 암호화
         accountsMapper.join(user);
+
         return user.getIdx();
     }
 
+    public void emailCheck(String email){
+        accountsMapper.emailCheck(email);
+    }
 
     public ReturnUser login(Map<String,String> userIdPassword) {
         ReturnUser returnUser = new ReturnUser();
@@ -104,7 +109,7 @@ public class AccountsService {
                     tmp.put("Month",user.getUserMonth());
                     tmp.put("Day",user.getUserDay());
                     tmp.put("Sex",user.getSex());
-                    tmp.put("PhoneNumber",user.getPhone_Number());
+                    tmp.put("PhoneNumber",user.getPhoneNumber());
                     log.info("현재 사용가능한 토큰입니다. "+ "토큰 만료시간 : {} ");//수정하세요
                     return tmp;
                 }

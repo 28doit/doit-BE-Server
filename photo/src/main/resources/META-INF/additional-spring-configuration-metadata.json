@@ -4,5 +4,10 @@
       "name": "spring",
       "type": "java.lang.String",
       "description": "Description for spring."
-  }
-] }
+    },
+    {
+      "name": "mail",
+      "type": "java.lang.String",
+      "description": "Description for mail."
+    }
+  ] }
