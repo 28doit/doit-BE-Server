@@ -5,26 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f954b46-ba7f-4eb5-998f-d41f954219ab" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/modules/photo.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/photo.test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/photo/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/apidocument/AccountControllerDocs.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/apidocument/AccountControllerDocs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/constants/SmtpConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/constants/SmtpConstant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/AccountsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/AccountsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/UploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/UploadController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/Gallary.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/Gallary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/mapper/AccountsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/mapper/AccountsMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/AccountsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/AccountsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/photo/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/config/AmazonS3Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/config/AmazonS3Config.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/EmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/EmailService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/UploaderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/UploaderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/resources/META-INF/additional-spring-configuration-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/resources/META-INF/additional-spring-configuration-metadata.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/photo/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/photo/src/main/resources/aws.yml" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/resources/aws.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/AccountsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/AccountsMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/resources/mybatis/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/resources/mybatis/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/GallaryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/GallaryMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +27,9 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$/photo">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
@@ -58,10 +49,16 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="list-board" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
@@ -73,11 +70,11 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/UserService.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/AccountsService.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/AccountsController.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/5.2.2.RELEASE/95832bf01d9bc52002836683637855ec254eec0/spring-web-5.2.2.RELEASE-sources.jar!/org/springframework/web/multipart/MultipartFile.java" root0="SKIP_INSPECTION" />
     <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-java-sdk-s3/1.11.415/3560662546cf0397a830245bc987a62e793451f4/aws-java-sdk-s3-1.11.415-sources.jar!/com/amazonaws/services/s3/model/PutObjectRequest.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/UserService.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/AccountsController.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/AccountsService.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1xAP6O8ED1NDmp7oJ4IYkQvNM0A" />
   <component name="ProjectLevelVcsManager">
@@ -88,6 +85,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mariadb" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -99,7 +97,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -109,7 +107,7 @@
       <recent name="com.example.photologger.photo.service" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.PhotoApplication">
     <configuration default="true" type="DjangoTestsConfigurationType">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -129,6 +127,68 @@
       <option name="USE_OPTIONS" value="false" />
       <option name="OPTIONS" value="" />
       <method v="2" />
+    </configuration>
+    <configuration name="AccountsControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="photo.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.photologger.photo.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.photologger.photo.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.example.photologger.photo.controller.AccountsControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PaginationServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="photo.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.photologger.photo.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.photologger.photo.service" />
+      <option name="MAIN_CLASS_NAME" value="com.example.photologger.photo.service.PaginationServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PaginationServiceTest.countIndex" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="photo.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.photologger.photo.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.photologger.photo.service" />
+      <option name="MAIN_CLASS_NAME" value="com.example.photologger.photo.service.PaginationServiceTest" />
+      <option name="METHOD_NAME" value="countIndex" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PaginationTestController.totalindex" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="photo.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.photologger.photo.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.photologger.photo.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.example.photologger.photo.controller.PaginationTestController" />
+      <option name="METHOD_NAME" value="totalindex" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
@@ -235,6 +295,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.PhotoApplication" />
+        <item itemvalue="JUnit.AccountsControllerTest" />
+        <item itemvalue="JUnit.PaginationServiceTest.countIndex" />
+        <item itemvalue="JUnit.PaginationServiceTest" />
+        <item itemvalue="JUnit.PaginationTestController.totalindex" />
       </list>
     </recent_temporary>
   </component>
@@ -255,7 +319,19 @@
       <workItem from="1630326965721" duration="4076000" />
       <workItem from="1630332888780" duration="2672000" />
       <workItem from="1630396449490" duration="69000" />
-      <workItem from="1630398519084" duration="5951000" />
+      <workItem from="1630398519084" duration="7421000" />
+      <workItem from="1630422350307" duration="2596000" />
+      <workItem from="1630465147147" duration="8336000" />
+      <workItem from="1630483861982" duration="909000" />
+      <workItem from="1630484799425" duration="2000" />
+      <workItem from="1630555882004" duration="3652000" />
+      <workItem from="1630566264926" duration="2805000" />
+      <workItem from="1630569098771" duration="3171000" />
+      <workItem from="1630647449746" duration="2660000" />
+      <workItem from="1630996604906" duration="597000" />
+      <workItem from="1631083414999" duration="3999000" />
+      <workItem from="1631163914855" duration="968000" />
+      <workItem from="1631175069213" duration="5996000" />
     </task>
     <servers />
   </component>

@@ -23,7 +23,7 @@
              #{gallaryDireaction},
              #{gallaryName},
              #{gallaryImageLocation},
-             #{gallarySubscibeCount}
+             #{gallarySubscribeCount}
              )
   </insert>
 </mapper>

@@ -39,3 +39,7 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### Settings file ####
+/src/main/resources/application.properties
+/src/main/resources/aws.yml
