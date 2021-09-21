@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f954b46-ba7f-4eb5-998f-d41f954219ab" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/00b6e4d6-edf0-493a-9249-804793f8ef3e/entities/entities.dat" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/00b6e4d6-edf0-493a-9249-804793f8ef3e/entities/entities.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/00b6e4d6-edf0-493a-9249-804793f8ef3e/entities/entities.dat.values" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/00b6e4d6-edf0-493a-9249-804793f8ef3e/entities/entities.dat.values" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/00b6e4d6-edf0-493a-9249-804793f8ef3e/entities/entities.dat.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/00b6e4d6-edf0-493a-9249-804793f8ef3e/entities/entities.dat.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/00b6e4d6-edf0-493a-9249-804793f8ef3e/entities/entities.dat.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/00b6e4d6-edf0-493a-9249-804793f8ef3e/entities/entities.dat.values.s" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/00b6e4d6-edf0-493a-9249-804793f8ef3e/entities/entities.dat_i" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/00b6e4d6-edf0-493a-9249-804793f8ef3e/entities/entities.dat_i" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/ResponseDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/StatusCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/StatusCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/EmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/EmailService.java" afterDir="false" />
-    </list>
+    <list default="true" id="6f954b46-ba7f-4eb5-998f-d41f954219ab" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,6 +43,9 @@
         <option value="Enum" />
       </list>
     </option>
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="Pagination" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
