@@ -21,7 +21,7 @@ public class EmailService {
     }
 
     //비밀 번호 찾기 안내 메일
-    public void sendFindPasswordMail(String adress, User user) {
+    public Object sendFindPasswordMail(String adress, User user) {
         SimpleMailMessage message = new SimpleMailMessage();
         String expwd = getTempPassword();
         message.setTo(adress);
@@ -31,6 +31,7 @@ public class EmailService {
         user.setPassword(expwd);
         userMapper.updatePassword(user);
         mailSender.send(message);
+        return null;
     }
 
     public void SendJoinMail(String adress){

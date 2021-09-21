@@ -1,10 +1,13 @@
 package com.example.photologger.photo.controller;
 
+import com.example.photologger.photo.domain.ResponseDto;
 import com.example.photologger.photo.domain.User;
 import com.example.photologger.photo.service.EmailService;
 import com.example.photologger.photo.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @Slf4j
@@ -38,21 +41,17 @@ public class UserController {
 
     // 비밀번호 찾기
     @PostMapping("/findPwd")
-    public String findPwd(@RequestBody User user)
-        throws Exception {
-
+    public ResponseEntity findPwd(@RequestBody User user)
+    {
         User user1 = null;
         user1 = userService.findpwd(user);
-        log.info(user1.toString());
-
-        if (user1 == null) { // 예외처리 확인
-            return "false";
-        } else {
-            String email = user1.getEmail();
-            log.info(user1.toString());
-            emailService.sendFindPasswordMail(email,user1);
-            return "true";
-        }
+        String email = user1.getEmail();
+        return new ResponseEntity(
+               ResponseDto
+                   .builder()
+                   .data(emailService.sendFindPasswordMail(email,user1))
+                   .build()
+            , HttpStatus.OK);
     }
 
 

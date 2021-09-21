@@ -1,18 +1,32 @@
+/*
 package com.example.photologger.photo.domain;
 
+import okhttp3.internal.http2.ErrorCode;
+
 public enum StatusCode {
-    OK("CM0", "정상작동")
-    ,ERR_PAGINATION("CM1", "잘못된 인덱스 접근")
-    ;
 
     private final String code;
     private final String message;
+    private final int status;
 
-    StatusCode(
-        final String code,
-        final String message
-    ){
-        this.code =code;
-        this.message=message;
+
+    public String getCode() {
+        return code;
     }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    StatusCode(String code, String message, int status) {
+        this.code = code;
+        this.message = message;
+        this.status = status;
+    }
+
 }
+*/
