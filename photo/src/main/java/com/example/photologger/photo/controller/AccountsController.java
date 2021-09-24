@@ -1,4 +1,3 @@
-
 package com.example.photologger.photo.controller;
 
 import com.example.photologger.photo.domain.ReturnUser;
@@ -9,6 +8,8 @@ import java.util.HashMap;
 import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.example.photologger.photo.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,31 +18,25 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 @Slf4j
-@RequestMapping("/api/accounts")
+@RequestMapping("/accounts")
 @RestController
-public class AccountsController {
+public class AccountsController{
 
     private final AccountsService accountsService;
     private final EmailService emailService;
-
+    private final UserService userService;
     @Autowired
     public AccountsController(AccountsService accountsService,
-        EmailService emailService) {
+                              EmailService emailService,
+                              UserService userService) {
         this.accountsService = accountsService;
         this.emailService = emailService;
+        this.userService = userService;
     }
-
 
     @PostMapping(value = "/new", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity JoIn(@RequestBody User user) {
@@ -80,22 +75,6 @@ public class AccountsController {
         }
         return "redirect:/";
     }
-
-    @PostMapping("/password-reset")
-    public void PassWord_Reset() {
-
-    }
-
-    @PostMapping("/id-find")
-    public String Id_Find() {
-        return "redirect:/";
-    }
-
-    @PostMapping("/deleteUser")
-    public String Delete_User() {
-        return "redirect:/";
-    }
-
     @GetMapping("/new/email-check")
     public Object email_check(@RequestParam(name = "email") String email) {
         log.info(email);
@@ -110,4 +89,3 @@ public class AccountsController {
         return accountsService.token_Expiration(token, email);
     }
 }
-

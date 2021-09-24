@@ -21,7 +21,7 @@ import java.util.Date;
 @Log4j2
 public class JwtTokenProvider { // 토큰 생성, 검증
 
-    private long tokenValidTime = 1*60*1000L;
+    private long tokenValidTime = 60*60*1000L;
     @Value("${jwt.secret}")
     private String secretKey;
     private final UserDetailsService  userDetailsService;

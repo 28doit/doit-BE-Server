@@ -1,4 +1,3 @@
-
 package com.example.photologger.photo.service;
 
 import com.example.photologger.photo.domain.ReturnCheck;
@@ -65,6 +64,10 @@ public class AccountsService {
             return returnUser;
         }
     }
+    public boolean login_check(String token)
+    {
+        return jwtTokenProvider.validateToken(token);
+    }
     public Object email_Check(String email)
     {
         ReturnCheck returncheck = new ReturnCheck();
@@ -103,13 +106,14 @@ public class AccountsService {
                 {
                     log.info(user.toString());
                     HashMap<String,Object> tmp = new HashMap<>();
+                    tmp.put("Token",jwtTokenProvider.validateToken(token));
                     tmp.put("Name",user.getName());
                     tmp.put("Email",user.getEmail());
-                    tmp.put("Year",user.getUserYear());
-                    tmp.put("Month",user.getUserMonth());
-                    tmp.put("Day",user.getUserDay());
+                    tmp.put("Year",user.getUser_year());
+                    tmp.put("Month",user.getUser_month());
+                    tmp.put("Day",user.getUser_day());
                     tmp.put("Sex",user.getSex());
-                    tmp.put("PhoneNumber",user.getPhoneNumber());
+                    tmp.put("PhoneNumber",user.getPhone_number());
                     log.info("현재 사용가능한 토큰입니다. "+ "토큰 만료시간 : {} ");//수정하세요
                     return tmp;
                 }
@@ -126,7 +130,10 @@ public class AccountsService {
         TrueAndFlase.put("Token",jwtTokenProvider.validateToken(token));
         return TrueAndFlase;
     }
-
+    public String getUserPk(String token)
+    {
+        return jwtTokenProvider.getUserPk(token);
+    }
     //필요없는 코드지만 재활용가능성 있음.
 //    private void validateDuplicateusßer(User user) {
 //        userRepository.findByEmail(user.getEmail())
@@ -135,4 +142,3 @@ public class AccountsService {
 //                });
 //    }
 }
-

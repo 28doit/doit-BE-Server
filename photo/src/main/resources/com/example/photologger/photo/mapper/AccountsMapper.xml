@@ -5,7 +5,7 @@
     <insert id="join" parameterType="com.example.photologger.photo.domain.User">
         INSERT INTO user (
             idx,
-            profile_Image_location,
+            profile_image_location,
             email,
             password,
             name,
@@ -22,20 +22,21 @@
             )
         VALUES (
                 NEXTVAL(idx),
-                #{profileImageLocation},
+                #{profile_image_location},
                 #{email},
                 #{password},
                 #{name},
-                #{nickName},
-                #{phoneNumber},
+                #{nick_name},
+                #{phone_number},
                 #{sex},
-                #{userYear},
-                #{userMonth},
-                #{userDay},
+                #{user_year},
+                #{user_month},
+                #{user_day},
                 #{type},
-                #{gallaryCount},
-                #{userSubscribeCount},
-                #{authKey})
+                #{gall_count},
+                #{user_subscribe_count})
+                #{authKey}
+                )
     </insert>
 
     <update id= "emailCheck">

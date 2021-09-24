@@ -1,4 +1,3 @@
-
 package com.example.photologger.photo.apidocument;
 
 import com.example.photologger.photo.domain.ReturnUser;
@@ -43,4 +42,3 @@ public interface AccountControllerDocs {
     public HashMap token_Expiration(@RequestParam(name = "token")@ApiParam(value = "token") String token, @RequestParam(name = "email") @ApiParam(value = "email") String email);
 
 }
-

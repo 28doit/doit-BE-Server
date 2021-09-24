@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.photologger.photo.mapper.PaymentMapper">
+    <select id="payment_idx" parameterType="com.example.photologger.photo.domain.Payment">
+        SELECT *
+        FROM payment
+        WHERE idx = #{idx}
+          AND total_point= #{total_point}
+          AND sell_point= #{sell_point}
+    </select>
+    <insert id="payment_update" parameterType="com.example.photologger.photo.domain.Payment">
+        INSERT INTO user_point
+        SET idx  = #{idx}
+                , total_point = #{total_point}
+                , sell_point = #{sell_point}
+        ON DUPLICATE KEY UPDATE
+            total_point = total_point + #{total_point}
+            ,sell_point = #{sell_point}
+    </insert>
+    <insert id="payment_History_Insert" parameterType="com.example.photologger.photo.domain.PaymentHistory">
+        INSERT INTO payment_history
+        SET idx = #{idx}
+                , pay = #{pay}
+                , name =#{name}
+                , email =#{email}
+                , pay_card = #{pay_card}
+                , time = #{time}
+                , mid = #{mid}
+    </insert>
+    <select id="payment_History" resultType="com.example.photologger.photo.domain.PaymentHistory">
+        SELECT *
+        FROM payment_history
+        WHERE time between #{start_history} AND #{end_history}
+        And email = #{email}
+        ORDER BY time ASC
+    </select>
+</mapper>
