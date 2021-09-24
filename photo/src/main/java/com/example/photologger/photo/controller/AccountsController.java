@@ -28,14 +28,11 @@ public class AccountsController{
 
     private final AccountsService accountsService;
     private final EmailService emailService;
-    private final UserService userService;
     @Autowired
     public AccountsController(AccountsService accountsService,
-                              EmailService emailService,
-                              UserService userService) {
+                              EmailService emailService) {
         this.accountsService = accountsService;
         this.emailService = emailService;
-        this.userService = userService;
     }
 
     @PostMapping(value = "/new", consumes = MediaType.APPLICATION_JSON_VALUE)

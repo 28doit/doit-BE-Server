@@ -12,9 +12,9 @@ import javax.validation.constraints.NotEmpty;
 @ToString
 public class Payment {
     @ApiModelProperty(example = "총 포인트")
-    private int total_point;
+    private int totalPoint;
     @ApiModelProperty(example = "소비 포인트")
-    private int sell_point;
+    private int sellPoint;
     @ApiModelProperty(example = "회원번호")
     @NotEmpty
     private int idx;

@@ -22,19 +22,19 @@
             )
         VALUES (
                 NEXTVAL(idx),
-                #{profile_image_location},
+                #{profileImageLocation},
                 #{email},
                 #{password},
                 #{name},
-                #{nick_name},
-                #{phone_number},
+                #{nickName},
+                #{phoneNumber},
                 #{sex},
-                #{user_year},
-                #{user_month},
-                #{user_day},
+                #{userYear},
+                #{userMonth},
+                #{userDay},
                 #{type},
-                #{gall_count},
-                #{user_subscribe_count})
+                #{gallCount},
+                #{userSubscribeCount},
                 #{authKey}
                 )
     </insert>

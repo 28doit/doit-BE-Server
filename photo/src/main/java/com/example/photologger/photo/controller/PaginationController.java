@@ -2,7 +2,7 @@ package com.example.photologger.photo.controller;
 
 
 import com.example.photologger.photo.domain.Gallary;
-import com.example.photologger.photo.domain.ResponseDto;
+//import com.example.photologger.photo.domain.ResponseDto;
 import com.example.photologger.photo.service.PaginationService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,16 +22,16 @@ public class PaginationController {
     PaginationService paginationService;
 
 
-    @GetMapping("/cursor/{cursor}")
-    public ResponseEntity cursorPagination(@PathVariable("cursor") Integer cursor){
-        return new ResponseEntity(
-            ResponseDto
-                .builder()
-                .data(paginationService.getGallery(cursor)) // 네네
-                .build()
-            , HttpStatus.OK
-        );
-    }
+//    @GetMapping("/cursor/{cursor}")
+//    public ResponseEntity cursorPagination(@PathVariable("cursor") Integer cursor){
+//        return new ResponseEntity(
+//            ResponseDto
+//                .builder()
+//                .data(paginationService.getGallery(cursor)) // 네네
+//                .build()
+//            , HttpStatus.OK
+//        );
+//    }
 
 
 

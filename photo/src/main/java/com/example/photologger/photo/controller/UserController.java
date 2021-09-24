@@ -1,6 +1,6 @@
 package com.example.photologger.photo.controller;
 
-import com.example.photologger.photo.domain.ResponseDto;
+//import com.example.photologger.photo.domain.ResponseDto;
 import com.example.photologger.photo.domain.User;
 import com.example.photologger.photo.service.EmailService;
 import com.example.photologger.photo.service.UserService;
@@ -40,19 +40,19 @@ public class UserController {
     }
 
     // 비밀번호 찾기
-    @PostMapping("/findPwd")
-    public ResponseEntity findPwd(@RequestBody User user)
-    {
-        User user1 = null;
-        user1 = userService.findpwd(user);
-        String email = user1.getEmail();
-        return new ResponseEntity(
-               ResponseDto
-                   .builder()
-                   .data(emailService.sendFindPasswordMail(email,user1))
-                   .build()
-            , HttpStatus.OK);
-    }
+//    @PostMapping("/findPwd")
+//    public ResponseEntity findPwd(@RequestBody User user)
+//    {
+//        User user1 = null;
+//        user1 = userService.findpwd(user);
+//        String email = user1.getEmail();
+//        return new ResponseEntity(
+//               ResponseDto
+//                   .builder()
+//                   .data(emailService.sendFindPasswordMail(email,user1))
+//                   .build()
+//            , HttpStatus.OK);
+//    }
 
 
     // 비밀번호 변경

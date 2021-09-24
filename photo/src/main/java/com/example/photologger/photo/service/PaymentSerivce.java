@@ -194,11 +194,11 @@ public class PaymentSerivce {
                 log.info("결제 금액 : "+Integer.toString(pay));
                 Payment payment = Payment.builder()
                         .idx(idx)
-                        .total_point(pay)
-                        .sell_point(0)
+                        .totalPoint(pay)
+                        .sellPoint(0)
                         .build();
                 log.info(payment.toString());
-                paymentMapper.payment_update(payment);
+                paymentMapper.paymentUpdate(payment);
                 Date date = new Date();
                 log.info(tmp.findValue(PAID_AT).toString());
                 date.setTime(Long.parseLong(tmp.findValue(PAID_AT).toString())*1000);
@@ -208,15 +208,15 @@ public class PaymentSerivce {
                 PaymentHistory paymentHistory = PaymentHistory.builder()
                         .idx(idx)
                         .pay(pay)
-                        .pay_card(card_Code(tmp.findValue(PAY_CARD).toString().replaceAll("\"", "")))
+                        .payCard(card_Code(tmp.findValue(PAY_CARD).toString().replaceAll("\"", "")))
                         .email(tmp.findValue(BUYER_EMAIL).toString().replaceAll("\"",""))
                         .name(tmp.findValue(BUYER_NAME).toString().replaceAll("\"",""))
-                        .mid(tmp.findValue(MERCHANT_UID).toString().replaceAll("\"",""))
+                        .mId(tmp.findValue(MERCHANT_UID).toString().replaceAll("\"",""))
                         .time(date)
                         .build();
                 log.info(paymentHistory.toString());
                 try{
-                    paymentMapper.payment_History_Insert(paymentHistory);
+                    paymentMapper.paymentHistoryInsert(paymentHistory);
                     return trueAndfalse;
                 }catch (Exception e)
                 {
@@ -257,7 +257,7 @@ public class PaymentSerivce {
                 try {
                     String email= accountsService.getUserPk(token);     //본인확인용 이메일
                     log.info(email);
-                    List<PaymentHistory> history = paymentMapper.payment_History(start_history, end_history,email); //db조회
+                    List<PaymentHistory> history = paymentMapper.paymentHistory(start_history, end_history,email); //db조회
                     if(userMapper.findOne(history.get(0).getIdx()).getEmail().equals(email))        //token에서나온 이메일과 db조회 이메일이 같은경우
                     {
                         log.info(Integer.toString(history.size()));
@@ -269,11 +269,11 @@ public class PaymentSerivce {
                                 String timeTmp = outputFormat.format(data);
                                 ReturnHistory tmp = ReturnHistory.builder()
                                         .name(history.get(i).getName())
-                                        .mid(history.get(i).getMid())
+                                        .mId(history.get(i).getMId())
                                         .email(history.get(i).getEmail())
                                         .pay(history.get(i).getPay())
                                         .idx(history.get(i).getIdx())
-                                        .pay_card(history.get(i).getPay_card())
+                                        .payCard(history.get(i).getPayCard())
                                         .time(timeTmp)
                                         .build();
                                 log.info(tmp.toString());
@@ -306,44 +306,44 @@ public class PaymentSerivce {
             return false;
         }
         ReturnHistory returnHistory = ReturnHistory.builder()   //초기화 되지않은 반환값을위해 미리세팅
-                .pay_card("")
+                .payCard("")
                 .time("")
                 .name("")
                 .idx(0)
                 .pay(0)
                 .email("")
-                .mid("")
+                .mId("")
                 .build();
         return returnHistory;
     }
-    public Map<String,Integer> itemBuy(String itemIdx,String token)
-    {
-        //1번 구매금액만큼 포인트 소비후 잔여포인트 갱신(반환)하기
-        try {
-            String email = accountsService.getUserPk(token);
-            User user = accountsMapper.findEmail(email)
-                    .orElseThrow(() -> new Exception("잘못된 이메일입니다."));
-
-            //구현해야할부분 구매내역에 존재하면 구매못하고 false Return 예정
-            Payment payment = Payment.builder()
-                            .sell_point(paymentMapper.item_select(itemIdx))
-                            .idx(user.getIdx())
-                            .total_point(0)
-                            .build();
-            paymentMapper.item_select(itemIdx);
-        }catch (Exception e)
-        {
-            log.info(e.toString());
-        }
-
-
-        //고려해야할것 3번 쿠폰
-
-        //고려햐야할것 4번 포인트
-
-        //고려해야할것 1번 상품등록자에게 구매금액 지급
-
-    }
+//    public Map<String,Integer> itemBuy(String itemIdx,String token)
+//    {
+//        //1번 구매금액만큼 포인트 소비후 잔여포인트 갱신(반환)하기
+//        try {
+//            String email = accountsService.getUserPk(token);
+//            User user = accountsMapper.findEmail(email)
+//                    .orElseThrow(() -> new Exception("잘못된 이메일입니다."));
+//
+//            //구현해야할부분 구매내역에 존재하면 구매못하고 false Return 예정
+//            Payment payment = Payment.builder()
+//                            .sellPoint(paymentMapper.itemSelect(itemIdx))
+//                            .idx(user.getIdx())
+//                            .totalPoint(0)
+//                            .build();
+//            paymentMapper.itemSelect(itemIdx);
+//        }catch (Exception e)
+//        {
+//            log.info(e.toString());
+//        }
+//
+//
+//        //고려해야할것 3번 쿠폰
+//
+//        //고려햐야할것 4번 포인트
+//
+//        //고려해야할것 1번 상품등록자에게 구매금액 지급
+//
+//    }
     public String card_Code(String code)
     {
         switch (code)

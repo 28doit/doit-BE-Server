@@ -16,8 +16,8 @@ public class PaymentHistory
     int pay;
     String name;
     String email;
-    String pay_card;
+    String payCard;
     Date time;
-    String mid;
+    String mId;
 
 }

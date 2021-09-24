@@ -10,13 +10,13 @@ import java.util.List;
 
 @Mapper
 public interface PaymentMapper {
-    void payment_update(Payment payment);
+    void paymentUpdate(Payment payment);
 
-    void payment_History_Insert(PaymentHistory paymentHistory);
+    void paymentHistoryInsert(PaymentHistory paymentHistory);
 
-    List<PaymentHistory> payment_History(Date start_history, Date end_history, String email);
+    List<PaymentHistory> paymentHistory(Date startHistory, Date endHistory, String email);
 
-    int item_select(String itemIdx);
+    int itemSelect(String itemIdx);
 
-    void item_History_insert()
+    void itemHistoryinsert();
 }

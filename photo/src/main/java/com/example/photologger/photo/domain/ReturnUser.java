@@ -8,5 +8,5 @@ import lombok.Setter;
 public class ReturnUser {
     private String token;
     private String name;
-    private int isvalue;
+    private int isValue;
 }

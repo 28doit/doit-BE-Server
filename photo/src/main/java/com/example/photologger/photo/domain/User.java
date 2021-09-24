@@ -60,7 +60,7 @@ public class User {
     private int type;
 
     @ApiModelProperty(example = "사진 갯수")
-    private int gallaryCount;
+    private int gallCount;
 
     @ApiModelProperty(example = "구독자 수")
     private int userSubscribeCount;

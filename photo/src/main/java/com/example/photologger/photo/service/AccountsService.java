@@ -46,8 +46,6 @@ public class AccountsService {
         BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
 
         log.info(userIdPassword.get("email"));
-        log.info(userIdPassword.get("password"));
-
         try {
             User user = accountsMapper.findEmail(userIdPassword.get("email"))
                     //            User user= userRepository.findbyUsername(logInUser.get("username"))
@@ -55,12 +53,22 @@ public class AccountsService {
             if (!bCryptPasswordEncoder.matches(userIdPassword.get("password"), user.getPassword())) {
                 throw new IllegalArgumentException("잘못된 비밀번호입니다.");
             }
-            returnUser.setToken(jwtTokenProvider.createToken(user.getEmail()));
-            log.info(returnUser.getToken());
-            returnUser.setName(user.getEmail());
-            return returnUser;
+            if(user.getAuthKey()==0) {
+                returnUser.setToken(jwtTokenProvider.createToken(user.getEmail()));
+                returnUser.setIsValue(1);
+                log.info(returnUser.getToken());
+                returnUser.setName(user.getEmail());
+                return returnUser;
+            }
+            else
+            {
+                returnUser.setIsValue(2);
+                log.info("현재 아이디가 가입처리 되지 않았습니다. E-mail을 확인해주세요.");
+                return returnUser;
+            }
         } catch (IllegalArgumentException e) {
-            returnUser.setMsg(e.getMessage());
+            returnUser.setIsValue(0);
+            log.info(e.getMessage());
             return returnUser;
         }
     }
@@ -74,7 +82,7 @@ public class AccountsService {
         if(email.equals(""))
         {
             returncheck.setMsg("아무것도 입력하지 않으셨습니다.");
-            returncheck.setIsvalue(false);
+            returncheck.setValue(false);
             log.info(returncheck.toString());
             return returncheck;
         }
@@ -82,11 +90,11 @@ public class AccountsService {
                 accountsMapper.findEmail(email)
                         .orElseThrow(() -> new IllegalArgumentException("가입가능한 email 입니다."));
                  returncheck.setMsg("이미 회원가입된 email 입니다.");
-                 returncheck.setIsvalue(true);
+                 returncheck.setValue(true);
                  log.info(returncheck.toString());
         }catch (IllegalArgumentException e) {
             returncheck.setMsg(e.getMessage());
-            returncheck.setIsvalue(false);
+            returncheck.setValue(false);
             log.info(returncheck.toString());
             return returncheck;
         }
@@ -109,11 +117,11 @@ public class AccountsService {
                     tmp.put("Token",jwtTokenProvider.validateToken(token));
                     tmp.put("Name",user.getName());
                     tmp.put("Email",user.getEmail());
-                    tmp.put("Year",user.getUser_year());
-                    tmp.put("Month",user.getUser_month());
-                    tmp.put("Day",user.getUser_day());
+                    tmp.put("Year",user.getUserYear());
+                    tmp.put("Month",user.getUserMonth());
+                    tmp.put("Day",user.getUserDay());
                     tmp.put("Sex",user.getSex());
-                    tmp.put("PhoneNumber",user.getPhone_number());
+                    tmp.put("PhoneNumber",user.getPhoneNumber());
                     log.info("현재 사용가능한 토큰입니다. "+ "토큰 만료시간 : {} ");//수정하세요
                     return tmp;
                 }

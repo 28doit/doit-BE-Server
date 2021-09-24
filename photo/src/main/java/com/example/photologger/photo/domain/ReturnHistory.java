@@ -14,9 +14,9 @@ public class ReturnHistory {
     int pay;
     String name;
     String email;
-    String pay_card;
+    String payCard;
     String time;
-    String mid;
+    String mId;
 
 }
 

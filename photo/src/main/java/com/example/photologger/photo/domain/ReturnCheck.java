@@ -9,5 +9,5 @@ import lombok.ToString;
 @ToString
 public class ReturnCheck {
     String msg;
-    boolean isvalue;
+    boolean isValue;
 }
