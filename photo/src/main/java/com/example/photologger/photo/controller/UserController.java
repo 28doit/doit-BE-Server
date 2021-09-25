@@ -8,7 +8,13 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
 @RestController
@@ -41,16 +47,15 @@ public class UserController {
 
     // 비밀번호 찾기
     @PostMapping("/findPwd")
-    public ResponseEntity findPwd(@RequestBody User user)
-    {
+    public ResponseEntity findPwd(@RequestBody User user) {
         User user1 = null;
         user1 = userService.findpwd(user);
         String email = user1.getEmail();
         return new ResponseEntity(
-               ResponseDto
-                   .builder()
-                   .data(emailService.sendFindPasswordMail(email,user1))
-                   .build()
+            ResponseDto
+                .builder()
+                .data(emailService.sendFindPasswordMail(email, user1))
+                .build()
             , HttpStatus.OK);
     }
 
@@ -64,4 +69,6 @@ public class UserController {
         userService.UpdatePassword(user);
         return "true";
     }
+
+    //프로필 이미지 저장
 }

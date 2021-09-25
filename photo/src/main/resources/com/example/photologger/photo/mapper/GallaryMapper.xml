@@ -2,6 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.example.photologger.photo.mapper.GallaryMapper">
+
   <insert id="gallaryinfosave" parameterType="com.example.photologger.photo.domain.Gallary">
     INSERT INTO gallary (
       gallary_id,
@@ -9,10 +10,11 @@
       gallary_adress,
       gallary_time,
       gallary_seseon,
-      gallary_direaction,
+      gallary_direaction_x,
       gallary_name,
       gallary_image_location,
-      gallary_subscibe_count
+      gallary_subscibe_count,
+      gallary_direaction_y
     )
     VALUES (
              #{gallaryId},
@@ -20,10 +22,20 @@
              #{gallaryAdress},
              #{gallaryTime},
              #{gallarySeseon},
-             #{gallaryDireaction},
+             #{gallaryDireactionX},
              #{gallaryName},
              #{gallaryImageLocation},
-             #{gallarySubscribeCount}
+             #{gallarySubscribeCount},
+             #{gallaryDireactionY}
              )
   </insert>
+
+  <update id="updateProfileLocation">
+    UPDATE user
+    SET profile_Image_location = #{profileImageLocation},
+        nick_name = #{nickName},
+        password = #{password}
+    WHERE idx  = #{idx}
+  </update>
+
 </mapper>

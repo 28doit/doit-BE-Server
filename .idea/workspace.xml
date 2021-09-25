@@ -4,7 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f954b46-ba7f-4eb5-998f-d41f954219ab" name="Changes" comment="" />
+    <list default="true" id="6f954b46-ba7f-4eb5-998f-d41f954219ab" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/00b6e4d6-edf0-493a-9249-804793f8ef3e/entities/entities.dat" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/00b6e4d6-edf0-493a-9249-804793f8ef3e/entities/entities.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/00b6e4d6-edf0-493a-9249-804793f8ef3e/entities/entities.dat.values" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/00b6e4d6-edf0-493a-9249-804793f8ef3e/entities/entities.dat.values" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/00b6e4d6-edf0-493a-9249-804793f8ef3e/entities/entities.dat.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/00b6e4d6-edf0-493a-9249-804793f8ef3e/entities/entities.dat.values.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/00b6e4d6-edf0-493a-9249-804793f8ef3e/entities/entities.dat_i" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/00b6e4d6-edf0-493a-9249-804793f8ef3e/entities/entities.dat_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/AccountsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/AccountsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/GallaryController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/UploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/UploadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/Gallary.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/Gallary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/StatusCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/StatusCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/mapper/GallaryMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/mapper/GallaryMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/EmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/EmailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/GallaryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/GallaryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/UploaderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/UploaderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/GallaryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/GallaryMapper.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,8 +59,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -50,7 +70,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="list-board" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -91,13 +111,14 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+    <property name="settings.editor.selected.configurable" value="copyright" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.example.photologger.photo.service" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.photologger.photo.domain" />
       <recent name="com.example.photologger.photo.service" />
     </key>
   </component>
@@ -289,10 +310,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.PhotoApplication" />
-        <item itemvalue="JUnit.AccountsControllerTest" />
+        <item itemvalue="JUnit.PaginationTestController.totalindex" />
         <item itemvalue="JUnit.PaginationServiceTest.countIndex" />
         <item itemvalue="JUnit.PaginationServiceTest" />
-        <item itemvalue="JUnit.PaginationTestController.totalindex" />
+        <item itemvalue="JUnit.AccountsControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -329,6 +350,12 @@
       <workItem from="1631190910960" duration="616000" />
       <workItem from="1631328039429" duration="6444000" />
       <workItem from="1631688018071" duration="9685000" />
+      <workItem from="1632461843026" duration="245000" />
+      <workItem from="1632462091010" duration="2049000" />
+      <workItem from="1632471055730" duration="821000" />
+      <workItem from="1632471910359" duration="792000" />
+      <workItem from="1632472738700" duration="15064000" />
+      <workItem from="1632567274580" duration="577000" />
     </task>
     <servers />
   </component>

@@ -26,8 +26,11 @@ public class Gallary {
     @ApiModelProperty(example = "시진 계절")
     private int gallarySeseon;
 
-    @ApiModelProperty(example = "사진 방향")
-    private String gallaryDireaction;
+    @ApiModelProperty(example = "사진 좌표 X")
+    private String gallaryDireactionX;
+
+    @ApiModelProperty(example = "사진 좌표 Y")
+    private String gallaryDireactionY;
 
     @ApiModelProperty(example = "사진 이름")
     private String gallaryName;

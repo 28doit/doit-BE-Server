@@ -6,7 +6,7 @@ import com.example.photologger.photo.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
-
+import java.util.Random;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -34,7 +34,7 @@ public class EmailService {
         return null;
     }
 
-    public void SendJoinMail(String adress){
+    public void SendJoinMail(String adress) {
         SimpleMailMessage message = new SimpleMailMessage();
         String link = getlink(adress);
         message.setTo(adress);
@@ -44,23 +44,25 @@ public class EmailService {
         mailSender.send(message);
     }
 
-    public String getlink(String email){
+    public String getlink(String email) {
         String str = "http://localhost:8080/api/accounts/emailcornfirm/";
         str += email;
         return str;
     }
 
     //임시 비밀번호 생성 - UUID 자리수 제한 가능함으로써 변경
-    public String getTempPassword(){
-        char[] charSet = new char[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F',
-            'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
-        String str = "";
-        int idx = 0;
-        for (int i = 0; i < 10; i++) {
-            idx = (int) (charSet.length * Math.random());
-            str += charSet[idx];
-        }
-        return str;
-    }
+    public String getTempPassword() {
+        Random rnd = new Random();
+        StringBuffer buf = new StringBuffer();
 
+        for (int i = 0; i < 20; i++) {
+            if (rnd.nextBoolean()) {
+                buf.append((char) ((int) (rnd.nextInt(26)) + 97));
+            } else {
+                buf.append((rnd.nextInt(10)));
+            }
+        }
+        return buf.toString();
+    }
 }
+
