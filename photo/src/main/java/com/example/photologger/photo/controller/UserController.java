@@ -34,7 +34,6 @@ public class UserController {
         @PathVariable(value = "idx")
             Integer idx
     ) throws Exception {
-
         User user = userService.findOne(idx);
         return user;
     }

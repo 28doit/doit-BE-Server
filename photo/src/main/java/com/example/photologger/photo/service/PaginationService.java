@@ -18,7 +18,6 @@ public class PaginationService {
     PaginationMapper paginationMapper;
 
     public List<Gallary> getGallery(Integer cursor) {
-
         return paginationMapper.cursorPagination(cursor, Constants.TAKE);
     }
 

@@ -5,25 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f954b46-ba7f-4eb5-998f-d41f954219ab" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/00b6e4d6-edf0-493a-9249-804793f8ef3e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/00b6e4d6-edf0-493a-9249-804793f8ef3e.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/00b6e4d6-edf0-493a-9249-804793f8ef3e/entities/entities.dat" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/00b6e4d6-edf0-493a-9249-804793f8ef3e/entities/entities.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/00b6e4d6-edf0-493a-9249-804793f8ef3e/entities/entities.dat.values" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/00b6e4d6-edf0-493a-9249-804793f8ef3e/entities/entities.dat.values" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/00b6e4d6-edf0-493a-9249-804793f8ef3e/entities/entities.dat.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/00b6e4d6-edf0-493a-9249-804793f8ef3e/entities/entities.dat.values.at" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/00b6e4d6-edf0-493a-9249-804793f8ef3e/entities/entities.dat.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/00b6e4d6-edf0-493a-9249-804793f8ef3e/entities/entities.dat.values.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/00b6e4d6-edf0-493a-9249-804793f8ef3e/entities/entities.dat_i" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/00b6e4d6-edf0-493a-9249-804793f8ef3e/entities/entities.dat_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2021_09_22_1_32___Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2021_09_22_1_32_오전_[Changes]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/photo/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/constants/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/AccountsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/AccountsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/GallaryController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/UploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/UploadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/PaginationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/PaginationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/Gallary.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/Gallary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/StatusCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/StatusCode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/mapper/GallaryMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/mapper/GallaryMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/mapper/PaginationMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/mapper/PaginationMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/mapper/UserMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/EmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/EmailService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/GallaryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/GallaryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/UploaderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/UploaderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/PaginationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/PaginationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/resources/aws.yml" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/resources/aws.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/GallaryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/GallaryMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/PaginationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/PaginationMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,9 +65,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -87,8 +94,6 @@
     <setting file="file://$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/UserService.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/AccountsService.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/AccountsController.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/5.2.2.RELEASE/95832bf01d9bc52002836683637855ec254eec0/spring-web-5.2.2.RELEASE-sources.jar!/org/springframework/web/multipart/MultipartFile.java" root0="SKIP_INSPECTION" />
-    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-java-sdk-s3/1.11.415/3560662546cf0397a830245bc987a62e793451f4/aws-java-sdk-s3-1.11.415-sources.jar!/com/amazonaws/services/s3/model/PutObjectRequest.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectId" id="1xAP6O8ED1NDmp7oJ4IYkQvNM0A" />
   <component name="ProjectLevelVcsManager">
@@ -355,7 +360,21 @@
       <workItem from="1632471055730" duration="821000" />
       <workItem from="1632471910359" duration="792000" />
       <workItem from="1632472738700" duration="15064000" />
-      <workItem from="1632567274580" duration="577000" />
+      <workItem from="1632567274580" duration="1576000" />
+      <workItem from="1632570748587" duration="12643000" />
+      <workItem from="1633014789765" duration="9289000" />
+      <workItem from="1633351593371" duration="11002000" />
+      <workItem from="1633953914688" duration="2675000" />
+      <workItem from="1634214987366" duration="19000" />
+      <workItem from="1634227518320" duration="47000" />
+      <workItem from="1635249937347" duration="4709000" />
+      <workItem from="1635425245158" duration="8253000" />
+      <workItem from="1636091714929" duration="7071000" />
+      <workItem from="1636183099582" duration="208000" />
+      <workItem from="1636190596235" duration="12000" />
+      <workItem from="1636192650776" duration="4317000" />
+      <workItem from="1636368719716" duration="1320000" />
+      <workItem from="1636499933773" duration="5687000" />
     </task>
     <servers />
   </component>

@@ -6,7 +6,6 @@ import com.example.photologger.photo.domain.User;
 import com.example.photologger.photo.service.AccountsService;
 import com.example.photologger.photo.service.EmailService;
 import com.example.photologger.photo.service.GallaryService;
-import com.example.photologger.photo.service.UploaderService;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -48,9 +47,6 @@ public class AccountsController {
         this.emailService = emailService;
         this.gallaryService = gallaryService;
     }
-
-
-
 
 
     @PostMapping(value = "/new")

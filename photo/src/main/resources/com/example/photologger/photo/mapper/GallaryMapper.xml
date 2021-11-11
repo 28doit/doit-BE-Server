@@ -3,21 +3,37 @@
 
 <mapper namespace="com.example.photologger.photo.mapper.GallaryMapper">
 
+  <resultMap type="com.example.photologger.photo.domain.Gallary"
+    id="GalleryInfo" >
+    <result property="gallaryId" column="gallary_id"/>
+    <result property="idx" column="idx"/>
+    <result property="gallaryAdress" column="gallary_adress"/>
+    <result property="gallaryTime" column="gallary_time"/>
+    <result property="gallarySeseon" column="gallary_seseon"/>
+    <result property="gallaryName" column="gallary_name"/>
+    <result property="gallaryDireactionX" column="gallary_direaction_x"/>
+    <result property="gallaryImageLocation" column="gallary_image_location"/>
+    <result property="gallarySubscribeCount" column="gallary_subscibe_count"/>
+    <result property="gallaryDireactionY" column="gallary_direaction_y"/>
+    <result property="gallaryViews" column="gallary_views"/>
+  </resultMap>
+
   <insert id="gallaryinfosave" parameterType="com.example.photologger.photo.domain.Gallary">
     INSERT INTO gallary (
-      gallary_id,
+      gallery_id,
       idx,
-      gallary_adress,
-      gallary_time,
-      gallary_seseon,
-      gallary_direaction_x,
-      gallary_name,
-      gallary_image_location,
-      gallary_subscibe_count,
-      gallary_direaction_y
+      gallery_adress,
+      gallery_time,
+      gallery_seseon,
+      gallery_direaction_x,
+      gallery_name,
+      gallery_image_location,
+      gallery_subscibe_count,
+      gallery_direaction_y,
+      gallery_views
     )
     VALUES (
-             #{gallaryId},
+             #{gallryId},
              #{idx},
              #{gallaryAdress},
              #{gallaryTime},
@@ -26,7 +42,8 @@
              #{gallaryName},
              #{gallaryImageLocation},
              #{gallarySubscribeCount},
-             #{gallaryDireactionY}
+             #{gallaryDireactionY},
+             #{gallaryViews}
              )
   </insert>
 
@@ -36,6 +53,18 @@
         nick_name = #{nickName},
         password = #{password}
     WHERE idx  = #{idx}
+  </update>
+
+  <select id="gallaryLookUp" resultMap="GalleryInfo" >
+    SELECT *
+    FROM gallary
+    WHERE gallary_id = #{gallaryId}
+  </select>
+
+  <update id= "galleryViewCount">
+    UPDATE gallary
+    SET gallary_views = gallary_views + 1
+    WHERE gallary_id = #{gllaryId}
   </update>
 
 </mapper>

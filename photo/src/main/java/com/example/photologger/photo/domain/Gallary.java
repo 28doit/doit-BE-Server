@@ -41,4 +41,6 @@ public class Gallary {
     @ApiModelProperty(example = "사진 구독자 수")
     private int gallarySubscribeCount;
 
+    @ApiModelProperty(example = "사진 조회수")
+    private int gallaryViews;
 }

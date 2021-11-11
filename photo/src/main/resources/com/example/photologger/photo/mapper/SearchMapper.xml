@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.photologger.photo.mapper.SearchMapper">
+  <resultMap type="com.example.photologger.photo.domain.Gallary"
+    id="GalleryInfo" >
+    <result property="gallaryId" column="gallary_id"/>
+    <result property="idx" column="idx"/>
+    <result property="gallaryAdress" column="gallary_adress"/>
+    <result property="gallaryTime" column="gallary_time"/>
+    <result property="gallarySeseon" column="gallary_seseon"/>
+    <result property="gallaryName" column="gallary_name"/>
+    <result property="gallaryDireactionX" column="gallary_direaction_x"/>
+    <result property="gallaryImageLocation" column="gallary_image_location"/>
+    <result property="gallarySubscribeCount" column="gallary_subscibe_count"/>
+    <result property="gallaryDireactionY" column="gallary_direaction_y"/>
+    <result property="gallaryViews" column="gallary_views"/>
+  </resultMap>
+
+  <select id = "titleSearch" resultMap="GalleryInfo">
+        <![CDATA[
+    SELECT *
+    FROM gallary
+    WHERE gallary_id < ${cursor} AND gallary_name LIKE CONCAT('%',#{word},'%')
+    ORDER BY gallary_id DESC
+      LIMIT ${take}
+    ;
+    ]]>
+    </select>
+
+  <select id = "sellerSearch" resultMap="GalleryInfo">
+        <![CDATA[
+    SELECT *
+    FROM gallary
+    WHERE gallary_id < ${cursor} AND gallary_name LIKE CONCAT('%',#{seller},'%')
+    ORDER BY gallary_id DESC
+      LIMIT ${take}
+    ;
+    ]]>
+    </select>
+</mapper>

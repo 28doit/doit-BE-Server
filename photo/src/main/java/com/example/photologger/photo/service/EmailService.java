@@ -50,7 +50,7 @@ public class EmailService {
         return str;
     }
 
-    //임시 비밀번호 생성 - UUID 자리수 제한 가능함으로써 변경
+    //랜덤 난수 만들기
     public String getTempPassword() {
         Random rnd = new Random();
         StringBuffer buf = new StringBuffer();

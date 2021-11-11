@@ -17,7 +17,6 @@ public interface UserMapper {
     void updateName(User user);
 
 
-
     //비밀번호 찾기
     User findPwd(User user);
 }

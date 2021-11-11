@@ -2,6 +2,7 @@ package com.example.photologger.photo.mapper;
 
 import com.example.photologger.photo.domain.Gallary;
 import com.example.photologger.photo.domain.User;
+import io.swagger.models.auth.In;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -13,5 +14,8 @@ public interface GallaryMapper {
 
     void updateProfileLocation(Integer idx, String profileImageLocation, String nickName, String password);
 
+    Gallary gallaryLookUp(@Param("gallaryId")Integer gallaryId);
+
+    void galleryViewCount(Integer gallaryId);
 
 }

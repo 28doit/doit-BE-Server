@@ -1,7 +1,6 @@
 package com.example.photologger.photo.controller;
 
 
-import com.example.photologger.photo.domain.Gallary;
 import com.example.photologger.photo.domain.ResponseDto;
 import com.example.photologger.photo.service.PaginationService;
 import lombok.extern.slf4j.Slf4j;
@@ -14,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
-@RequestMapping("/api/pagination")
+@RequestMapping("/pagination")
 @RestController
 public class PaginationController {
 
@@ -27,7 +26,7 @@ public class PaginationController {
         return new ResponseEntity(
             ResponseDto
                 .builder()
-                .data(paginationService.getGallery(cursor)) // 네네
+                .data(paginationService.getGallery(cursor))
                 .build()
             , HttpStatus.OK
         );
