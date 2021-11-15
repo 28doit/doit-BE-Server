@@ -11,8 +11,6 @@ public interface AccountsMapper {
 
     void emailCheck(String email);
 
-    void findEmail(User user);
-
     //토큰발급용 맵퍼jwt
     Optional<User> findEmail(String email);
 }

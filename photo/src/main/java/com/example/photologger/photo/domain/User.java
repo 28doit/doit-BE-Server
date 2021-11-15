@@ -8,6 +8,8 @@ import javax.validation.constraints.*;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @ToString
 public class User {
 

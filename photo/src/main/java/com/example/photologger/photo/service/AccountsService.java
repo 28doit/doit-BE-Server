@@ -53,11 +53,11 @@ public class AccountsService {
             if (!bCryptPasswordEncoder.matches(userIdPassword.get("password"), user.getPassword())) {
                 throw new IllegalArgumentException("잘못된 비밀번호입니다.");
             }
-            if(user.getAuthKey()==0) {
+            if(user.getAuthKey()==0) { //1로바꾸셈
                 returnUser.setToken(jwtTokenProvider.createToken(user.getEmail()));
                 returnUser.setIsValue(1);
                 log.info(returnUser.getToken());
-                returnUser.setName(user.getEmail());
+                returnUser.setEmail(user.getEmail());
                 return returnUser;
             }
             else
@@ -72,10 +72,12 @@ public class AccountsService {
             return returnUser;
         }
     }
+
     public boolean login_check(String token)
     {
         return jwtTokenProvider.validateToken(token);
     }
+
     public Object email_Check(String email)
     {
         ReturnCheck returncheck = new ReturnCheck();
@@ -127,26 +129,23 @@ public class AccountsService {
                 }
                 //사실상 동작안하는부분(0.0몇초차이로 할수도)
                 TrueAndFlase.put("Token", jwtTokenProvider.validateToken(token));
+                log.info("test1");
                 return TrueAndFlase;
             }
         }catch (ExpiredJwtException e) {
             TrueAndFlase.put("Token", jwtTokenProvider.validateToken(token));
+            log.info("test2");
             log.info("해당 토큰은 이미 만료된 토큰입니다.   " + "토큰 만료시간 : {} " + e.getClaims().getExpiration());   //현재 디버그 동작안함 수정 필요
             return TrueAndFlase;
         }
         //사실상 동작안하는부분
-        TrueAndFlase.put("Token",jwtTokenProvider.validateToken(token));
+        TrueAndFlase.put("Token",false);
+        log.info("test3");
         return TrueAndFlase;
     }
+
     public String getUserPk(String token)
     {
         return jwtTokenProvider.getUserPk(token);
     }
-    //필요없는 코드지만 재활용가능성 있음.
-//    private void validateDuplicateusßer(User user) {
-//        userRepository.findByEmail(user.getEmail())
-//                .ifPresent(m -> {
-//                    throw new IllegalStateException("이미 존재하는 회원입니다.");
-//                });
-//    }
 }

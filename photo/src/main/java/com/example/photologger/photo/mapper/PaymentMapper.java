@@ -1,12 +1,11 @@
 package com.example.photologger.photo.mapper;
 
-import com.example.photologger.photo.domain.Payment;
-import com.example.photologger.photo.domain.PaymentHistory;
+import com.example.photologger.photo.domain.*;
 import org.apache.ibatis.annotations.Mapper;
-import org.joda.time.DateTime;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 @Mapper
 public interface PaymentMapper {
@@ -14,9 +13,17 @@ public interface PaymentMapper {
 
     void paymentHistoryInsert(PaymentHistory paymentHistory);
 
-    List<PaymentHistory> paymentHistory(Date startHistory, Date endHistory, String email);
+    List<PaymentHistory> paymentHistory(Date startHistory, Date endHistory, int idx);
+    Optional<Order> itemBuyCheck(int galleryId,int idx);
 
-    int itemSelect(String itemIdx);
-
-    void itemHistoryinsert();
+    Payment userPoint(int idx);
+    GalleryPrice priceCheck(int galleryId);
+    void itemHistoryInsert(Order order);
+    SellerIdxCheck sellerIdxCheck(int galleryId);
+    List<Order> idxToGallId(int idx, Date start, Date end);
+    Gallery gallCheck(int galleryId);
+    void cartInsert(int idx, int galleryId);
+    List<Cart> cartCheck(int idx);
+    Optional<Cart> cartDup(int idx, int galleryId);
+    void cartDelete(int idx, int galleryId);
 }

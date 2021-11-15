@@ -1,5 +1,6 @@
 package com.example.photologger.photo.controller;
 
+import com.example.photologger.photo.apidocument.AccountControllerDocs;
 import com.example.photologger.photo.domain.ReturnUser;
 import com.example.photologger.photo.domain.User;
 import com.example.photologger.photo.service.AccountsService;
@@ -24,7 +25,7 @@ import org.springframework.web.bind.annotation.*;
 @Slf4j
 @RequestMapping("/accounts")
 @RestController
-public class AccountsController{
+public class AccountsController implements AccountControllerDocs {
 
     private final AccountsService accountsService;
     private final EmailService emailService;
@@ -35,7 +36,7 @@ public class AccountsController{
         this.emailService = emailService;
     }
 
-    @PostMapping(value = "/new", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity JoIn(@RequestBody User user) {
 //        //비밀번호 암호화(미사용코드) 프론트쪽에서 암호화예정.
 //        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
@@ -52,7 +53,7 @@ public class AccountsController{
     public String checkEmail(@PathVariable(value = "email") String email) {
         log.info(email);
         accountsService.emailCheck(email);
-        log.info("아매알 안중이 완료 되었습니다.");
+        log.info("아매알 인중이 완료 되었습니다.");
         return "true";
     }
 
@@ -63,22 +64,13 @@ public class AccountsController{
         return accountsService.login(userIdPassword);
     }
 
-    @GetMapping("/logout")
-    public String logout(HttpServletRequest request, HttpServletResponse response) {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-
-        if (authentication != null) {
-            new SecurityContextLogoutHandler().logout(request, response, authentication);
-        }
-        return "redirect:/";
-    }
-    @GetMapping("/new/email-check")
+    @GetMapping("/email")
     public Object email_check(@RequestParam(name = "email") String email) {
         log.info(email);
         return accountsService.email_Check(email);
     }
 
-    @GetMapping("/token-check")
+    @GetMapping("/token")
     @ResponseBody
     public HashMap token_Expiration(@RequestParam(name = "token") String token,
         @RequestParam(name = "email") String email) {
