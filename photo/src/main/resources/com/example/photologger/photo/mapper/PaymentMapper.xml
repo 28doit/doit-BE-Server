@@ -96,4 +96,10 @@
         WHERE idx = #{idx}
         AND gallery_id = #{galleryId}
     </delete>
+    <update id="withdraw">
+        UPDATE user_point
+        SET profit_point = profit_point - #{profitPoint}
+        , total_point = total_point - #{profitPoint}
+        WHERE idx = #{idx}
+    </update>
 </mapper>

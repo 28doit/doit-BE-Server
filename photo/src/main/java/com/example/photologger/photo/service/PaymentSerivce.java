@@ -235,6 +235,32 @@ public class PaymentSerivce {
             return false;
         }
     }
+    public Object withdraw(String token,String email,int pay)
+    {
+        int idx;
+        if(userCheck(token,email))
+        {
+            try
+            {
+                idx =accountsMapper.findEmail(email).get().getIdx();
+                int profitPoint=paymentMapper.userPoint(idx).getProfitPoint();
+                if(profitPoint<pay)
+                {
+                    log.info("잔여금액이 부족합니다.");
+                    return false;
+                }
+                paymentMapper.withdraw(idx,pay);
+                log.info(pay +"원 인출되었습니다");
+                return true;
+            }catch (Exception e)
+            {
+                log.info(e.getMessage());
+                return false;
+            }
+        }
+        log.info("유저 인증 실패");
+        return false;
+    }
     public Object history(String token, String start, String end)
     {
         SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);  //get으로 가져올 date
@@ -363,8 +389,10 @@ public class PaymentSerivce {
                     .idx(paymentMapper.sellerIdxCheck(galleryId).getIdx())        //수정해야합니다.
                     .profitPoint(sellPoint)
                     .build();
+            log.info("test");
             buyer = paymentMapper.userPoint(user.getIdx());
             paymentMapper.paymentUpdate(seller);
+            log.info("test");
             return Integer.toString(buyer.getTotalPoint());
         }catch (Exception e)
         {
@@ -484,7 +512,7 @@ public class PaymentSerivce {
     {
         log.info(token+ " " + email);
         List outPut = new ArrayList();
-        String Stmp;
+        int gallidx;
 
         if(userCheck(token,email))
         {
@@ -499,6 +527,8 @@ public class PaymentSerivce {
                    outPut_in.put("gallery_location",tmp.getGalleryImageLocation());
                    outPut_in.put("gallery_name",tmp.getGalleryName());
                    outPut_in.put("price",paymentMapper.priceCheck(tmp.getGalleryId()).getPrice());
+                   outPut_in.put("gallery_id",tmp.getGalleryId());
+                   outPut_in.put("seller_Name",userMapper.findOne(paymentMapper.gallCheck(tmp.getGalleryId()).getIdx()).getNickName());
                    outPut.add(i,outPut_in);
                    log.info(outPut.toString());
                }
@@ -522,9 +552,16 @@ public class PaymentSerivce {
         int gallery_id = Integer.parseInt(tmp.get("gallery_id").toString());
         if(userCheck(token,email))
         {
+
             int idx = 0;
             try {
                 idx = accountsMapper.findEmail(email).get().getIdx();
+
+               if(paymentMapper.itemBuyCheck(gallery_id,idx).get().getIdx()==idx)
+               {
+                   log.info("이미 구매내역에 존재합니다.");
+                   return false;
+               }
                 log.info(Integer.toString(idx));
                 paymentMapper.cartDup(idx,gallery_id)
                         .orElseThrow(() -> new IllegalArgumentException("장바구니 담기 가는 상태"));
@@ -552,12 +589,13 @@ public class PaymentSerivce {
     }
     public Object cartBuy(String json)
     {
+        log.info(json);
         ObjectMapper mapper = new ObjectMapper();
         try {
             JsonNode data = mapper.readTree(json);
-            String email = data.get("email").toString().replace("\"","");
+            String email = data.get("user_email").toString().replace("\"","");
             String token = data.get("token").toString().replace("\"","");
-            int price = Integer.parseInt(data.get("price").toString());
+            int price = Integer.parseInt(data.get("pay").toString());
             String galleryId = data.get("gallery_id").toString().replace("\"","");
             String array[]=galleryId.split(",");
             int arrayLength = array.length;
@@ -575,13 +613,15 @@ public class PaymentSerivce {
             if(price<=totalPrice) {
                 if (userCheck(token, email)) {
                     try {
-                        for (int i = 0; i <= cart.length; i++) {
+                        log.info(Integer.toString(cart.length));
+                        for (int i = 0; i < cart.length; i++) {
                             log.info(cart[i]+"번 물건 결제시도");
-                            itemBuy(cart[i], token);
+                            String tmp = itemBuy(cart[i], token).toString();
+                            log.info(tmp);
                         }
                         log.info(price+"원 결제");
                         log.info(totalPrice-price+"원 남았습니다.");
-                        for(int i=0; i<=cart.length;i++)
+                        for(int i=0; i<cart.length;i++)
                         {
                             log.info(cart[i]+"구매 완료후 삭제");
                             delete(token,email,cart[i].toString());
@@ -590,6 +630,7 @@ public class PaymentSerivce {
 
                         //return 최종결제금액
                     } catch (Exception e) {
+                        log.info(e.getMessage());
                         log.info("결제 오류");
                     }
                 }

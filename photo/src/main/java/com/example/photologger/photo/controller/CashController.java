@@ -27,5 +27,11 @@ public class CashController {
     {
             return paymentSerivce.history(token,start, end);
     }
-
+    @PutMapping("/payment")
+    public Object withdraw(@RequestParam(name="token")String token,
+                           @RequestParam(name="email")String email,
+                           @RequestParam(name="pay")int pay)
+    {
+            return paymentSerivce.withdraw(token,email,pay);
+    }
 }

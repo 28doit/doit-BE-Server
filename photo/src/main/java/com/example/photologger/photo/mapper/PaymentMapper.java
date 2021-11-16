@@ -26,4 +26,5 @@ public interface PaymentMapper {
     List<Cart> cartCheck(int idx);
     Optional<Cart> cartDup(int idx, int galleryId);
     void cartDelete(int idx, int galleryId);
+    int withdraw(int idx, int profitPoint);
 }

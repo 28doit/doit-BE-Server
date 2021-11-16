@@ -5,6 +5,7 @@ import com.example.photologger.photo.domain.ReturnUser;
 import com.example.photologger.photo.domain.User;
 import com.example.photologger.photo.jwt.JwtTokenProvider;
 import com.example.photologger.photo.mapper.AccountsMapper;
+import com.example.photologger.photo.mapper.PaymentMapper;
 import com.example.photologger.photo.mapper.UserMapper;
 import io.jsonwebtoken.ExpiredJwtException;
 import java.util.HashMap;
@@ -27,6 +28,8 @@ public class AccountsService {
     @Autowired
     UserMapper userMapper;
 
+    @Autowired
+    PaymentMapper paymentMapper;
     @Transactional
     public int join(User user) {
         //validateDuplicateuser(user); //중복 회원 검증
@@ -124,6 +127,7 @@ public class AccountsService {
                     tmp.put("Day",user.getUserDay());
                     tmp.put("Sex",user.getSex());
                     tmp.put("PhoneNumber",user.getPhoneNumber());
+                    tmp.put("Point",paymentMapper.userPoint(user.getIdx()));
                     log.info("현재 사용가능한 토큰입니다. "+ "토큰 만료시간 : {} ");//수정하세요
                     return tmp;
                 }
