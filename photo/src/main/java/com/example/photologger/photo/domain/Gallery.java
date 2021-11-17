@@ -10,37 +10,37 @@ import lombok.ToString;
 @Setter
 @NoArgsConstructor
 @ToString
-public class Gallary {
+public class Gallery {
     @ApiModelProperty(example = "사진 번호")
-    private int gallaryId;
+    private int galleryId;
 
     @ApiModelProperty(example = "회원 번호")
     private  int idx;
 
     @ApiModelProperty(example = "사진 주소")
-    private String gallaryAdress;
+    private String galleryAdress;
 
     @ApiModelProperty(example = "사진 시간")
-    private String gallaryTime;
+    private String galleryTime;
 
     @ApiModelProperty(example = "시진 계절")
-    private int gallarySeseon;
+    private int gallerySeseon;
 
     @ApiModelProperty(example = "사진 좌표 X")
-    private String gallaryDireactionX;
+    private String galleryDireactionX;
 
     @ApiModelProperty(example = "사진 좌표 Y")
-    private String gallaryDireactionY;
+    private String galleryDireactionY;
 
     @ApiModelProperty(example = "사진 이름")
-    private String gallaryName;
+    private String galleryName;
 
     @ApiModelProperty(example = "사진 업로드 위치")
-    private String gallaryImageLocation;
+    private String galleryImageLocation;
 
     @ApiModelProperty(example = "사진 구독자 수")
-    private int gallarySubscribeCount;
+    private int gallerySubscribeCount;
 
     @ApiModelProperty(example = "사진 조회수")
-    private int gallaryViews;
+    private int galleryViews;
 }

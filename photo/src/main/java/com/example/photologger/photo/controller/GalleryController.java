@@ -1,7 +1,7 @@
 package com.example.photologger.photo.controller;
 
-import com.example.photologger.photo.domain.Gallary;
-import com.example.photologger.photo.service.GallaryService;
+import com.example.photologger.photo.domain.Gallery;
+import com.example.photologger.photo.service.GalleryService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,20 +15,20 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class GalleryController {
 
-    private final GallaryService gallaryService;
+    private final GalleryService galleryService;
 
     @Autowired
-    public GalleryController(GallaryService gallaryService){
-        this.gallaryService = gallaryService;
+    public GalleryController(GalleryService galleryService){
+        this.galleryService = galleryService;
     }
 
     /*갤러리 정보 조회*/
     @GetMapping(value = "/{gallery_id}")
     @ResponseBody
-    public Gallary lookUp(
+    public Gallery lookUp(
         @PathVariable(value = "gallery_id") Integer galleryId
     ) throws Exception{
-        Gallary gallary = gallaryService.gallaryLookUp(galleryId);
+        Gallery gallary = galleryService.galleryLookUp(galleryId);
         return gallary;
     }
 }

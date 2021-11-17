@@ -5,7 +5,7 @@ import com.example.photologger.photo.domain.ReturnUser;
 import com.example.photologger.photo.domain.User;
 import com.example.photologger.photo.service.AccountsService;
 import com.example.photologger.photo.service.EmailService;
-import com.example.photologger.photo.service.GallaryService;
+import com.example.photologger.photo.service.GalleryService;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -37,15 +37,15 @@ public class AccountsController {
 
     private final AccountsService accountsService;
     private final EmailService emailService;
-    private final GallaryService gallaryService;
+    private final GalleryService galleryService;
 
     @Autowired
     public AccountsController(AccountsService accountsService,
         EmailService emailService,
-        GallaryService gallaryService) {
+        GalleryService galleryService) {
         this.accountsService = accountsService;
         this.emailService = emailService;
-        this.gallaryService = gallaryService;
+        this.galleryService = galleryService;
     }
 
 
@@ -68,7 +68,7 @@ public class AccountsController {
         emailService.SendJoinMail(user.getEmail());
 
         //이미지 전송
-        user.setProfileImageLocation(gallaryService.profileImagejoin(multipartFile, user));
+        user.setProfileImageLocation(galleryService.profileImagejoin(multipartFile, user));
 
         log.info(user.getName() + "님의 회원가입이 정상적으로 완료되었습니다");
         return new ResponseEntity(HttpStatus.OK);

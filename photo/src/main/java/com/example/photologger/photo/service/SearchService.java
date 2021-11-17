@@ -1,7 +1,7 @@
 package com.example.photologger.photo.service;
 
 import com.example.photologger.photo.constants.Constants;
-import com.example.photologger.photo.domain.Gallary;
+import com.example.photologger.photo.domain.Gallery;
 import com.example.photologger.photo.domain.User;
 import com.example.photologger.photo.mapper.SearchMapper;
 import java.util.List;
@@ -18,7 +18,7 @@ public class SearchService {
         this.searchMapper = searchMapper;
     }
 
-    public List<Gallary> titleSearch(Integer cursor, String word){
+    public List<Gallery> titleSearch(Integer cursor, String word){
             return searchMapper.titleSearch(cursor, Constants.SEARCH_TAKE,word);
     }
 

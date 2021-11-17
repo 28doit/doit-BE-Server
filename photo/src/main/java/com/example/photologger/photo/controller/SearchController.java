@@ -1,7 +1,7 @@
 package com.example.photologger.photo.controller;
 
 
-import com.example.photologger.photo.domain.Gallary;
+import com.example.photologger.photo.domain.Gallery;
 import com.example.photologger.photo.domain.User;
 import com.example.photologger.photo.service.SearchService;
 import java.util.List;
@@ -25,7 +25,7 @@ public class SearchController {
     }
 
     @GetMapping(value = "/title/{cursor}/{word}")
-    public List<Gallary> titleSearch(
+    public List<Gallery> titleSearch(
         @PathVariable("cursor") Integer cursor,
         @PathVariable("word") String word)
     {

@@ -1,8 +1,8 @@
 package com.example.photologger.photo.service;
 
-import com.example.photologger.photo.domain.Gallary;
+import com.example.photologger.photo.domain.Gallery;
 import com.example.photologger.photo.domain.User;
-import com.example.photologger.photo.mapper.GallaryMapper;
+import com.example.photologger.photo.mapper.GalleryMapper;
 import com.example.photologger.photo.mapper.UserMapper;
 import java.io.IOException;
 import lombok.extern.slf4j.Slf4j;
@@ -11,29 +11,29 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Slf4j
 @Service
-public class GallaryService {
+public class GalleryService {
 
     private final UploaderService uploaderService;
-    private final GallaryMapper gallaryMapper;
+    private final GalleryMapper galleryMapper;
     private final UserMapper userMapper;
 
-    public GallaryService(UploaderService uploaderService,
-        GallaryMapper gallaryMapper, UserMapper userMapper) {
+    public GalleryService(UploaderService uploaderService,
+        GalleryMapper galleryMapper, UserMapper userMapper) {
         this.uploaderService = uploaderService;
-        this.gallaryMapper = gallaryMapper;
+        this.galleryMapper = galleryMapper;
         this.userMapper = userMapper;
     }
 
 
     //갤러리 이미지 저장
-    public void gallaryInfoeSave(Gallary gallary, MultipartFile multipartFile)
+    public void galleryInfoeSave(Gallery gallery, MultipartFile multipartFile)
         throws IOException {
         if (multipartFile != null) {
             String path = "gallery";
-            gallary.setGallaryImageLocation(uploaderService.upload(multipartFile, path));
-            gallary.setGallaryName(multipartFile.getOriginalFilename());
-            gallaryMapper.gallaryinfosave(gallary);
-            log.info(gallary.toString());
+            gallery.setGalleryImageLocation(uploaderService.upload(multipartFile, path));
+            gallery.setGalleryName(multipartFile.getOriginalFilename());
+            galleryMapper.galleryinfosave(gallery);
+            log.info(gallery.toString());
         }
     }
 
@@ -56,21 +56,21 @@ public class GallaryService {
             String path = "profile";
             user.setProfileImageLocation(uploaderService.upload(multipartFile, path));
             log.info(user.getProfileImageLocation());
-            gallaryMapper.updateProfileLocation(user.getIdx(), user.getProfileImageLocation(),
+            galleryMapper.updateProfileLocation(user.getIdx(), user.getProfileImageLocation(),
                 user.getNickName(), user.getPassword());
         }
     }
 
     //갤러리 조회
-    public Gallary gallaryLookUp(Integer galleryId) {
-        gallaryMapper.galleryViewCount(galleryUser(galleryId));
-        return gallaryMapper.gallaryLookUp(galleryId);
+    public Gallery galleryLookUp(Integer galleryId) {
+        galleryMapper.galleryViewCount(galleryUser(galleryId));
+        return galleryMapper.galleryLookUp(galleryId);
     }
 
     //갤러리 아이디를 이용해 겔러리 정보 불러오기
     Integer galleryUser(Integer gallery){
-        Gallary galleryInfo = gallaryMapper.gallaryLookUp(gallery);
-        Integer galleryId = galleryInfo.getGallaryId();
+        Gallery galleryInfo = galleryMapper.galleryLookUp(gallery);
+        Integer galleryId = galleryInfo.getGalleryId();
         return galleryId;
     }
 }

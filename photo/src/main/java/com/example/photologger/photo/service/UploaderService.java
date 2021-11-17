@@ -7,7 +7,7 @@ import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.transfer.TransferManager;
 import com.amazonaws.services.s3.transfer.Upload;
-import com.example.photologger.photo.mapper.GallaryMapper;
+import com.example.photologger.photo.mapper.GalleryMapper;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -28,7 +28,7 @@ import org.springframework.web.multipart.MultipartFile;
 public class UploaderService {
 
     @Autowired
-    GallaryMapper gallaryMapper;
+    GalleryMapper galleryMapper;
 
     @Autowired
     private final AmazonS3Client amazonS3Client;

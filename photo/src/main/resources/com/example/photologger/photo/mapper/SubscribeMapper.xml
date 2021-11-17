@@ -2,46 +2,46 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.photologger.photo.mapper.SubscribeMapper">
-  <resultMap type="com.example.photologger.photo.domain.Gallary"
+  <resultMap type="com.example.photologger.photo.domain.Gallery"
     id="GalleryInfo">
-    <result property="gallaryId" column="gallary_id"/>
+    <result property="galleryId" column="gallery_id"/>
     <result property="idx" column="idx"/>
-    <result property="gallaryAdress" column="gallary_adress"/>
-    <result property="gallaryTime" column="gallary_time"/>
-    <result property="gallarySeseon" column="gallary_seseon"/>
-    <result property="gallaryName" column="gallary_name"/>
-    <result property="gallaryDireactionX" column="gallary_direaction_x"/>
-    <result property="gallaryImageLocation" column="gallary_image_location"/>
-    <result property="gallarySubscribeCount" column="gallary_subscibe_count"/>
-    <result property="gallaryDireactionY" column="gallary_direaction_y"/>
-    <result property="gallaryViews" column="gallary_views"/>
+    <result property="galleryAdress" column="gallery_adress"/>
+    <result property="galleryTime" column="gallery_time"/>
+    <result property="gallerySeseon" column="gallery_seseon"/>
+    <result property="galleryName" column="gallery_name"/>
+    <result property="galleryDireactionX" column="gallery_direaction_x"/>
+    <result property="galleryImageLocation" column="gallery_image_location"/>
+    <result property="gallerySubscribeCount" column="gallery_subscibe_count"/>
+    <result property="galleryDireactionY" column="gallery_direaction_y"/>
+    <result property="galleryViews" column="gallery_views"/>
   </resultMap>
   <resultMap type="com.example.photologger.photo.domain.Subscribe"
     id="subscribeInfo">
     <result property="idx" column="idx"/>
-    <result property="galleryId" column="gallary_id"/>
+    <result property="galleryId" column="gallery_id"/>
   </resultMap>
 
-  <insert id="subscirbeGallery" parameterType="com.example.photologger.photo.domain.Gallary">
+  <insert id="subscirbeGallery" parameterType="com.example.photologger.photo.domain.Gallery">
     INSERT INTO PHOTO.subscribe_gallery(idx,
                                         gallery_id)
     VALUES (#{idx},
             #{galleryId})
   </insert>
 
-  <insert id="subscirbeUser" parameterType="com.example.photologger.photo.domain.Gallary">
+  <insert id="subscirbeUser" parameterType="com.example.photologger.photo.domain.Gallery">
     INSERT INTO PHOTO.subscribe_user(idx,
                                      subscribe_idx)
     VALUES (#{idx},
             #{subscribeUser})
   </insert>
 
-  <select id="subscirbeGalleryCursorPagination" resultMap="int">
+  <select id="subscirbeGalleryCursorPagination" resultMap="GalleryInfo">
         <![CDATA[
     SELECT idx
     FROM subscribe_user
     WHERE idx = #{idx}
-    ORDER BY gallary_id
+    ORDER BY gallery_id
     ]]>
     </select>
 

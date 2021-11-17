@@ -1,6 +1,6 @@
 package com.example.photologger.photo.mapper;
 
-import com.example.photologger.photo.domain.Gallary;
+import com.example.photologger.photo.domain.Gallery;
 import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -9,7 +9,7 @@ import org.apache.ibatis.annotations.Param;
 public interface PaginationMapper {
 
     /*Cursor Pagination*/
-    List<Gallary> cursorPagination(
+    List<Gallery> cursorPagination(
         @Param("cursor") Integer cursor
         , @Param("take") Integer take
     );

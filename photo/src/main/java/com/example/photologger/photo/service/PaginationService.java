@@ -1,7 +1,7 @@
 package com.example.photologger.photo.service;
 
 import com.example.photologger.photo.constants.Constants;
-import com.example.photologger.photo.domain.Gallary;
+import com.example.photologger.photo.domain.Gallery;
 import com.example.photologger.photo.mapper.PaginationMapper;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
@@ -17,7 +17,7 @@ public class PaginationService {
     @Autowired
     PaginationMapper paginationMapper;
 
-    public List<Gallary> getGallery(Integer cursor) {
+    public List<Gallery> getGallery(Integer cursor) {
         return paginationMapper.cursorPagination(cursor, Constants.TAKE);
     }
 
