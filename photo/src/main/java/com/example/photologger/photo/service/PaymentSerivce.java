@@ -4,6 +4,7 @@ import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.Map.Entry;
 
@@ -25,6 +26,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import static com.example.photologger.photo.constants.paymentConstant.*;
 
@@ -235,9 +237,14 @@ public class PaymentSerivce {
             return false;
         }
     }
-    public Object withdraw(String token,String email,int pay)
+    public Object withdrawal(String token,String email,int pay)
     {
         int idx;
+
+        SimpleDateFormat outputFormat= new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss", Locale.ENGLISH);     //결재완료후 뛰어줄 date
+        LocalDateTime now = LocalDateTime.now();
+        Date date = Timestamp.valueOf(now);
+        log.info(date.toString());
         if(userCheck(token,email))
         {
             try
@@ -249,8 +256,15 @@ public class PaymentSerivce {
                     log.info("잔여금액이 부족합니다.");
                     return false;
                 }
-                paymentMapper.withdraw(idx,pay);
+                paymentMapper.withdrawal(idx,pay);
                 log.info(pay +"원 인출되었습니다");
+                Withdrawal withdrawal = Withdrawal.builder()
+                                .date(date)
+                                .idx(idx)
+                                .withdrawalNumber((Integer.toString(idx))+"_"+outputFormat.format(date))
+                                .point(pay)
+                                .build();
+                paymentMapper.withdrawalHistoryInsert(withdrawal);
                 return true;
             }catch (Exception e)
             {
@@ -259,6 +273,44 @@ public class PaymentSerivce {
             }
         }
         log.info("유저 인증 실패");
+        return false;
+    }
+    public Object withdrawalHistory(int idx, String token,String start, String end)
+    {
+        SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);  //get으로 가져올 date
+        SimpleDateFormat outputFormat = new SimpleDateFormat("yyyy-MM-dd_HH:mm:SS", Locale.ENGLISH);  //get으로 가져올 date
+        List<ReturnWithdrawal> output = new ArrayList<>();
+        try
+        {
+            String email = userMapper.findOne(idx).getEmail();
+            if(userCheck(token,email))
+            {
+
+                Date start_history = inputFormat.parse(start);  //시작날짜 inputFormat형식으로 변경
+                Date end_history = inputFormat.parse(end);      //종료날짜 inputFormat형식으로 변경
+                log.info("로그인중 토큰정보 : " +token);
+                log.info("결제내역 시작 : " + start_history.toString());
+                log.info("결제내역 끝 : "+ end_history.toString());
+                List<Withdrawal> tmp =  paymentMapper.withdrawalHistory(start_history,end_history,idx);
+                for (int i =0;i<tmp.size();i++)
+                {
+                    ReturnWithdrawal returnWithdrawal = ReturnWithdrawal.builder()
+                            .withdrawalNumber(tmp.get(i).getWithdrawalNumber())
+                            .idx(tmp.get(i).getIdx())
+                            .date(outputFormat.format(tmp.get(i).getDate()))
+                            .point(tmp.get(i).getPoint())
+                            .build();
+                    output.add(i,returnWithdrawal);
+                }
+                return output;
+            }
+        }catch (Exception e)
+        {
+            log.info(e.getMessage());
+            log.info("조회요청 실패");
+            return false;
+        }
+        log.info("유저인증 실패");
         return false;
     }
     public Object history(String token, String start, String end)
@@ -402,6 +454,7 @@ public class PaymentSerivce {
         }
         //고려해야할것 3번 쿠폰
     }
+
     public Payment itemBuyCheck(Payment payment,int sellPoint)   //이 함수를 실행시켰다는것은 total-sell을 통과했다는거 따라서 세부조항만 계산하면됨.
     {
         int tmp;    //임시로 사용할 int

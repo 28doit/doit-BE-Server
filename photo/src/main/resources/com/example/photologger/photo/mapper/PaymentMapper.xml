@@ -96,10 +96,24 @@
         WHERE idx = #{idx}
         AND gallery_id = #{galleryId}
     </delete>
-    <update id="withdraw">
+    <update id="withdrawal">
         UPDATE user_point
         SET profit_point = profit_point - #{profitPoint}
         , total_point = total_point - #{profitPoint}
         WHERE idx = #{idx}
     </update>
+    <insert id="withdrawalHistoryInsert" parameterType="com.example.photologger.photo.domain.Withdrawal">
+       INSERT INTO withdrawal_history
+        SET idx = #{idx},
+            withdrawal_number = #{withdrawalNumber},
+            point = #{point},
+            date = #{date}
+    </insert>
+    <select id="withdrawalHistory" resultType="com.example.photologger.photo.domain.Withdrawal">
+        SELECT *
+        FROM withdrawal_history
+        WHERE date between #{start} AND #{end}
+        AND idx = #{idx}
+        ORDER BY date ASC
+    </select>
 </mapper>

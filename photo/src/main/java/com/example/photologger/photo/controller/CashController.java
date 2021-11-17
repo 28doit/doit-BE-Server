@@ -27,11 +27,19 @@ public class CashController {
     {
             return paymentSerivce.history(token,start, end);
     }
-    @PutMapping("/payment")
-    public Object withdraw(@RequestParam(name="token")String token,
+    @PutMapping("/withdrawal")
+    public Object withdrawal(@RequestParam(name="token")String token,
                            @RequestParam(name="email")String email,
                            @RequestParam(name="pay")int pay)
     {
-            return paymentSerivce.withdraw(token,email,pay);
+            return paymentSerivce.withdrawal(token,email,pay);
+    }
+    @GetMapping("/withdrawal")
+    public Object withdrawalHistory(@RequestParam(name="idx")int idx,
+                                    @RequestParam(name="token")String token,
+                                    @RequestParam(name = "start_history")String start,
+                                    @RequestParam(name = "end_history")String end)
+    {
+        return paymentSerivce.withdrawalHistory(idx,token,start,end);
     }
 }
