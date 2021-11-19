@@ -1,0 +1,18 @@
+Index: photo/src/main/resources/com/example/photologger/photo/mapper/UserMapper.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE mapper PUBLIC \"-//mybatis.org//DTD Mapper 3.0//EN\" \"http://mybatis.org/dtd/mybatis-3-mapper.dtd\">\n\n<mapper namespace=\"com.example.photologger.photo.mapper.UserMapper\">\n    <select id=\"findOne\" resultType=\"com.example.photologger.photo.domain.User\" >\n        SELECT *\n        FROM user\n        WHERE idx = #{idx}\n    </select>\n    \n    <select id=\"findId\" resultType=\"com.example.photologger.photo.domain.User\">\n        SELECT *\n          FROM user\n         WHERE name     = #{name}\n           AND phone_number  = #{phoneNumber}\n    </select>\n\n    <select id=\"findPwd\" resultType=\"com.example.photologger.photo.domain.User\">\n        SELECT *\n          FROM user\n         WHERE email        = #{email}\n           AND name         = #{name}\n           AND phone_number = #{phoneNumber}\n    </select>\n    \n    <update id= \"updatePassword\">\n        UPDATE user\n           SET password = #{password}\n         where idx      = #{idx}\n    </update>\n\n\n    <update id= \"updateEPassword\">\n        UPDATE user\n        SET password = #{password}\n        where email  = #{email}\n    </update>\n\n    <update id=\"updateName\">\n      UPDATE user\n         SET name = #{name}\n       WHERE idx  = #{idx}\n    </update>\n</mapper>\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/photo/src/main/resources/com/example/photologger/photo/mapper/UserMapper.xml b/photo/src/main/resources/com/example/photologger/photo/mapper/UserMapper.xml
+--- a/photo/src/main/resources/com/example/photologger/photo/mapper/UserMapper.xml	
++++ b/photo/src/main/resources/com/example/photologger/photo/mapper/UserMapper.xml	
+@@ -22,6 +22,7 @@
+            AND name         = #{name}
+            AND phone_number = #{phoneNumber}
+     </select>
++
+     
+     <update id= "updatePassword">
+         UPDATE user
