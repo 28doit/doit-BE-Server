@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.photologger.photo.mapper.SearchMapper">
+  <resultMap type="com.example.photologger.photo.domain.Gallery"
+    id="GalleryInfo" >
+    <result property="galleryId" column="gallery_id"/>
+    <result property="idx" column="idx"/>
+    <result property="galleryAdress" column="gallery_adress"/>
+    <result property="galleryTime" column="gallery_time"/>
+    <result property="gallerySeseon" column="gallery_seseon"/>
+    <result property="galleryName" column="gallery_name"/>
+    <result property="galleryDireactionX" column="gallery_direaction_x"/>
+    <result property="galleryImageLocation" column="gallery_image_location"/>
+    <result property="gallerySubscribeCount" column="gallery_subscibe_count"/>
+    <result property="galleryDireactionY" column="gallery_direaction_y"/>
+    <result property="galleryViews" column="gallery_views"/>
+  </resultMap>
+
+  <select id = "titleSearch" resultMap="GalleryInfo">
+        <![CDATA[
+    SELECT *
+    FROM gallery
+    WHERE gallery_id < ${cursor} AND gallery_name LIKE CONCAT('%',#{word},'%')
+    ORDER BY gallery_id
+    ;
+    ]]>
+    </select>
+
+  <select id = "sellerSearch" resultMap="GalleryInfo">
+        <![CDATA[
+    SELECT *
+    FROM gallery
+    WHERE gallery_id < ${cursor} AND gallery_name LIKE CONCAT('%',#{seller},'%')
+    ORDER BY gallery_id
+    ;
+    ]]>
+    </select>
+</mapper>

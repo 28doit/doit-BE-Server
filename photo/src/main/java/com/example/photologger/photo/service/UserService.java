@@ -14,7 +14,7 @@ public class UserService {
     @Autowired
     UserMapper userMapper;
 
-    //맴버 전체 조회
+    //맴버 조회
     public User findOne(Integer idx) {
         return userMapper.findOne(idx);
     }

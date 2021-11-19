@@ -25,8 +25,11 @@ public class Gallery {
     @ApiModelProperty(example = "시진 계절")
     private int gallerySeseon;
 
-    @ApiModelProperty(example = "사진 방향")
-    private String galleryDireaction;
+    @ApiModelProperty(example = "사진 좌표 X")
+    private String galleryDireactionX;
+
+    @ApiModelProperty(example = "사진 좌표 Y")
+    private String galleryDireactionY;
 
     @ApiModelProperty(example = "사진 이름")
     private String galleryName;
@@ -37,6 +40,6 @@ public class Gallery {
     @ApiModelProperty(example = "사진 구독자 수")
     private int gallerySubscribeCount;
 
-    private String galleryDireaction_Y;
+    @ApiModelProperty(example = "사진 조회수")
     private int galleryViews;
 }

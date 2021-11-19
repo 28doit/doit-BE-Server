@@ -4,10 +4,45 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f954b46-ba7f-4eb5-998f-d41f954219ab" name="Changes" comment="Changes">
+    <list default="true" id="6f954b46-ba7f-4eb5-998f-d41f954219ab" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/GalleryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/SearchController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/SubscribeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/ResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/Subscribe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/mapper/GalleryMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/mapper/SearchMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/mapper/SubscribeMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/GalleryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/SearchService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/SubscribeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/GalleryMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/SearchMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/SubscribeMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/00b6e4d6-edf0-493a-9249-804793f8ef3e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/00b6e4d6-edf0-493a-9249-804793f8ef3e.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/photo/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/constants/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/AccountsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/AccountsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/GallaryController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/PaginationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/PaginationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/UploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/UploadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/Gallery.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/Gallery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/StatusCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/StatusCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/mapper/GallaryMapper.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/mapper/PaginationMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/mapper/PaginationMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/EmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/EmailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/GallaryService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/PaginationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/PaginationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/UploaderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/UploaderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/resources/aws.yml" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/resources/aws.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/AccountsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/AccountsMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/GallaryMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/PaginationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/PaginationMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,9 +77,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -54,7 +89,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="list-board" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -91,26 +126,18 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mariadb" />
-    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
-    <property name="RequestMappingsPanelOrder2" value="2" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
-    <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="database.data.extractors.current.export.id" value="Comma-separated (CSV)_id" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+    <property name="settings.editor.selected.configurable" value="copyright" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -309,10 +336,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.PhotoApplication" />
-        <item itemvalue="JUnit.AccountsControllerTest" />
+        <item itemvalue="JUnit.PaginationTestController.totalindex" />
         <item itemvalue="JUnit.PaginationServiceTest.countIndex" />
         <item itemvalue="JUnit.PaginationServiceTest" />
-        <item itemvalue="JUnit.PaginationTestController.totalindex" />
+        <item itemvalue="JUnit.AccountsControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -349,20 +376,29 @@
       <workItem from="1631190910960" duration="616000" />
       <workItem from="1631328039429" duration="6444000" />
       <workItem from="1631688018071" duration="9685000" />
-      <workItem from="1633266784637" duration="95000" />
-      <workItem from="1633267009274" duration="7520000" />
-      <workItem from="1633414840921" duration="6050000" />
-      <workItem from="1633529647019" duration="1198000" />
-      <workItem from="1633650882569" duration="22416000" />
-      <workItem from="1633970838179" duration="31888000" />
-      <workItem from="1634255115145" duration="13585000" />
-      <workItem from="1635299897695" duration="11935000" />
-      <workItem from="1635640629375" duration="8440000" />
-      <workItem from="1635947345460" duration="33360000" />
-      <workItem from="1636707942567" duration="9413000" />
-      <workItem from="1636770272956" duration="2861000" />
-      <workItem from="1636814848331" duration="3307000" />
-      <workItem from="1636863006055" duration="46212000" />
+      <workItem from="1632461843026" duration="245000" />
+      <workItem from="1632462091010" duration="2049000" />
+      <workItem from="1632471055730" duration="821000" />
+      <workItem from="1632471910359" duration="792000" />
+      <workItem from="1632472738700" duration="15064000" />
+      <workItem from="1632567274580" duration="1576000" />
+      <workItem from="1632570748587" duration="12643000" />
+      <workItem from="1633014789765" duration="9289000" />
+      <workItem from="1633351593371" duration="11002000" />
+      <workItem from="1633953914688" duration="2675000" />
+      <workItem from="1634214987366" duration="19000" />
+      <workItem from="1634227518320" duration="47000" />
+      <workItem from="1635249937347" duration="4709000" />
+      <workItem from="1635425245158" duration="8253000" />
+      <workItem from="1636091714929" duration="7071000" />
+      <workItem from="1636183099582" duration="208000" />
+      <workItem from="1636190596235" duration="12000" />
+      <workItem from="1636192650776" duration="4317000" />
+      <workItem from="1636368719716" duration="1320000" />
+      <workItem from="1636499933773" duration="6677000" />
+      <workItem from="1636648870034" duration="14168000" />
+      <workItem from="1636977665904" duration="7949000" />
+      <workItem from="1637136363406" duration="5191000" />
     </task>
     <servers />
   </component>

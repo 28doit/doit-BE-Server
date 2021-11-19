@@ -1257,11 +1257,17 @@ test\\_%|schema||&apos;&apos;||UPDATE|G</Grants>
     <table id="344" parent="7" name="gallary_price"/>
     <table id="345" parent="7" name="subscribe_gallery"/>
     <column id="346" parent="335" name="identificationNumber">
+    <table id="340" parent="7" name="gall_price"/>
+    <table id="341" parent="7" name="payment_history"/>
+    <table id="342" parent="7" name="order"/>
+    <table id="343" parent="7" name="user_point"/>
+    <table id="344" parent="7" name="order_detail"/>
+    <column id="345" parent="335" name="identificationNumber">
       <Position>1</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="347" parent="335" name="firstName">
+    <column id="346" parent="335" name="firstName">
       <Position>2</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
@@ -1280,443 +1286,242 @@ test\\_%|schema||&apos;&apos;||UPDATE|G</Grants>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
+    <column id="350" parent="335" name="password">
     <column id="351" parent="335" name="password">
       <Position>6</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="352" parent="335" name="PRIMARY">
+    <key id="351" parent="335" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>identificationNumber</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="353" parent="336" name="gallary_id">
+    <column id="347" parent="336" name="gallary_id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="354" parent="336" name="idx">
+    <column id="348" parent="336" name="idx">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="355" parent="336" name="gallary_adress">
+    <column id="349" parent="336" name="gallary_adress">
       <Position>3</Position>
       <DataType>varchar(100)|0s</DataType>
     </column>
-    <column id="356" parent="336" name="gallary_time">
+    <column id="350" parent="336" name="gallary_time">
       <Position>4</Position>
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="357" parent="336" name="gallary_seseon">
+    <column id="351" parent="336" name="gallary_seseon">
       <Position>5</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="358" parent="336" name="gallary_name">
+    <column id="352" parent="336" name="gallary_direaction">
+      <Position>6</Position>
+      <DataType>varchar(12)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="353" parent="336" name="gallary_name">
       <Position>7</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="359" parent="336" name="gallary_image_location">
+    <column id="354" parent="336" name="gallary_image_location">
       <Position>8</Position>
       <DataType>varchar(300)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="360" parent="336" name="gallary_subscibe_count">
+    <column id="355" parent="336" name="gallary_subscibe_count">
       <Position>9</Position>
       <DataType>int(11)|0s</DataType>
     </column>
-    <column id="361" parent="336" name="gallary_direaction_x">
-      <Position>6</Position>
-      <DataType>varchar(100)|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="362" parent="336" name="gallary_direaction_y">
-      <Position>10</Position>
-      <DataType>varchar(100)|0s</DataType>
-    </column>
-    <column id="363" parent="336" name="gallary_views">
-      <Position>11</Position>
-      <DataType>int(11)|0s</DataType>
-      <DefaultExpression>0</DefaultExpression>
-    </column>
-    <index id="364" parent="336" name="idx">
+    <index id="356" parent="336" name="idx">
       <ColNames>idx</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="365" parent="336" name="PRIMARY">
+    <key id="357" parent="336" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>gallary_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="366" parent="336" name="gallary_ibfk_1">
+    <foreign-key id="358" parent="336" name="gallary_ibfk_1">
       <ColNames>idx</ColNames>
       <RefTableName>user</RefTableName>
       <RefColNames>idx</RefColNames>
     </foreign-key>
-    <column id="367" parent="337" name="next_not_cached_value">
+    <column id="359" parent="337" name="next_not_cached_value">
       <Position>1</Position>
       <DataType>bigint(21)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="368" parent="337" name="minimum_value">
+    <column id="360" parent="337" name="minimum_value">
       <Position>2</Position>
       <DataType>bigint(21)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="369" parent="337" name="maximum_value">
+    <column id="361" parent="337" name="maximum_value">
       <Position>3</Position>
       <DataType>bigint(21)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="370" parent="337" name="start_value">
+    <column id="362" parent="337" name="start_value">
       <Position>4</Position>
       <Comment>start value when sequences is created or value if RESTART is used</Comment>
       <DataType>bigint(21)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="371" parent="337" name="increment">
+    <column id="363" parent="337" name="increment">
       <Position>5</Position>
       <Comment>increment value</Comment>
       <DataType>bigint(21)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="372" parent="337" name="cache_size">
+    <column id="364" parent="337" name="cache_size">
       <Position>6</Position>
       <DataType>bigint(21) unsigned|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="373" parent="337" name="cycle_option">
+    <column id="365" parent="337" name="cycle_option">
       <Position>7</Position>
       <Comment>0 if no cycles are allowed, 1 if the sequence should begin a new cycle when maximum_value is passed</Comment>
       <DataType>tinyint(1) unsigned|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="374" parent="337" name="cycle_count">
+    <column id="366" parent="337" name="cycle_count">
       <Position>8</Position>
       <Comment>How many cycles have been done</Comment>
       <DataType>bigint(21)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="375" parent="338" name="next_not_cached_value">
+    <column id="367" parent="338" name="next_not_cached_value">
       <Position>1</Position>
       <DataType>bigint(21)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="376" parent="338" name="minimum_value">
+    <column id="368" parent="338" name="minimum_value">
       <Position>2</Position>
       <DataType>bigint(21)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="377" parent="338" name="maximum_value">
+    <column id="369" parent="338" name="maximum_value">
       <Position>3</Position>
       <DataType>bigint(21)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="378" parent="338" name="start_value">
+    <column id="370" parent="338" name="start_value">
       <Position>4</Position>
       <Comment>start value when sequences is created or value if RESTART is used</Comment>
       <DataType>bigint(21)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="379" parent="338" name="increment">
+    <column id="371" parent="338" name="increment">
       <Position>5</Position>
       <Comment>increment value</Comment>
       <DataType>bigint(21)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="380" parent="338" name="cache_size">
+    <column id="372" parent="338" name="cache_size">
       <Position>6</Position>
       <DataType>bigint(21) unsigned|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="381" parent="338" name="cycle_option">
+    <column id="373" parent="338" name="cycle_option">
       <Position>7</Position>
       <Comment>0 if no cycles are allowed, 1 if the sequence should begin a new cycle when maximum_value is passed</Comment>
       <DataType>tinyint(1) unsigned|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="382" parent="338" name="cycle_count">
+    <column id="374" parent="338" name="cycle_count">
       <Position>8</Position>
       <Comment>How many cycles have been done</Comment>
       <DataType>bigint(21)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="383" parent="339" name="idx">
+    <column id="375" parent="339" name="idx">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="384" parent="339" name="profile_Image_location">
+    <column id="376" parent="339" name="profile_Image_location">
       <Position>2</Position>
       <DataType>varchar(300)|0s</DataType>
     </column>
-    <column id="385" parent="339" name="email">
+    <column id="377" parent="339" name="email">
       <Position>3</Position>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="386" parent="339" name="name">
+    <column id="378" parent="339" name="name">
       <Position>4</Position>
       <DataType>varchar(12)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="387" parent="339" name="nick_name">
+    <column id="379" parent="339" name="nick_name">
       <Position>5</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="388" parent="339" name="phone_number">
+    <column id="380" parent="339" name="phone_number">
       <Position>6</Position>
       <DataType>char(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="389" parent="339" name="sex">
+    <column id="381" parent="339" name="sex">
       <Position>7</Position>
       <DataType>varchar(3)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="390" parent="339" name="user_year">
+    <column id="382" parent="339" name="user_year">
       <Position>8</Position>
       <DataType>char(4)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="391" parent="339" name="user_month">
+    <column id="383" parent="339" name="user_month">
       <Position>9</Position>
       <DataType>char(2)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="392" parent="339" name="user_day">
+    <column id="384" parent="339" name="user_day">
       <Position>10</Position>
       <DataType>char(2)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="393" parent="339" name="password">
+    <column id="385" parent="339" name="password">
       <Position>11</Position>
       <DataType>varchar(200)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="394" parent="339" name="type">
+    <column id="386" parent="339" name="type">
       <Position>12</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="395" parent="339" name="gall_count">
+    <column id="387" parent="339" name="gall_count">
       <Position>13</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="396" parent="339" name="user_subscribe_count">
+    <column id="388" parent="339" name="user_subscribe_count">
       <Position>14</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="397" parent="339" name="auth_key">
+    <column id="389" parent="339" name="auth_key">
       <Position>15</Position>
       <DataType>int(1)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
     </column>
-    <key id="398" parent="339" name="PRIMARY">
+    <key id="390" parent="339" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idx</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="399" parent="340" name="idx">
-      <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="400" parent="340" name="pay">
-      <Position>2</Position>
-      <DataType>int(8)|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="401" parent="340" name="pay_card">
-      <Position>3</Position>
-      <DataType>varchar(20)|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="402" parent="340" name="time">
-      <Position>4</Position>
-      <DataType>datetime|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="403" parent="340" name="mid">
-      <Position>5</Position>
-      <DataType>varchar(30)|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <index id="404" parent="340" name="payment_history_FK">
-      <ColNames>idx</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="405" parent="340" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>mid</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="406" parent="340" name="payment_history_FK">
-      <ColNames>idx</ColNames>
-      <RefTableName>user</RefTableName>
-      <RefColNames>idx</RefColNames>
-    </foreign-key>
-    <column id="407" parent="341" name="idx">
-      <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="408" parent="341" name="order_number">
-      <Position>2</Position>
-      <DataType>varchar(30)|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="409" parent="341" name="date">
-      <Position>3</Position>
-      <DataType>datetime|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="410" parent="341" name="gallary_id">
-      <Position>4</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <index id="411" parent="341" name="gall_history_FK">
-      <ColNames>idx</ColNames>
-      <Type>btree</Type>
-    </index>
-    <index id="412" parent="341" name="order_FK">
-      <ColNames>gallary_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="413" parent="341" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>order_number</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="414" parent="341" name="gall_history_FK">
-      <ColNames>idx</ColNames>
-      <RefTableName>user</RefTableName>
-      <RefColNames>idx</RefColNames>
-    </foreign-key>
-    <foreign-key id="415" parent="341" name="order_FK">
-      <ColNames>gallary_id</ColNames>
-      <RefTableName>gallary</RefTableName>
-      <RefColNames>gallary_id</RefColNames>
-    </foreign-key>
-    <column id="416" parent="342" name="idx">
-      <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="417" parent="342" name="subscribe_idx">
-      <Position>2</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <index id="418" parent="342" name="idx">
-      <ColNames>idx</ColNames>
-      <Type>btree</Type>
-    </index>
-    <foreign-key id="419" parent="342" name="subscribe_user_ibfk_1">
-      <ColNames>idx</ColNames>
-      <RefTableName>user</RefTableName>
-      <RefColNames>idx</RefColNames>
-    </foreign-key>
-    <column id="420" parent="343" name="idx">
-      <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="421" parent="343" name="total_point">
-      <Position>2</Position>
-      <DataType>int(10)|0s</DataType>
-      <NotNull>1</NotNull>
-      <DefaultExpression>0</DefaultExpression>
-    </column>
-    <column id="422" parent="343" name="Sell_point">
-      <Position>3</Position>
-      <DataType>int(10)|0s</DataType>
-      <NotNull>1</NotNull>
-      <DefaultExpression>0</DefaultExpression>
-    </column>
-    <column id="423" parent="343" name="buy_point">
-      <Position>4</Position>
-      <DataType>int(10)|0s</DataType>
-      <NotNull>1</NotNull>
-      <DefaultExpression>0</DefaultExpression>
-    </column>
-    <column id="424" parent="343" name="free_point">
-      <Position>5</Position>
-      <DataType>int(10)|0s</DataType>
-      <NotNull>1</NotNull>
-      <DefaultExpression>0</DefaultExpression>
-    </column>
-    <column id="425" parent="343" name="profit_point">
-      <Position>6</Position>
-      <DataType>int(10)|0s</DataType>
-      <NotNull>1</NotNull>
-      <DefaultExpression>0</DefaultExpression>
-    </column>
-    <key id="426" parent="343" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>idx</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="427" parent="343" name="user_point_FK">
-      <ColNames>idx</ColNames>
-      <RefTableName>user</RefTableName>
-      <RefColNames>idx</RefColNames>
-    </foreign-key>
-    <column id="428" parent="344" name="gallary_id">
-      <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="429" parent="344" name="price">
-      <Position>2</Position>
-      <DataType>int(10)|0s</DataType>
-    </column>
-    <key id="430" parent="344" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>gallary_id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="431" parent="344" name="gallary_price_FK">
-      <ColNames>gallary_id</ColNames>
-      <RefTableName>gallary</RefTableName>
-      <RefColNames>gallary_id</RefColNames>
-    </foreign-key>
-    <column id="432" parent="345" name="idx">
-      <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="433" parent="345" name="gallery_id">
-      <Position>2</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <index id="434" parent="345" name="gallery_id">
-      <ColNames>gallery_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <index id="435" parent="345" name="idx">
-      <ColNames>idx</ColNames>
-      <Type>btree</Type>
-    </index>
-    <foreign-key id="436" parent="345" name="subscribe_gallery_ibfk_1">
-      <ColNames>idx</ColNames>
-      <RefTableName>user</RefTableName>
-      <RefColNames>idx</RefColNames>
-    </foreign-key>
-    <foreign-key id="437" parent="345" name="subscribe_gallery_ibfk_2">
-      <ColNames>gallery_id</ColNames>
-      <RefTableName>gallary</RefTableName>
-      <RefColNames>gallary_id</RefColNames>
-    </foreign-key>
   </database-model>
 </dataSource>
