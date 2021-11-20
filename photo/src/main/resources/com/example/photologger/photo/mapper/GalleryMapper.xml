@@ -18,6 +18,29 @@
     <result property="galleryViews" column="gallery_views"/>
   </resultMap>
 
+  <resultMap id="UserInfo" type="com.example.photologger.photo.domain.User">
+    <result property="idx" column="idx"/>
+    <result property="profileImageLocation" column="profile_Image_location"/>
+    <result property="email" column="email"/>
+    <result property="name" column="name"/>
+    <result property="nickName" column="nick_name"/>
+    <result property="phoneNumber" column="phone_number"/>
+    <result property="sex" column="sex"/>
+    <result property="userYear" column="user_year"/>
+    <result property="userMonth" column="user_month"/>
+    <result property="userDay" column="user_day"/>
+    <result property="password" column="password"/>
+    <result property="type" column="type"/>
+    <result property="gallCount" column="gall_count"/>
+    <result property="userSubscribeCount" column="user_subscribe_count"/>
+    <result property="authKey" column="auth_key"/>
+  </resultMap>
+
+  <resultMap id="GalleryPriceInfo" type="com.example.photologger.photo.domain.GalleryPrice">
+    <result property="price" column="price"/>
+    <result property="galleryId" column="gallery_id"/>
+  </resultMap>
+
   <insert id="galleryinfosave" parameterType="com.example.photologger.photo.domain.Gallery">
     INSERT INTO gallery (
       gallery_id,
@@ -30,7 +53,8 @@
       gallery_image_location,
       gallery_subscibe_count,
       gallery_direaction_y,
-      gallery_views
+      gallery_views,
+      gallery_buy_count
     )
     VALUES (
              #{galleryId},
@@ -43,9 +67,16 @@
              #{galleryImageLocation},
              #{gallerySubscribeCount},
              #{galleryDireactionY},
-             #{galleryViews}
+             #{galleryViews},
+             #{galleryBuyCount}
              )
   </insert>
+  
+  <resultMap id="JoinGalleryUserLU" type="com.example.photologger.photo.domain.JoinGalleryUserLU">
+    <collection property="gallery" resultMap="GalleryInfo"/>
+    <collection property="user" resultMap="UserInfo"/>
+    <collection property="galleryPrice" resultMap="GalleryPriceInfo"/>
+  </resultMap>
 
   <update id="updateProfileLocation">
     UPDATE user
@@ -57,13 +88,25 @@
 
   <select id="galleryLookUp" resultMap="GalleryInfo" >
     SELECT *
-    FROM gallery
+    FROM gallery g
     WHERE gallery_id = #{galleryId}
+  </select>
+
+  <select id="galleryAndUserLU" resultMap="JoinGalleryUserLU">
+    SELECT *
+    FROM gallery g, user u, gallary_price gp
+    WHERE g.gallery_id = #{galleryId} AND u.idx = #{idx} AND gp.gallery_id = #{galleryId}
   </select>
 
   <update id= "galleryViewCount">
     UPDATE gallery
     SET gallery_views = gallery_views + 1
+    WHERE gallery_id = #{glleryId}
+  </update>
+
+  <update id= "galleryBuyCount">
+    UPDATE gallery
+    SET gallery_buy_count = gallery_buy_count + 1
     WHERE gallery_id = #{glleryId}
   </update>
 

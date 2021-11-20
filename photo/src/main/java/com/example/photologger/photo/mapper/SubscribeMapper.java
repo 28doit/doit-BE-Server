@@ -14,7 +14,15 @@ public interface SubscribeMapper {
 
     List<Subscribe> subscirbeGalleryCursorPagination(
         @Param("cursor") Integer cursor,
+        @Param("idx") Integer idx,
         @Param("take") Integer take
     );
+
+    List<Subscribe> subscirbeUserCursorPagination(
+        @Param("cursor") Integer cursor,
+        @Param("idx") Integer idx,
+        @Param("take") Integer take
+    );
+
 
 }

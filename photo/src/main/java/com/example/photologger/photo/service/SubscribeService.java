@@ -28,8 +28,12 @@ public class SubscribeService {
     }
 
     /*구독한 사진 페이지 네이션*/
-    public List<Subscribe> getSubscribeGallery(Integer cursor) {
-        return subscribeMapper.subscirbeGalleryCursorPagination(cursor, Constants.SUBSCRIVE_TAKE);
+    public List<Subscribe> getSubscribeGallery(Integer cursor, Integer idx) {
+        return subscribeMapper.subscirbeGalleryCursorPagination(cursor, idx, Constants.SUBSCRIVE_TAKE);
     }
 
+    /*구독한 사진 페이지 네이션*/
+    public List<Subscribe> getSubscribeUser(Integer cursor, Integer idx) {
+        return subscribeMapper.subscirbeUserCursorPagination(cursor, idx, Constants.SUBSCRIVE_TAKE);
+    }
 }

@@ -1,6 +1,7 @@
 package com.example.photologger.photo.service;
 
 import com.example.photologger.photo.domain.Gallery;
+import com.example.photologger.photo.domain.JoinGalleryUserLU;
 import com.example.photologger.photo.domain.User;
 import com.example.photologger.photo.mapper.GalleryMapper;
 import com.example.photologger.photo.mapper.UserMapper;
@@ -25,7 +26,7 @@ public class GalleryService {
     }
 
 
-    //갤러리 이미지 저장
+    /* Gallery Image Save */
     public void galleryInfoeSave(Gallery gallery, MultipartFile multipartFile)
         throws IOException {
         if (multipartFile != null) {
@@ -37,7 +38,7 @@ public class GalleryService {
         }
     }
 
-    // 프로필 이미지 저장
+    /* Profile images save */
     public String profileImagejoin(MultipartFile multipartFile, User user)
         throws IOException {
         if (multipartFile != null) {
@@ -49,7 +50,7 @@ public class GalleryService {
         return "fail";
     }
 
-    // 프로필 이미지 저장
+    /* Profile images save */
     public void profileImageSave(MultipartFile multipartFile, User user)
         throws IOException {
         if (multipartFile != null) {
@@ -61,16 +62,22 @@ public class GalleryService {
         }
     }
 
-    //갤러리 조회
+    /* Gallery Info */
     public Gallery galleryLookUp(Integer galleryId) {
         galleryMapper.galleryViewCount(galleryUser(galleryId));
         return galleryMapper.galleryLookUp(galleryId);
     }
 
-    //갤러리 아이디를 이용해 겔러리 정보 불러오기
+    /* Gallery And User Indo */
+    public JoinGalleryUserLU galleryAndUserLU(Integer galleryId, Integer idx){
+        return galleryMapper.galleryAndUserLU(galleryId, idx);
+    }
+
+    /* Use GalleryId bring Userinfo*/
     Integer galleryUser(Integer gallery){
         Gallery galleryInfo = galleryMapper.galleryLookUp(gallery);
         Integer galleryId = galleryInfo.getGalleryId();
         return galleryId;
     }
+
 }

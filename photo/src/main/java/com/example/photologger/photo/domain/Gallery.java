@@ -42,4 +42,8 @@ public class Gallery {
 
     @ApiModelProperty(example = "사진 조회수")
     private int galleryViews;
+
+    @ApiModelProperty(example = "사진 구매 수")
+    private int galleryBuyCount;
+
 }

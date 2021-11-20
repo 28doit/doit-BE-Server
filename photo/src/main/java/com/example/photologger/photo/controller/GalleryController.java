@@ -1,6 +1,7 @@
 package com.example.photologger.photo.controller;
 
 import com.example.photologger.photo.domain.Gallery;
+import com.example.photologger.photo.domain.JoinGalleryUserLU;
 import com.example.photologger.photo.service.GalleryService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,13 +23,13 @@ public class GalleryController {
         this.galleryService = galleryService;
     }
 
-    /*갤러리 정보 조회*/
+    /* Gallery Info LookUp */
     @GetMapping(value = "/{gallery_id}")
     @ResponseBody
-    public Gallery lookUp(
+    public JoinGalleryUserLU lookUp(
         @PathVariable(value = "gallery_id") Integer galleryId
     ) throws Exception{
-        Gallery gallary = galleryService.galleryLookUp(galleryId);
-        return gallary;
+        Gallery gallery1 = galleryService.galleryLookUp(galleryId);
+        return galleryService.galleryAndUserLU(gallery1.getGalleryId(), gallery1.getIdx());
     }
 }

@@ -5,44 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6f954b46-ba7f-4eb5-998f-d41f954219ab" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/GalleryController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/SearchController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/SubscribeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/ResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/Subscribe.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/mapper/GalleryMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/mapper/SearchMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/mapper/SubscribeMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/GalleryService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/SearchService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/SubscribeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/GalleryMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/SearchMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/SubscribeMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/00b6e4d6-edf0-493a-9249-804793f8ef3e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/00b6e4d6-edf0-493a-9249-804793f8ef3e.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/photo/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/constants/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/AccountsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/AccountsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/GallaryController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/PaginationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/PaginationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/UploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/UploadController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/GalleryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/GalleryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/ItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/SubscribeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/SubscribeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/Gallery.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/Gallery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/StatusCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/StatusCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/mapper/GallaryMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/mapper/PaginationMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/mapper/PaginationMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/EmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/EmailService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/GallaryService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/PaginationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/PaginationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/UploaderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/UploaderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/resources/aws.yml" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/resources/aws.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/AccountsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/AccountsMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/GallaryMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/PaginationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/PaginationMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/mapper/GalleryMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/mapper/GalleryMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/mapper/SubscribeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/mapper/SubscribeMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/GalleryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/GalleryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/PaymentSerivce.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/PaymentSerivce.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/SubscribeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/SubscribeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/GalleryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/GalleryMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/SubscribeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/SubscribeMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,8 +52,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
