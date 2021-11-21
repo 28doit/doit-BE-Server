@@ -36,7 +36,7 @@ public class AccountsController implements AccountControllerDocs {
         this.emailService = emailService;
     }
 
-    @PostMapping(value = "", consumes = MediaType.ALL_VALUE)
+    @PostMapping(value = "")
     public ResponseEntity JoIn(@RequestBody User user) {
 //        //비밀번호 암호화(미사용코드) 프론트쪽에서 암호화예정.
 //        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();

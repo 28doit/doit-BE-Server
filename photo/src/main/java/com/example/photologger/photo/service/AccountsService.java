@@ -3,12 +3,16 @@ package com.example.photologger.photo.service;
 import com.example.photologger.photo.domain.ReturnCheck;
 import com.example.photologger.photo.domain.ReturnUser;
 import com.example.photologger.photo.domain.User;
+import com.example.photologger.photo.domain.Withdrawal;
 import com.example.photologger.photo.jwt.JwtTokenProvider;
 import com.example.photologger.photo.mapper.AccountsMapper;
 import com.example.photologger.photo.mapper.PaymentMapper;
 import com.example.photologger.photo.mapper.UserMapper;
 import io.jsonwebtoken.ExpiredJwtException;
+
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,6 +65,7 @@ public class AccountsService {
                 returnUser.setIsValue(1);
                 log.info(returnUser.getToken());
                 returnUser.setEmail(user.getEmail());
+                returnUser.setIdx(user.getIdx());
                 return returnUser;
             }
             else
@@ -108,6 +113,8 @@ public class AccountsService {
     public HashMap token_Expiration(String token,String email)
     {
         HashMap<String,Boolean> TrueAndFlase = new HashMap();
+        List<Withdrawal> withdrawal = new ArrayList<>();
+        int cumulativeSales=0;
         try {
 
             if (jwtTokenProvider.getUserPk(token).equals(email))
@@ -128,6 +135,17 @@ public class AccountsService {
                     tmp.put("Sex",user.getSex());
                     tmp.put("PhoneNumber",user.getPhoneNumber());
                     tmp.put("Point",paymentMapper.userPoint(user.getIdx()));
+                    tmp.put("NicName",user.getNickName());
+                    withdrawal = paymentMapper.moneyWithdrawn(user.getIdx());
+                    for(int i=0;i<withdrawal.size();i++)
+                    {
+                        cumulativeSales = cumulativeSales + withdrawal.get(i).getPoint();
+                    }
+                    cumulativeSales = cumulativeSales + paymentMapper.userPoint(user.getIdx()).getProfitPoint();
+                    tmp.put("CumulativeSales",cumulativeSales);
+                   // 판매중콘텐츠는 : 사진만
+                  //  누적판매수 : 사진전부더해서
+                  //      나를구독하고있는사람
                     log.info("현재 사용가능한 토큰입니다. "+ "토큰 만료시간 : {} ");//수정하세요
                     return tmp;
                 }

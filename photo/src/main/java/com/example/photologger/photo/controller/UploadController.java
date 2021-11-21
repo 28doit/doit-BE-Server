@@ -1,6 +1,6 @@
 package com.example.photologger.photo.controller;
 
-import com.example.photologger.photo.domain.Gallary;
+import com.example.photologger.photo.domain.Gallery;
 import com.example.photologger.photo.service.GallaryService;
 import java.io.IOException;
 import lombok.extern.slf4j.Slf4j;
@@ -16,16 +16,16 @@ import org.springframework.web.multipart.MultipartFile;
 @RequestMapping("/api/uploader")
 public class UploadController {
 
-    @Autowired
-    private GallaryService gallaryService;
-
-    @PostMapping(value = "/images")
-    public String upload(
-        Gallary gallary,
-        @RequestParam(value = "images") MultipartFile multipartFile
-    ) throws IOException {
-        gallaryService.gallaryInfoeSave(gallary ,multipartFile);
-        return "ok";
-    }
+//    @Autowired
+//    private GallaryService gallaryService;
+//
+//    @PostMapping(value = "/images")
+//    public String upload(
+//        Gallery gallary,
+//        @RequestParam(value = "images") MultipartFile multipartFile
+//    ) throws IOException {
+//        gallaryService.gallaryInfoeSave(gallary ,multipartFile);
+//        return "ok";
+//    }
 
 }

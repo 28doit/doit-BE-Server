@@ -1,7 +1,7 @@
 package com.example.photologger.photo.controller;
 
 
-import com.example.photologger.photo.domain.Gallary;
+import com.example.photologger.photo.domain.Gallery;
 //import com.example.photologger.photo.domain.ResponseDto;
 import com.example.photologger.photo.service.PaginationService;
 import lombok.extern.slf4j.Slf4j;

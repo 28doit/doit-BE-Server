@@ -1,6 +1,5 @@
 package com.example.photologger.photo.service;
 
-import com.example.photologger.photo.domain.Gallary;
 import com.example.photologger.photo.mapper.GallaryMapper;
 import java.io.IOException;
 import lombok.extern.slf4j.Slf4j;
@@ -18,13 +17,13 @@ public class GallaryService {
     @Autowired
     GallaryMapper gallaryMapper;
 
-    public void gallaryInfoeSave(Gallary gallary, MultipartFile multipartFile) throws IOException {
-        if (multipartFile != null) {
-
-            gallary.setGallaryImageLocation(uploaderService.upload(multipartFile));
-            gallary.setGallaryName(multipartFile.getOriginalFilename());
-            gallaryMapper.gallaryinfosave(gallary);
-            log.info(gallary.toString());
-        }
-    }
+//    public void gallaryInfoeSave(Gallary gallary, MultipartFile multipartFile) throws IOException {
+//        if (multipartFile != null) {
+//
+//            gallary.setGallaryImageLocation(uploaderService.upload(multipartFile));
+//            gallary.setGallaryName(multipartFile.getOriginalFilename());
+//            gallaryMapper.gallaryinfosave(gallary);
+//            log.info(gallary.toString());
+//        }
+//    }
 }

@@ -116,4 +116,9 @@
         AND idx = #{idx}
         ORDER BY date ASC
     </select>
+    <select id="moneyWithdrawn" resultType="com.example.photologger.photo.domain.Withdrawal">
+        SELECT *
+        FROM withdrawal_history
+        WHERE idx = #{idx}
+    </select>
 </mapper>

@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.example.photologger.photo.mapper.PaginationMapper">
-  <resultMap type="com.example.photologger.photo.domain.Gallary"
+  <resultMap type="com.example.photologger.photo.domain.Gallery"
     id="GalleryInfo" >
     <result property="idx" column="idx"/>
     <result property="gallaryTime" column="gallary_time"/>
@@ -20,7 +20,7 @@
     FROM PHOTO.gallary g
   </select>
 
-  <select id = "indexPagination" resultType="com.example.photologger.photo.domain.Gallary">
+  <select id = "indexPagination" resultType="com.example.photologger.photo.domain.Gallery">
     SELECT *
     FROM PHOTO.gallary
     ORDER BY sequence DESC

@@ -15,4 +15,7 @@ public class ReturnUser {
 
     @ApiModelProperty(example = "0 1 2 구분")
     private int isValue;
+
+    @ApiModelProperty(example = "유저 idx")
+    private int idx;
 }
