@@ -1,9 +1,6 @@
 package com.example.photologger.photo.service;
 
-import com.example.photologger.photo.domain.ReturnCheck;
-import com.example.photologger.photo.domain.ReturnUser;
-import com.example.photologger.photo.domain.User;
-import com.example.photologger.photo.domain.Withdrawal;
+import com.example.photologger.photo.domain.*;
 import com.example.photologger.photo.jwt.JwtTokenProvider;
 import com.example.photologger.photo.mapper.AccountsMapper;
 import com.example.photologger.photo.mapper.PaymentMapper;
@@ -114,6 +111,8 @@ public class AccountsService {
     {
         HashMap<String,Boolean> TrueAndFlase = new HashMap();
         List<Withdrawal> withdrawal = new ArrayList<>();
+        int size=0;
+        List<ReturnPhotosForSale> returnPhotosForSales = new ArrayList<>();
         int cumulativeSales=0;
         try {
 
@@ -135,7 +134,16 @@ public class AccountsService {
                     tmp.put("Sex",user.getSex());
                     tmp.put("PhoneNumber",user.getPhoneNumber());
                     tmp.put("Point",paymentMapper.userPoint(user.getIdx()));
-                    tmp.put("NicName",user.getNickName());
+                    tmp.put("NickName",user.getNickName());
+                    tmp.put("SubScribeUser",userMapper.subScribe(user.getIdx()));
+                    tmp.put("ProfileImagelocation",user.getProfileImageLocation());
+                    returnPhotosForSales = userMapper.photosForSale(user.getIdx());
+                    for(int i =0; i< returnPhotosForSales.size();i++)
+                    {
+                        size= size+paymentMapper.totalSales(returnPhotosForSales.get(i).getGalleryId()).size();
+                    }
+                    tmp.put("totalSales",size);
+                    tmp.put("PhotosForSale",returnPhotosForSales);
                     withdrawal = paymentMapper.moneyWithdrawn(user.getIdx());
                     for(int i=0;i<withdrawal.size();i++)
                     {
@@ -145,9 +153,10 @@ public class AccountsService {
                     tmp.put("CumulativeSales",cumulativeSales);
                    // 판매중콘텐츠는 : 사진만
                   //  누적판매수 : 사진전부더해서
-                  //      나를구독하고있는사람
+                  //      나를구독하고있는사람 반틈완료.
                     log.info("현재 사용가능한 토큰입니다. "+ "토큰 만료시간 : {} ");//수정하세요
                     return tmp;
+
                 }
                 //사실상 동작안하는부분(0.0몇초차이로 할수도)
                 TrueAndFlase.put("Token", jwtTokenProvider.validateToken(token));

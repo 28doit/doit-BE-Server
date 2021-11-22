@@ -30,4 +30,6 @@ public interface PaymentMapper {
     void withdrawalHistoryInsert(Withdrawal withdrawal);
     List<Withdrawal> withdrawalHistory(Date start, Date end,int idx);
     List<Withdrawal> moneyWithdrawn(int idx);
+    List<Order> totalSales(int galleryId);
+
 }
