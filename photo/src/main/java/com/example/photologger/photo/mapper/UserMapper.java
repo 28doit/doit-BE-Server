@@ -7,16 +7,18 @@ import org.apache.ibatis.annotations.Param;
 @Mapper
 public interface UserMapper {
 
-    //특정 회원 정보 불러오기
+    /* Show User One */
     User findOne(@Param("idx") Integer idx);
 
-    //비밀번호 변경
+    /* Change Password */
     void updatePassword(User user);
 
-    //닉네임 변경
+    /* Change NickName */
     void updateName(User user);
 
+    /* Find Id*/
+    void findId(String name, String phoneNumber);
 
-    //비밀번호 찾기
+    /* Find Password */
     User findPwd(User user);
 }

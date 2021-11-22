@@ -10,26 +10,28 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserService {
 
-
     @Autowired
     UserMapper userMapper;
 
-    //맴버 조회
+    /* Show User One */
     public User findOne(Integer idx) {
         return userMapper.findOne(idx);
     }
 
-    //비밀번호 변경
+    /* Change Password */
     public void UpdatePassword(User user) {
         userMapper.updatePassword(user);
     }
 
-    //닉네임 변경
+    /* Change NickName */
     public void UpdateName(User user) {
         userMapper.updateName(user);
     }
 
+    /* Find Id*/
+    public void findId(String name, String phoneNumber){ userMapper.findId(name, phoneNumber); }
 
+    /* Find Password */
     public User findpwd(User user) {
         return userMapper.findPwd(user);
     }

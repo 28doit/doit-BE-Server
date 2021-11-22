@@ -39,9 +39,10 @@ public class UserController {
     }
 
     // 아이디 찾기
-    @GetMapping("/findId")
-    public String findUserId(@RequestBody User user) {
-        return "ok";
+    @GetMapping("/findid")
+    public void findUserId(@RequestBody String name, String phoneNumber) {
+        userService.findId(name, phoneNumber);
+
     }
 
     // 비밀번호 찾기

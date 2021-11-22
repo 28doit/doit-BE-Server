@@ -44,7 +44,7 @@ public class AccountsController {
         this.galleryService = galleryService;
     }
 
-    @PostMapping(value = "", consumes = MediaType.ALL_VALUE)
+    @PostMapping(value = "")
     public ResponseEntity JoIn(
         @RequestBody User user,
         @RequestParam(value = "images") MultipartFile multipartFile) throws IOException {
