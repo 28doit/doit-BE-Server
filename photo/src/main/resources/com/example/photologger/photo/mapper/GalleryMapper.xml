@@ -16,6 +16,7 @@
     <result property="gallerySubscribeCount" column="gallery_subscibe_count"/>
     <result property="galleryDireactionY" column="gallery_direaction_y"/>
     <result property="galleryViews" column="gallery_views"/>
+    <result property="galleryBuyCount" column="gallery_buy_count"/>
   </resultMap>
 
   <resultMap id="UserInfo" type="com.example.photologger.photo.domain.User">

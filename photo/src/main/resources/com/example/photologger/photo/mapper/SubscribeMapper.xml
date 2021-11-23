@@ -2,20 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.photologger.photo.mapper.SubscribeMapper">
-  <resultMap type="com.example.photologger.photo.domain.Gallery"
-    id="GalleryInfo">
-    <result property="galleryId" column="gallery_id"/>
-    <result property="idx" column="idx"/>
-    <result property="galleryAdress" column="gallery_adress"/>
-    <result property="galleryTime" column="gallery_time"/>
-    <result property="gallerySeseon" column="gallery_seseon"/>
-    <result property="galleryName" column="gallery_name"/>
-    <result property="galleryDireactionX" column="gallery_direaction_x"/>
-    <result property="galleryImageLocation" column="gallery_image_location"/>
-    <result property="gallerySubscribeCount" column="gallery_subscibe_count"/>
-    <result property="galleryDireactionY" column="gallery_direaction_y"/>
-    <result property="galleryViews" column="gallery_views"/>
-  </resultMap>
 
   <resultMap id="SubscribeGalleryInfo" type="com.example.photologger.photo.domain.Subscribe">
     <result property="idx" column="idx"/>
@@ -52,6 +38,7 @@
     SELECT idx, subscribe_idx
     FROM subscribe_user
     WHERE idx = #{idx}
+
     ORDER BY subscribe_idx
   </select>
 
