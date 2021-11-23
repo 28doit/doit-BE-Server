@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.photologger.photo.mapper.GalleryMapper">
+
+  <resultMap type="com.example.photologger.photo.domain.Gallery"
+    id="GalleryInfo" >
+    <result property="galleryId" column="gallery_id"/>
+    <result property="idx" column="idx"/>
+    <result property="galleryAdress" column="gallery_adress"/>
+    <result property="galleryTime" column="gallery_time"/>
+    <result property="gallerySeseon" column="gallery_seseon"/>
+    <result property="galleryName" column="gallery_name"/>
+    <result property="galleryDireactionX" column="gallery_direaction_x"/>
+    <result property="galleryImageLocation" column="gallery_image_location"/>
+    <result property="gallerySubscribeCount" column="gallery_subscibe_count"/>
+    <result property="galleryDireactionY" column="gallery_direaction_y"/>
+    <result property="galleryViews" column="gallery_views"/>
+  </resultMap>
+
+  <resultMap id="UserInfo" type="com.example.photologger.photo.domain.User">
+    <result property="idx" column="idx"/>
+    <result property="profileImageLocation" column="profile_Image_location"/>
+    <result property="email" column="email"/>
+    <result property="name" column="name"/>
+    <result property="nickName" column="nick_name"/>
+    <result property="phoneNumber" column="phone_number"/>
+    <result property="sex" column="sex"/>
+    <result property="userYear" column="user_year"/>
+    <result property="userMonth" column="user_month"/>
+    <result property="userDay" column="user_day"/>
+    <result property="password" column="password"/>
+    <result property="type" column="type"/>
+    <result property="gallCount" column="gall_count"/>
+    <result property="userSubscribeCount" column="user_subscribe_count"/>
+    <result property="authKey" column="auth_key"/>
+  </resultMap>
+
+  <resultMap id="GalleryPriceInfo" type="com.example.photologger.photo.domain.GalleryPrice">
+    <result property="price" column="price"/>
+    <result property="galleryId" column="gallery_id"/>
+  </resultMap>
+
+  <insert id="galleryinfosave" parameterType="com.example.photologger.photo.domain.Gallery">
+    INSERT INTO gallery (
+      gallery_id,
+      idx,
+      gallery_adress,
+      gallery_time,
+      gallery_seseon,
+      gallery_direaction_x,
+      gallery_name,
+      gallery_image_location,
+      gallery_subscibe_count,
+      gallery_direaction_y,
+      gallery_views,
+      gallery_buy_count
+    )
+    VALUES (
+             #{galleryId},
+             #{idx},
+             #{galleryAdress},
+             #{galleryTime},
+             #{gallerySeseon},
+             #{galleryDireactionX},
+             #{galleryName},
+             #{galleryImageLocation},
+             #{gallerySubscribeCount},
+             #{galleryDireactionY},
+             #{galleryViews},
+             #{galleryBuyCount}
+             )
+  </insert>
+  
+  <resultMap id="JoinGalleryUserLU" type="com.example.photologger.photo.domain.JoinGalleryUserLU">
+    <collection property="gallery" resultMap="GalleryInfo"/>
+    <collection property="user" resultMap="UserInfo"/>
+    <collection property="galleryPrice" resultMap="GalleryPriceInfo"/>
+  </resultMap>
+
+  <update id="updateProfileLocation">
+    UPDATE user
+    SET profile_Image_location = #{profileImageLocation},
+        nick_name = #{nickName},
+        password = #{password}
+    WHERE idx  = #{idx}
+  </update>
+
+  <select id="galleryLookUp" resultMap="GalleryInfo" >
+    SELECT *
+    FROM gallery g
+    WHERE gallery_id = #{galleryId}
+  </select>
+
+  <select id="galleryAndUserLU" resultMap="JoinGalleryUserLU">
+    SELECT *
+    FROM gallery g, user u, gallary_price gp
+    WHERE g.gallery_id = #{galleryId} AND u.idx = #{idx} AND gp.gallery_id = #{galleryId}
+  </select>
+
+  <update id= "galleryViewCount">
+    UPDATE gallery
+    SET gallery_views = gallery_views + 1
+    WHERE gallery_id = #{glleryId}
+  </update>
+
+  <update id= "galleryBuyCount">
+    UPDATE gallery
+    SET gallery_buy_count = gallery_buy_count + 1
+    WHERE gallery_id = #{glleryId}
+  </update>
+
+</mapper>

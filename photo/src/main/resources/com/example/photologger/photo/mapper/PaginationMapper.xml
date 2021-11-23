@@ -2,38 +2,25 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.example.photologger.photo.mapper.PaginationMapper">
-  <resultMap type="com.example.photologger.photo.domain.Gallery"
-    id="GalleryInfo" >
-    <result property="idx" column="idx"/>
-    <result property="gallaryTime" column="gallary_time"/>
-    <result property="gallaryId" column="gallary_id"/>
-    <result property="gallarySubscribeCount" column="gallary_subscibe_count"/>
-    <result property="gallarySeseon" column="gallary_seseon"/>
-    <result property="gallaryName" column="gallary_name"/>
-    <result property="gallaryImageLocation" column="gallary_image_location"/>
-    <result property="gallaryDireaction" column="gallary_direaction"/>
-    <result property="gallaryAdress" column="gallary_adress"/>
-  </resultMap>
-
   <select id="gallerycount" resultType="int">
     SELECT COUNT(*)
-    FROM PHOTO.gallary g
+    FROM PHOTO.gallery g
   </select>
 
   <select id = "indexPagination" resultType="com.example.photologger.photo.domain.Gallery">
     SELECT *
-    FROM PHOTO.gallary
+    FROM PHOTO.gallery
     ORDER BY sequence DESC
       LIMIT ${skip}, ${take}
     ;
   </select>
 
-  <select id = "cursorPagination" resultMap="GalleryInfo">
+  <select id = "cursorPagination" resultType="com.example.photologger.photo.domain.Gallery">
         <![CDATA[
     SELECT *
-    FROM gallary
-    WHERE gallary_id < ${cursor}
-    ORDER BY gallary_id DESC
+    FROM gallery
+    WHERE gallery_id < ${cursor}
+    ORDER BY gallery_id DESC
       LIMIT ${take}
     ;
     ]]>

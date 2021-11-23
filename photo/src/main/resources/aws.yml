@@ -1,0 +1,19 @@
+cloud:
+  aws:
+    credentials:
+      access-key: AKIA3IW2YOIUGFPO6FNM
+      instance-profile: false
+      secret-key: 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
+    region:
+      auto: false
+      static: ap-northeast-2
+    s3:
+      bucket: photo-album-paldu
+    stack:
+      auto: false
+logging:
+  level:
+    com:
+      amazonaws:
+        util:
+          EC2MetadataUtils: error

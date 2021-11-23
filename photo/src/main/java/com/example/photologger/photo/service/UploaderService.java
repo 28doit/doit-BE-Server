@@ -7,7 +7,7 @@ import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.transfer.TransferManager;
 import com.amazonaws.services.s3.transfer.Upload;
-import com.example.photologger.photo.mapper.GallaryMapper;
+import com.example.photologger.photo.mapper.GalleryMapper;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -28,7 +28,7 @@ import org.springframework.web.multipart.MultipartFile;
 public class UploaderService {
 
     @Autowired
-    GallaryMapper gallaryMapper;
+    GalleryMapper galleryMapper;
 
     @Autowired
     private final AmazonS3Client amazonS3Client;
@@ -47,24 +47,28 @@ public class UploaderService {
     @Value("${cloud.aws.s3.bucket.url}")
     private String defaultUrl; //버킷 주소
 
-    public String upload(MultipartFile multipartFile) throws IOException {
+    public String upload(MultipartFile multipartFile, String path) throws IOException {
         String originName = multipartFile.getOriginalFilename();
         String url;
-
         try {
 
-            //파일 명 변경
+            //원본 파일 명 저장
             String saveFileName =
-                "O" + fourteen_format.format(date_now) +multipartFile.getOriginalFilename();
-            File file = new File( System.getProperty("user.dir") + saveFileName);
+                path + "/" + "O" + "/"
+                    + fourteen_format.format(date_now)
+                    + multipartFile.getOriginalFilename();
+            File file = new File(System.getProperty("user.dir") + originName);
             multipartFile.transferTo(file);
             //원본 이미지 업로드
             uploadOnS3(saveFileName, file);
 
             BufferedImage transImage = ImageIO.read(file);
-            BufferedImage thumbnailImage = Thumbnails.of(transImage).size(500,333).asBufferedImage();
-            String saveFileName2 = "T" + fourteen_format.format(date_now) + multipartFile.getOriginalFilename(); //사간 이름 카테고리
-            thumbUploadOns3(saveFileName2,thumbnailImage);
+            BufferedImage thumbnailImage = Thumbnails.of(transImage).size(500, 333)
+                .asBufferedImage();
+            //변형된 파일 명 저장
+            String saveFileName2 = path + "/" + "T" + "/"  + fourteen_format.format(date_now)
+                + multipartFile.getOriginalFilename(); //사간 이름 카테고리
+            thumbUploadOns3(saveFileName2, thumbnailImage);
 
             url = defaultUrl + saveFileName;
 
@@ -74,7 +78,7 @@ public class UploaderService {
         return url;
     }
 
-    private void uploadOnS3(String findName,File file) {
+    private void uploadOnS3(String findName, File file) {
         TransferManager transferManager = new TransferManager(this.amazonS3Client);
         PutObjectRequest request = new PutObjectRequest(bucket, findName, file);
         Upload upload = transferManager.upload(request);
@@ -106,7 +110,8 @@ public class UploaderService {
         ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(bytes);
 
         TransferManager transferManager = new TransferManager(this.amazonS3Client);
-        PutObjectRequest request = new PutObjectRequest(bucket,findName ,byteArrayInputStream, objectMetadata);
+        PutObjectRequest request = new PutObjectRequest(bucket, findName, byteArrayInputStream,
+            objectMetadata);
         Upload upload = transferManager.upload(request);
 
         try {

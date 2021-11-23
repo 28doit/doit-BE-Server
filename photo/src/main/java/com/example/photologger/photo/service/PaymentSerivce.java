@@ -1,17 +1,46 @@
 package com.example.photologger.photo.service;
 
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.*;
-import java.util.Map.Entry;
+import static com.example.photologger.photo.constants.paymentConstant.BUYER_EMAIL;
+import static com.example.photologger.photo.constants.paymentConstant.IMPORT_CANCEL_URL;
+import static com.example.photologger.photo.constants.paymentConstant.IMPORT_PAYMENTINFO_URL;
+import static com.example.photologger.photo.constants.paymentConstant.IMPORT_PREPARE_URL;
+import static com.example.photologger.photo.constants.paymentConstant.IMPORT_TOKEN_URL;
+import static com.example.photologger.photo.constants.paymentConstant.KEY;
+import static com.example.photologger.photo.constants.paymentConstant.MERCHANT_UID;
+import static com.example.photologger.photo.constants.paymentConstant.PAID_AT;
+import static com.example.photologger.photo.constants.paymentConstant.PAY_CARD;
+import static com.example.photologger.photo.constants.paymentConstant.SECRET;
+import static com.example.photologger.photo.constants.paymentConstant.imp_key;
+import static com.example.photologger.photo.constants.paymentConstant.imp_secret;
 
-import com.example.photologger.photo.domain.*;
+import com.example.photologger.photo.domain.Cart;
+import com.example.photologger.photo.domain.Gallery;
+import com.example.photologger.photo.domain.GalleryPrice;
+import com.example.photologger.photo.domain.Order;
+import com.example.photologger.photo.domain.Payment;
+import com.example.photologger.photo.domain.PaymentHistory;
+import com.example.photologger.photo.domain.ReturnGalleryHistory;
+import com.example.photologger.photo.domain.ReturnHistory;
+import com.example.photologger.photo.domain.ReturnWithdrawal;
+import com.example.photologger.photo.domain.User;
+import com.example.photologger.photo.domain.Withdrawal;
 import com.example.photologger.photo.mapper.AccountsMapper;
+import com.example.photologger.photo.mapper.GalleryMapper;
 import com.example.photologger.photo.mapper.PaymentMapper;
 import com.example.photologger.photo.mapper.UserMapper;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
@@ -22,13 +51,8 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestParam;
-
-import static com.example.photologger.photo.constants.paymentConstant.*;
 
 @Slf4j
 @Service
@@ -41,6 +65,8 @@ public class PaymentSerivce {
     AccountsService accountsService;
     @Autowired
     UserMapper userMapper;
+    @Autowired
+    GalleryMapper galleryMapper;
     //가맹점 식별코드 imp89552474
     // 아임포트 인증(토큰)을 받아주는 함수
     public String getImportToken() {
@@ -388,6 +414,10 @@ public class PaymentSerivce {
                 .build();
         return returnHistory;
     }
+
+    public void galleryBuyCount(int galleryId){
+        galleryMapper.galleryBuyCount(galleryId);
+    }
     public Object itemBuy(int galleryId, String token)
     {
         SimpleDateFormat outputFormat= new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss", Locale.ENGLISH);     //결재완료후 뛰어줄 date
@@ -445,6 +475,7 @@ public class PaymentSerivce {
             log.info("test");
             buyer = paymentMapper.userPoint(user.getIdx());
             paymentMapper.paymentUpdate(seller);
+            galleryBuyCount(galleryId);
             log.info("test");
             return Integer.toString(buyer.getTotalPoint());
         }catch (Exception e)
