@@ -301,14 +301,15 @@ public class PaymentSerivce {
         log.info("유저 인증 실패");
         return false;
     }
-    public Object withdrawalHistory(int idx, String token,String start, String end)
+    public Object withdrawalHistory(String email, String token,String start, String end)
     {
         SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);  //get으로 가져올 date
         SimpleDateFormat outputFormat = new SimpleDateFormat("yyyy-MM-dd_HH:mm:SS", Locale.ENGLISH);  //get으로 가져올 date
         List<ReturnWithdrawal> output = new ArrayList<>();
+        int idx = accountsMapper.findEmail(email).get().getIdx();
         try
         {
-            String email = userMapper.findOne(idx).getEmail();
+
             if(userCheck(token,email))
             {
 

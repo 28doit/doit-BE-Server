@@ -18,7 +18,7 @@ public class PaymentHistory
     @NotEmpty
     @ApiModelProperty(example = "회원번호")
     int idx;
-    @ApiModelProperty(example = "충전포인트 내역")
+    @ApiModelProperty(example = "충전포인트")
     int pay;
     @ApiModelProperty(example = "결제카드")
     String payCard;

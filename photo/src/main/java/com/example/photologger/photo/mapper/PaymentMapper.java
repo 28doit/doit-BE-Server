@@ -29,4 +29,7 @@ public interface PaymentMapper {
     int withdrawal(int idx, int profitPoint);
     void withdrawalHistoryInsert(Withdrawal withdrawal);
     List<Withdrawal> withdrawalHistory(Date start, Date end,int idx);
+    List<Withdrawal> moneyWithdrawn(int idx);
+    List<Order> totalSales(int galleryId);
+
 }

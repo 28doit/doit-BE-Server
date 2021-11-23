@@ -4,11 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f954b46-ba7f-4eb5-998f-d41f954219ab" name="Changes" comment="">
+    <list default="true" id="84a1bd0c-eacb-40e4-9e72-ed19b16175d7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/GalleryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/GalleryMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/PaginationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/PaginationMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/SubscribeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/SubscribeMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/CashController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/CashController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/Cart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/GalleryPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/GalleryPrice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/PayJoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/PayJoin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/PaymentHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/PaymentHistory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/ReturnHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/ReturnHistory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/ReturnUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/ReturnUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/ReturnWithdrawal.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/ReturnWithdrawal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/SellerIdxCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/SellerIdxCheck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/Withdrawal.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/Withdrawal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/mapper/PaymentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/mapper/PaymentMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/AccountsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/AccountsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/PaymentSerivce.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/PaymentSerivce.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/AccountsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/AccountsMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/PaymentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/PaymentMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/UserMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,6 +107,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mariadb" />
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />

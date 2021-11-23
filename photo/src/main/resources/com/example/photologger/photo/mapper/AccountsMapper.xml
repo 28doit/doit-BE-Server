@@ -48,6 +48,6 @@
     <select id="findEmail" resultType="com.example.photologger.photo.domain.User">
         SELECT *
         FROM user
-        WHERE email    = #{email}
+        WHERE email    = #{emailg}
     </select>
 </mapper>
