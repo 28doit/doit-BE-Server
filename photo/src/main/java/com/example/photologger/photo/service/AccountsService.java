@@ -57,7 +57,7 @@ public class AccountsService {
             if (!bCryptPasswordEncoder.matches(userIdPassword.get("password"), user.getPassword())) {
                 throw new IllegalArgumentException("잘못된 비밀번호입니다.");
             }
-            if(user.getAuthKey()==0) { //1로바꾸셈
+            if(user.getAuthKey()==1) { //1로바꾸셈
                 returnUser.setToken(jwtTokenProvider.createToken(user.getEmail()));
                 returnUser.setIsValue(1);
                 log.info(returnUser.getToken());
