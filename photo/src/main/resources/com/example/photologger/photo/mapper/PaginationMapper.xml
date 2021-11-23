@@ -18,6 +18,41 @@
     <result property="galleryViews" column="gallery_views"/>
   </resultMap>
 
+  <resultMap type="com.example.photologger.photo.domain.Gallery"
+    id="GalleryjoinInfo" >
+    <result property="galleryId" column="gallery_id"/>
+    <result property="idx" column="idx"/>
+    <result property="galleryAdress" column="gallery_adress"/>
+    <result property="galleryTime" column="gallery_time"/>
+    <result property="gallerySeseon" column="gallery_seseon"/>
+    <result property="galleryName" column="gallery_name"/>
+    <result property="galleryDireactionX" column="gallery_direaction_x"/>
+    <result property="galleryImageLocation" column="gallery_image_location"/>
+    <result property="gallerySubscribeCount" column="gallery_subscibe_count"/>
+    <result property="galleryDireactionY" column="gallery_direaction_y"/>
+    <result property="galleryViews" column="gallery_views"/>
+    <result property="idx" column="idx"/>
+    <result property="nickName" column="nick_name"/>
+  </resultMap>
+
+  <resultMap id="UserInfo" type="com.example.photologger.photo.domain.User">
+    <result property="idx" column="idx"/>
+    <result property="profileImageLocation" column="profile_Image_location"/>
+    <result property="email" column="email"/>
+    <result property="name" column="name"/>
+    <result property="nickName" column="nick_name"/>
+    <result property="phoneNumber" column="phone_number"/>
+    <result property="sex" column="sex"/>
+    <result property="userYear" column="user_year"/>
+    <result property="userMonth" column="user_month"/>
+    <result property="userDay" column="user_day"/>
+    <result property="password" column="password"/>
+    <result property="type" column="type"/>
+    <result property="gallCount" column="gall_count"/>
+    <result property="userSubscribeCount" column="user_subscribe_count"/>
+    <result property="authKey" column="auth_key"/>
+  </resultMap>
+
   <resultMap id="SubscribeGalleryInfo" type="com.example.photologger.photo.domain.Subscribe">
     <result property="idx" column="idx"/>
     <result property="galleryId" column="gallery_id"/>
@@ -26,7 +61,6 @@
   <resultMap id="JoinGalleryAndSubscribeInfo" type="com.example.photologger.photo.domain.JoinGalleryAndSubscribe">
     <collection property="gallery" resultMap="GalleryInfo"/>
     <collection property="user" resultMap="UserInfo"/>
-    <collection property="galleryPrice" resultMap="GalleryPriceInfo"/>
   </resultMap>
 
   <select id="gallerycount" resultType="int">
@@ -44,12 +78,12 @@
 
   <select id = "cursorPagination" resultMap="JoinGalleryAndSubscribeInfo">
         <![CDATA[
-    SELECT *
-    FROM       gallery g, subscribe_gallery s
-    WHERE      g.gallery_id < ${cursor} AND s.idx = #{idx}
+    SELECT g.gallery_id, g.idx, g.gallery_adress, g.gallery_time, g.gallery_seseon, g.gallery_direaction_x, g.gallery_direaction_y, g.gallery_name, g.gallery_image_location, g.gallery_subscibe_count, g.gallery_views, g.gallery_buy_count, u.nick_name
+    FROM       gallery g, user u
+    WHERE      g.gallery_id < ${cursor} AND g.idx = u.idx
     ORDER BY   gallery_id DESC
-      LIMIT ${take}
+    LIMIT ${take}
     ;
-    ]]>
+  ]]>
     </select>
 </mapper>

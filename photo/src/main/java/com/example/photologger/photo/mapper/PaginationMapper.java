@@ -10,8 +10,8 @@ public interface PaginationMapper {
 
     /*Cursor Pagination*/
     List<Gallery> cursorPagination(
-        @Param("cursor") Integer cursor
-        , @Param("take") Integer take
+        @Param("cursor") Integer cursor,
+        @Param("take") Integer take
     );
 
 }

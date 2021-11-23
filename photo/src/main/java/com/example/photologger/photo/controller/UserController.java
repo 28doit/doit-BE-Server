@@ -59,7 +59,6 @@ public class UserController {
             , HttpStatus.OK);
     }
 
-
     // 비밀번호 변경
     @PostMapping("/setpassword/{idx}")
     public String updatePassword(@PathVariable(value = "idx") Integer idx,
@@ -70,5 +69,5 @@ public class UserController {
         return "true";
     }
 
-    //프로필 이미지 저장
+
 }

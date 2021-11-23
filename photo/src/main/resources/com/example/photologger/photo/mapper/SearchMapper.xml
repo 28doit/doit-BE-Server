@@ -2,6 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.example.photologger.photo.mapper.SearchMapper">
+
   <resultMap type="com.example.photologger.photo.domain.Gallery"
     id="GalleryInfo" >
     <result property="galleryId" column="gallery_id"/>
@@ -15,23 +16,71 @@
     <result property="gallerySubscribeCount" column="gallery_subscibe_count"/>
     <result property="galleryDireactionY" column="gallery_direaction_y"/>
     <result property="galleryViews" column="gallery_views"/>
+    <result property="idx" column="idx"/>
   </resultMap>
 
-  <select id = "titleSearch" resultMap="GalleryInfo">
+  <resultMap id="UserInfo" type="com.example.photologger.photo.domain.User">
+    <result property="idx" column="idx"/>
+    <result property="profileImageLocation" column="profile_Image_location"/>
+    <result property="email" column="email"/>
+    <result property="name" column="name"/>
+    <result property="nickName" column="nick_name"/>
+    <result property="phoneNumber" column="phone_number"/>
+    <result property="sex" column="sex"/>
+    <result property="userYear" column="user_year"/>
+    <result property="userMonth" column="user_month"/>
+    <result property="userDay" column="user_day"/>
+    <result property="password" column="password"/>
+    <result property="type" column="type"/>
+    <result property="gallCount" column="gall_count"/>
+    <result property="userSubscribeCount" column="user_subscribe_count"/>
+    <result property="authKey" column="auth_key"/>
+  </resultMap>
+
+  <resultMap id="JoinGalleryAndSubscribeInfo" type="com.example.photologger.photo.domain.JoinGalleryAndSubscribe">
+    <collection property="gallery" resultMap="GalleryInfo"/>
+    <collection property="user" resultMap="UserInfo"/>
+  </resultMap>
+
+  <select id = "titleSearch" resultMap="JoinGalleryAndSubscribeInfo">
         <![CDATA[
-    SELECT *
-    FROM gallery
-    WHERE gallery_id < ${cursor} AND gallery_name LIKE CONCAT('%',#{word},'%')
+    SELECT g.gallery_id,
+           g.idx,
+           g.gallery_adress,
+           g.gallery_time,
+           g.gallery_seseon,
+           g.gallery_direaction_x,
+           g.gallery_direaction_y,
+           g.gallery_name,
+           g.gallery_image_location,
+           g.gallery_subscibe_count,
+           g.gallery_views,
+           g.gallery_buy_count,
+           u.nick_name
+    FROM gallery g, user u
+    WHERE gallery_id < ${cursor} AND gallery_name LIKE CONCAT('%',#{word},'%') AND g.idx = u.idx
     ORDER BY gallery_id
     ;
     ]]>
     </select>
 
-  <select id = "sellerSearch" resultMap="GalleryInfo">
+  <select id = "sellerSearch" resultMap="JoinGalleryAndSubscribeInfo">
         <![CDATA[
-    SELECT *
-    FROM gallery
-    WHERE gallery_id < ${cursor} AND gallery_name LIKE CONCAT('%',#{seller},'%')
+    SELECT g.gallery_id,
+           g.idx,
+           g.gallery_adress,
+           g.gallery_time,
+           g.gallery_seseon,
+           g.gallery_direaction_x,
+           g.gallery_direaction_y,
+           g.gallery_name,
+           g.gallery_image_location,
+           g.gallery_subscibe_count,
+           g.gallery_views,
+           g.gallery_buy_count,
+           u.nick_name
+    FROM gallery g, user u
+    WHERE gallery_id < ${cursor} AND gallery_name LIKE CONCAT('%',#{seller},'%') AND g.idx = u.idx
     ORDER BY gallery_id
     ;
     ]]>

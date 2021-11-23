@@ -10,6 +10,6 @@ import lombok.Setter;
 public class JoinGalleryAndSubscribe {
 
     private Gallery gallery;
-    private Subscribe subscribe;
+    private User user;
 
 }

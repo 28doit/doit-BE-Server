@@ -33,7 +33,7 @@
                 #{userMonth},
                 #{userDay},
                 #{type},
-                #{galleryCount},
+                #{gallCount},
                 #{userSubscribeCount},
                 #{authKey}
                 )

@@ -79,6 +79,11 @@
     <collection property="galleryPrice" resultMap="GalleryPriceInfo"/>
   </resultMap>
 
+  <resultMap id="JoinGalleryUserLT" type="com.example.photologger.photo.domain.JoinGalleryUserLU">
+    <collection property="gallery" resultMap="GalleryInfo"/>
+    <collection property="user" resultMap="UserInfo"/>
+  </resultMap>
+
   <update id="updateProfileLocation">
     UPDATE user
     SET profile_Image_location = #{profileImageLocation},

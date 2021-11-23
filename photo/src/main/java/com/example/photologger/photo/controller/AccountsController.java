@@ -46,11 +46,13 @@ public class AccountsController {
 
     @PostMapping(value = "")
     public ResponseEntity JoIn(
-        @RequestBody User user,
+        User user,
         @RequestParam(value = "images") MultipartFile multipartFile) throws IOException {
 
         accountsService.join(user);
-        user.setProfileImageLocation(galleryService.profileImagejoin(multipartFile, user));
+        String profileLoc = galleryService.profileImagejoin(multipartFile, user);
+        log.info(profileLoc);
+        user.setProfileImageLocation(profileLoc);
         emailService.SendJoinMail(user.getEmail());
         log.info(user.getName() + "님의 회원가입이 정상적으로 완료되었습니다");
         return new ResponseEntity(HttpStatus.OK);
