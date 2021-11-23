@@ -2,38 +2,54 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.example.photologger.photo.mapper.PaginationMapper">
-  <resultMap type="com.example.photologger.photo.domain.Gallary"
+
+  <resultMap type="com.example.photologger.photo.domain.Gallery"
     id="GalleryInfo" >
+    <result property="galleryId" column="gallery_id"/>
     <result property="idx" column="idx"/>
-    <result property="gallaryTime" column="gallary_time"/>
-    <result property="gallaryId" column="gallary_id"/>
-    <result property="gallarySubscribeCount" column="gallary_subscibe_count"/>
-    <result property="gallarySeseon" column="gallary_seseon"/>
-    <result property="gallaryName" column="gallary_name"/>
-    <result property="gallaryImageLocation" column="gallary_image_location"/>
-    <result property="gallaryDireaction" column="gallary_direaction"/>
-    <result property="gallaryAdress" column="gallary_adress"/>
+    <result property="galleryAdress" column="gallery_adress"/>
+    <result property="galleryTime" column="gallery_time"/>
+    <result property="gallerySeseon" column="gallery_seseon"/>
+    <result property="galleryName" column="gallery_name"/>
+    <result property="galleryDireactionX" column="gallery_direaction_x"/>
+    <result property="galleryImageLocation" column="gallery_image_location"/>
+    <result property="gallerySubscribeCount" column="gallery_subscibe_count"/>
+    <result property="galleryDireactionY" column="gallery_direaction_y"/>
+    <result property="galleryViews" column="gallery_views"/>
+  </resultMap>
+
+  <resultMap id="SubscribeGalleryInfo" type="com.example.photologger.photo.domain.Subscribe">
+    <result property="idx" column="idx"/>
+    <result property="galleryId" column="gallery_id"/>
+  </resultMap>
+
+  <resultMap id="JoinGalleryAndSubscribeInfo" type="com.example.photologger.photo.domain.JoinGalleryAndSubscribe">
+    <collection property="gallery" resultMap="GalleryInfo"/>
+    <collection property="user" resultMap="UserInfo"/>
+    <collection property="galleryPrice" resultMap="GalleryPriceInfo"/>
   </resultMap>
 
   <select id="gallerycount" resultType="int">
     SELECT COUNT(*)
-    FROM PHOTO.gallary g
+    FROM PHOTO.gallery g
   </select>
 
-  <select id = "indexPagination" resultType="com.example.photologger.photo.domain.Gallary">
+  <select id = "indexPagination" resultType="com.example.photologger.photo.domain.Gallery">
     SELECT *
-    FROM PHOTO.gallary
+    FROM PHOTO.gallery
     ORDER BY sequence DESC
       LIMIT ${skip}, ${take}
     ;
   </select>
 
-  <select id = "cursorPagination" resultMap="GalleryInfo">
+  <select id = "cursorPagination" resultMap="JoinGalleryAndSubscribeInfo">
         <![CDATA[
     SELECT *
-    FROM gallary
-    WHERE gallary_id < ${cursor}
-    ORDER BY gallary_id DESC
+    FROM gallery g, subscribe_gallery s
+    WHERE
+          IF
+          gallery_id < ${cursor} AND s.idx = #{idx}
+    ORDER BY gallery_id DESC
       LIMIT ${take}
     ;
     ]]>

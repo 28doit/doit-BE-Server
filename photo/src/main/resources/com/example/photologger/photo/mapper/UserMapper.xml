@@ -9,7 +9,7 @@
     </select>
     
     <select id="findId" resultType="com.example.photologger.photo.domain.User">
-        SELECT *
+        SELECT email
           FROM user
          WHERE name     = #{name}
            AND phone_number  = #{phoneNumber}
@@ -41,4 +41,16 @@
          SET name = #{name}
        WHERE idx  = #{idx}
     </update>
+
+    <select id="subScribe" resultType="com.example.photologger.photo.domain.ReturnSubScribe">
+        SELECT user.nick_name,user.profile_Image_location
+        FROM user
+        LEFT JOIN subscribe_user ON user.idx = subscribe_user.subscribe_idx
+        WHERE subscribe_user.idx = #{idx}
+    </select>
+    <select id="photosForSale" resultType="com.example.photologger.photo.domain.ReturnPhotosForSale">
+        SELECT gallery.gallery_id, gallery.idx, gallery.gallery_image_location
+        FROM gallery
+        WHERE idx = #{idx}
+    </select>
 </mapper>

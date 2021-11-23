@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.photologger.photo.mapper.SubscribeMapper">
+
+  <resultMap id="SubscribeGalleryInfo" type="com.example.photologger.photo.domain.Subscribe">
+    <result property="idx" column="idx"/>
+    <result property="galleryId" column="gallery_id"/>
+  </resultMap>
+
+  <resultMap id="SubscribeUserInfo" type="com.example.photologger.photo.domain.Subscribe">
+    <result property="idx" column="idx"/>
+    <result property="subscribeUser" column="subscribe_idx"/>
+  </resultMap>
+
+  <insert id="subscirbeGallery" parameterType="com.example.photologger.photo.domain.Gallery">
+    INSERT INTO PHOTO.subscribe_gallery(idx,
+                                        gallery_id)
+    VALUES (#{idx},
+            #{galleryId})
+  </insert>
+
+  <insert id="subscirbeUser" parameterType="com.example.photologger.photo.domain.Gallery">
+    INSERT INTO PHOTO.subscribe_user(idx,
+                                     subscribe_idx)
+    VALUES (#{idx},
+            #{subscribeUser})
+  </insert>
+
+  <select id="subscirbeGalleryCursorPagination" resultMap="SubscribeGalleryInfo">
+    SELECT idx, gallery_id
+    FROM subscribe_gallery
+    WHERE idx = #{idx}
+    ORDER BY gallery_id
+    </select>
+
+  <select id="subscirbeUserCursorPagination" resultMap="SubscribeUserInfo">
+    SELECT idx, subscribe_idx
+    FROM subscribe_user
+    WHERE idx = #{idx}
+
+    ORDER BY subscribe_idx
+  </select>
+
+</mapper>

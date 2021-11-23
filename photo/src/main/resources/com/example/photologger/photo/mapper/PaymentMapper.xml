@@ -2,21 +2,21 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.example.photologger.photo.mapper.PaymentMapper">
-    <select id="paymentIdx" parameterType="com.example.photologger.photo.domain.Payment">
-        SELECT *
-        FROM payment
-        WHERE idx = #{idx}
-          AND total_point= #{totalPoint}
-          AND sell_point= #{sellPoint}
-    </select>
+
     <insert id="paymentUpdate" parameterType="com.example.photologger.photo.domain.Payment">
         INSERT INTO user_point
         SET idx  = #{idx}
-                , total_point = #{totalPoint}
+                , free_point = #{freePoint}
+                , profit_point = #{profitPoint}
+                , buy_point = #{buyPoint}
                 , sell_point = #{sellPoint}
+                , total_point = free_point + buy_point + profit_point
         ON DUPLICATE KEY UPDATE
-            total_point = total_point + #{totalPoint}
-            ,sell_point = #{sellPoint}
+               free_point = free_point + #{freePoint}
+             , profit_point = profit_point + #{profitPoint}
+             , buy_point = buy_point + #{buyPoint}
+             , sell_point = sell_point + #{sellPoint}
+             , total_point = free_point + buy_point + profit_point
     </insert>
     <insert id="paymentHistoryInsert" parameterType="com.example.photologger.photo.domain.PaymentHistory">
         INSERT INTO payment_history
@@ -32,7 +32,98 @@
         SELECT *
         FROM payment_history
         WHERE time between #{startHistory} AND #{endHistory}
-        And email = #{email}
+        And idx = #{idx}
         ORDER BY time ASC
+    </select>
+    <select id="itemBuyCheck" resultType="com.example.photologger.photo.domain.Order">
+        SELECT *
+        FROM `order`
+        WHERE gallery_id = #{galleryId}
+        AND idx = #{idx}
+    </select>
+    <select id="priceCheck" resultType="com.example.photologger.photo.domain.GalleryPrice">
+        SELECT *
+        FROM gallary_price
+        WHERE gallery_id = #{galleryId}
+    </select>
+    <insert id="itemHistoryInsert" parameterType="com.example.photologger.photo.domain.Order">
+        INSERT INTO `order`
+        SET idx = #{idx}
+          , gallery_id = #{galleryId}
+          , date = #{date}
+          , order_number = #{orderNumber}
+    </insert>
+    <select id="userPoint" resultType="com.example.photologger.photo.domain.Payment">
+        SELECT *
+        FROM user_point
+        WHERE idx = #{idx}
+    </select>
+    <select id="sellerIdxCheck" resultType="com.example.photologger.photo.domain.SellerIdxCheck">
+        SELECT idx
+        FROM gallery
+        WHERE gallery_id = #{galleryId}
+    </select>
+    <select id="idxToGallId" resultType="com.example.photologger.photo.domain.Order">
+        SELECT *
+        FROM `order`
+        WHERE date between #{start} AND #{end}
+        And idx = #{idx}
+        ORDER BY date ASC
+    </select>
+    <select id="gallCheck" resultType="com.example.photologger.photo.domain.Gallery">
+        SELECT *
+        FROM gallery
+        WHERE gallery_id = #{galleryId}
+    </select>
+    <select id="cartCheck" resultType="com.example.photologger.photo.domain.Cart">
+        SELECT *
+        FROM cart
+        WHERE idx = #{idx}
+    </select>
+    <insert id="cartInsert" parameterType="com.example.photologger.photo.domain.Cart">
+        INSERT INTO cart
+        SET idx = #{idx}
+        , gallery_id = #{galleryId}
+    </insert>
+    <select id="cartDup" resultType="com.example.photologger.photo.domain.Cart">
+        SELECT *
+        FROM cart
+        WHERE idx = #{idx}
+        AND gallery_id = #{galleryId}
+    </select>
+    <delete id="cartDelete">
+        DELETE FROM cart
+        WHERE idx = #{idx}
+        AND gallery_id = #{galleryId}
+    </delete>
+    <update id="withdrawal">
+        UPDATE user_point
+        SET profit_point = profit_point - #{profitPoint}
+        , total_point = total_point - #{profitPoint}
+        WHERE idx = #{idx}
+    </update>
+    <insert id="withdrawalHistoryInsert" parameterType="com.example.photologger.photo.domain.Withdrawal">
+       INSERT INTO withdrawal_history
+        SET idx = #{idx},
+            withdrawal_number = #{withdrawalNumber},
+            point = #{point},
+            date = #{date}
+    </insert>
+    <select id="withdrawalHistory" resultType="com.example.photologger.photo.domain.Withdrawal">
+        SELECT *
+        FROM withdrawal_history
+        WHERE date between #{start} AND #{end}
+        AND idx = #{idx}
+        ORDER BY date ASC
+    </select>
+    <select id="moneyWithdrawn" resultType="com.example.photologger.photo.domain.Withdrawal">
+        SELECT *
+        FROM withdrawal_history
+        WHERE idx = #{idx}
+    </select>
+    <select id="totalSales" resultType="com.example.photologger.photo.domain.Order">
+        SELECT *
+        FROM `order`
+        WHERE gallery_id = #{galleryId}
     </select>
 </mapper>

@@ -33,7 +33,7 @@
                 #{userMonth},
                 #{userDay},
                 #{type},
-                #{gallCount},
+                #{galleryCount},
                 #{userSubscribeCount},
                 #{authKey}
                 )
@@ -48,6 +48,6 @@
     <select id="findEmail" resultType="com.example.photologger.photo.domain.User">
         SELECT *
         FROM user
-        WHERE email    = #{email}
+        WHERE email    = #{emailg}
     </select>
 </mapper>

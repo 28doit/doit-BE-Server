@@ -1,0 +1,24 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_2021_11_19_2_38_오전_[Changes]1" date="1637257152387" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2021_11_19_2_38_오전_[Changes]1/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 2021/11/19 2:38 오전 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value=".idea/dataSources/00b6e4d6-edf0-493a-9249-804793f8ef3e/entities/entities.dat.values" />
+    <option name="AFTER_PATH" value=".idea/dataSources/00b6e4d6-edf0-493a-9249-804793f8ef3e/entities/entities.dat.values" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2021_11_19_2_38_오전_[Changes]1/entities.dat.values" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".idea/dataSources/00b6e4d6-edf0-493a-9249-804793f8ef3e/entities/entities.dat_i" />
+    <option name="AFTER_PATH" value=".idea/dataSources/00b6e4d6-edf0-493a-9249-804793f8ef3e/entities/entities.dat_i" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2021_11_19_2_38_오전_[Changes]1/entities.dat_i" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".idea/dataSources/00b6e4d6-edf0-493a-9249-804793f8ef3e/entities/entities.dat.values.s" />
+    <option name="AFTER_PATH" value=".idea/dataSources/00b6e4d6-edf0-493a-9249-804793f8ef3e/entities/entities.dat.values.s" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2021_11_19_2_38_오전_[Changes]1/entities.dat.values.s" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".idea/dataSources/00b6e4d6-edf0-493a-9249-804793f8ef3e/entities/entities.dat" />
+    <option name="AFTER_PATH" value=".idea/dataSources/00b6e4d6-edf0-493a-9249-804793f8ef3e/entities/entities.dat" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2021_11_19_2_38_오전_[Changes]1/entities.dat" />
+  </binary>
+</changelist>

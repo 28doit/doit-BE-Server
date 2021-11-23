@@ -4,24 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6f954b46-ba7f-4eb5-998f-d41f954219ab" name="Changes" comment="">
+    <list default="true" id="84a1bd0c-eacb-40e4-9e72-ed19b16175d7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/AccountsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/AccountsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/PaginationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/PaginationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/iHomeController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/Payment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/CashController.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/CashController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/Cart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/GalleryPrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/GalleryPrice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/PayJoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/PayJoin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/PaymentHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/PaymentHistory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/ReturnCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/ReturnCheck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/ReturnHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/ReturnHistory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/ReturnUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/ReturnUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/ReturnWithdrawal.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/ReturnWithdrawal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/SellerIdxCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/SellerIdxCheck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/Withdrawal.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/Withdrawal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/mapper/PaymentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/mapper/PaymentMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/mapper/UserMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/AccountsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/AccountsService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/PaymentSerivce.java" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/PaymentSerivce.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/AccountsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/AccountsMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/PaymentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/PaymentMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/UserMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,9 +58,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -68,7 +70,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="list-board" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -82,11 +84,18 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/5.2.2.RELEASE/95832bf01d9bc52002836683637855ec254eec0/spring-web-5.2.2.RELEASE-sources.jar!/org/springframework/web/multipart/MultipartFile.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/UserService.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/PhotoApplication.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/photo/src/main/resources/com/example/photologger/photo/mapper/PaymentMapper.xml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/AccountsService.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/com.amazonaws/aws-java-sdk-s3/1.11.415/3560662546cf0397a830245bc987a62e793451f4/aws-java-sdk-s3-1.11.415-sources.jar!/com/amazonaws/services/s3/model/PutObjectRequest.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/AccountsController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/PaymentHistory.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/Payment.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/domain/ReturnCheck.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/service/PaymentSerivce.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/controller/CashController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/photo/src/main/java/com/example/photologger/photo/mapper/PaymentMapper.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/photo/src/test/java/com/example/photologger/photo/jwt/JwtTokenProviderTest.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1xAP6O8ED1NDmp7oJ4IYkQvNM0A" />
   <component name="ProjectLevelVcsManager">
@@ -98,6 +107,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mariadb" />
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -105,19 +115,18 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+    <property name="settings.editor.selected.configurable" value="copyright" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.example.photologger.photo.service" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.photologger.photo.domain" />
       <recent name="com.example.photologger.photo.service" />
     </key>
   </component>
@@ -140,84 +149,6 @@
       <option name="CUSTOM_SETTINGS" value="false" />
       <option name="USE_OPTIONS" value="false" />
       <option name="OPTIONS" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="ADDITIONAL_ARGS" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="Python.FlaskServer">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="launchJavascriptDebuger" value="false" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="Tox" factoryName="Tox">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Doctests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
       <method v="2" />
     </configuration>
     <configuration name="AccountsControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
@@ -293,6 +224,54 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Python.FlaskServer">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
     <configuration name="PhotoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="photo.main" />
       <extension name="coverage">
@@ -306,13 +285,43 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.PhotoApplication" />
-        <item itemvalue="JUnit.AccountsControllerTest" />
+        <item itemvalue="JUnit.PaginationTestController.totalindex" />
         <item itemvalue="JUnit.PaginationServiceTest.countIndex" />
         <item itemvalue="JUnit.PaginationServiceTest" />
-        <item itemvalue="JUnit.PaginationTestController.totalindex" />
+        <item itemvalue="JUnit.AccountsControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -349,6 +358,30 @@
       <workItem from="1631190910960" duration="616000" />
       <workItem from="1631328039429" duration="6444000" />
       <workItem from="1631688018071" duration="9685000" />
+      <workItem from="1632461843026" duration="245000" />
+      <workItem from="1632462091010" duration="2049000" />
+      <workItem from="1632471055730" duration="821000" />
+      <workItem from="1632471910359" duration="792000" />
+      <workItem from="1632472738700" duration="15064000" />
+      <workItem from="1632567274580" duration="1576000" />
+      <workItem from="1632570748587" duration="12643000" />
+      <workItem from="1633014789765" duration="9289000" />
+      <workItem from="1633351593371" duration="11002000" />
+      <workItem from="1633953914688" duration="2675000" />
+      <workItem from="1634214987366" duration="19000" />
+      <workItem from="1634227518320" duration="47000" />
+      <workItem from="1635249937347" duration="4709000" />
+      <workItem from="1635425245158" duration="8253000" />
+      <workItem from="1636091714929" duration="7071000" />
+      <workItem from="1636183099582" duration="208000" />
+      <workItem from="1636190596235" duration="12000" />
+      <workItem from="1636192650776" duration="4317000" />
+      <workItem from="1636368719716" duration="1320000" />
+      <workItem from="1636499933773" duration="6677000" />
+      <workItem from="1636648870034" duration="14168000" />
+      <workItem from="1636977665904" duration="7949000" />
+      <workItem from="1637136363406" duration="5191000" />
+      <workItem from="1637435621601" duration="15261000" />
     </task>
     <servers />
   </component>
