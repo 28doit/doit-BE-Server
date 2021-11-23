@@ -45,11 +45,9 @@
   <select id = "cursorPagination" resultMap="JoinGalleryAndSubscribeInfo">
         <![CDATA[
     SELECT *
-    FROM gallery g, subscribe_gallery s
-    WHERE
-          IF
-          gallery_id < ${cursor} AND s.idx = #{idx}
-    ORDER BY gallery_id DESC
+    FROM       gallery g, subscribe_gallery s
+    WHERE      g.gallery_id < ${cursor} AND s.idx = #{idx}
+    ORDER BY   gallery_id DESC
       LIMIT ${take}
     ;
     ]]>
