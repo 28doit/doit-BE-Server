@@ -166,8 +166,7 @@ public class PaymentSerivce {
             }
 
     }
-    public boolean check(Map <String,String>mid)
-    {
+    public boolean check(Map <String,String>mid){
         boolean trueAndfalse;
         int idx= accountsMapper.findEmail(mid.get("login_email")).get().getIdx();
         String userName= accountsMapper.findEmail(mid.get("login_email")).get().getName();
@@ -175,36 +174,23 @@ public class PaymentSerivce {
         String iAmToken = getImportToken();
         JsonNode tmp = (JsonNode) setDB(iAmToken,mid.get("mid"));
         String buyerName = tmp.findValue("buyer_name").toString().replaceAll("\"", "");
-        log.info(buyerName);
-        log.info(mid.get("login_email"));
-        if ((boolean)accountsService.token_Expiration(mid.get("token"),mid.get("login_email")).get("Token")&&userName.equals(buyerName))
-        {
+        if ((boolean)accountsService.token_Expiration(mid.get("token"),mid.get("login_email")).get("Token")&&userName.equals(buyerName)){
             int pay = Integer.parseInt(getAmount(iAmToken,mid.get("mid")));
-
-            log.info("결제를 시도한 사람의 이름은 : " + mid.get("name"));
-            log.info(mid.get("mid"));
-            log.info(iAmToken);
             trueAndfalse = setHackCheck(
                     Integer.toString(pay)
                     , mid.get("mid")
                     , iAmToken
             );
             if(trueAndfalse) {
-                //DB갱신
                 log.info("결제 금액 : "+Integer.toString(pay));
                 Payment payment = Payment.builder()
                         .idx(idx)
                         .totalPoint(pay)
                         .sellPoint(0)
                         .build();
-                log.info(payment.toString());
                 paymentMapper.paymentUpdate(payment);
                 Date date = new Date();
-                log.info(tmp.findValue(PAID_AT).toString());
                 date.setTime(Long.parseLong(tmp.findValue(PAID_AT).toString())*1000);
-                log.info(tmp.findValue(BUYER_EMAIL).toString());
-                log.info(date.toString());
-                log.info(tmp.findValue(MERCHANT_UID).toString().replaceAll("\"",""));
                 PaymentHistory paymentHistory = PaymentHistory.builder()
                         .idx(idx)
                         .pay(pay)
@@ -214,26 +200,20 @@ public class PaymentSerivce {
                         .mId(tmp.findValue(MERCHANT_UID).toString().replaceAll("\"",""))
                         .time(date)
                         .build();
-                log.info(paymentHistory.toString());
                 try{
                     paymentMapper.paymentHistoryInsert(paymentHistory);
                     return trueAndfalse;
-                }catch (Exception e)
-                {
+                }catch (Exception e){
                     log.info("이미 결제된 사용자입니다.");
                     return trueAndfalse=false;
                 }
-
-
             }
             else {
                 log.info("이미 결제된 사용자입니다.");
                 return trueAndfalse;
             }
-
         }
-        else
-        {
+        else{
             log.info("결제자와 로그인 중 사용자가 다릅니다.");  //debug
             return false;
         }
